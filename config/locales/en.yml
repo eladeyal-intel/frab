@@ -1657,34 +1657,31 @@ en:
     bus: Bus
     business: Business
     canceled: Canceled
-    concert: Concert
+    concert: Do Not Use (reserved for Concert)
     confirmed: Confirmed
     coordinator: Coordinator
     crew: Crew member
     declined: Declined
     dect: DECT
     demo: Demo
-    djset: DJ set
     fax: Fax
     female: Female
-    film: Film
+    film: Do Not Use (Reserved for Film)
     icq: ICQ
     idea: Idea
     integrated: Integrated
     jabber: Jabber/XMPP
-    lecture: Lecture (Presentation)
-    lightning_talk: Lightning talk
+    lecture: Presentation (Lecture)
     male: Male
-    meeting: Meeting
+    meeting: Do Not Use (reserved for Meeting)
     mobile: Mobile
     msn: Msn
     offer: Offer
     orga: Organisator
     other: Other
     otrs: OTRS
-    performance: Theater/Performance
+    performance: Do Not Use (reserved for Theater/Performance)
     phone: Phone
-    podium: Podium
     poster: Poster
     private: Private
     redmine: Redmine
@@ -1698,7 +1695,7 @@ en:
     talk: Talk
     unclear: Unclear
     work: Work
-    workshop: Workshop
+    workshop: Do not use (reserved for Workshop)
     yahoo: Yahoo
   others_only: Others only
   page_titles:
