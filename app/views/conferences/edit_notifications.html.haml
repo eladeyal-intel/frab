@@ -15,11 +15,11 @@
     - partial = 'notification_section_ticket'
   - else
     - partial = 'notification_section'
-  - if @accepting.count > 0
+  - if @accepting&.count > 0
     = render partial: partial, locals: { e: @accepting, state: 'accepting', name: 'acceptance' }
-  - if @rejecting.count > 0
+  - if @rejecting&.count > 0
     = render partial: partial, locals: { e: @rejecting, state: 'rejecting', name: 'rejection' }
-  - if @confirmed.count > 0
+  - if @confirmed&.count > 0
     = render partial: partial, locals: { e: @confirmed, state: 'confirmed', name: 'scheduling' }
 
   %h1= t('edit')
