@@ -527,7 +527,7 @@
       public_name: Speaker public name
       room: Room of presentation
       surname: Speaker surname
-      subtitle: Subtitle
+      subtitle: Authors (and not Subtitle)
       time: Time of presentation
       track: Track name
       type: Event type
