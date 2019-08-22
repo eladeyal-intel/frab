@@ -74,7 +74,7 @@ en:
         start_time: Start time
         state: state
         submission_note: Submission notes
-        subtitle: Subtitle
+        subtitle: Authors
         tech_rider: Tech rider
         time_slots: Time slots
         title: title
@@ -527,7 +527,7 @@ en:
       public_name: Speaker public name
       room: Room of presentation
       surname: Speaker surname
-      subtitle: Subtitle
+      subtitle: Authors (and not Subtitle)
       time: Time of presentation
       track: Track name
       type: Event type
@@ -977,6 +977,7 @@ en:
         public: Is this event visible in the public schedule?
         recording_license: Recording license for this talk
         submission_note: 'visibiliy: admin and user; additional information.'
+        subtitle: 'The names of the authors of this submission. Use the format: FirstName LastName, FirstName LastName, ... - This list will be used when publishing the agenda.'
         tech_rider: What is needed for this event?
     my_events: My Events
     my_rating: My rating
