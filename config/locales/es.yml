@@ -217,6 +217,7 @@ es:
       notification: Notificación
       person: perfil
       phone_number: número telefónico
+      review_metric: Revisar métrica
       room: sala
       track: área
   add_association: Agregar %{name}
@@ -1992,6 +1993,12 @@ es:
     speakers_without_availabilities: altavoces sin disponibilidad
     unconfirmed_events: eventos que no están confirmados
   resend: Reenviar
+  review_metrics: Revisar métricas
+  review_metrics_module:
+    empty_review_metrics: |
+      Puede solicitar a los revisores de envío que se centren en
+      aspectos de cada presentación durante la revisión, agregando
+      revise las métricas de esta lista.
   role:
     admin: Administración
     assistant: Asistente

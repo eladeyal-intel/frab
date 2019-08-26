@@ -173,6 +173,7 @@ ru:
       notification: уведомление
       person: профиль
       phone_number: номер телефона
+      review_metric: Обзор метрики
       room: комната
       track: трек
   add_association: Добавить %{name}
@@ -1942,6 +1943,12 @@ ru:
     speakers_without_availabilities: динамики без оговорок
     unconfirmed_events: события, неподтвержденные
   resend: Отправить
+  review_metrics: Обзор метрик
+  review_metrics_module:
+    empty_review_metrics: |
+      Вы можете попросить рецензентов, чтобы сосредоточиться на конкретных
+      аспекты каждого представления при рассмотрении, добавив
+      просмотреть метрики к этому списку.
   role:
     admin: Администратор
     assistant: Ассистент
