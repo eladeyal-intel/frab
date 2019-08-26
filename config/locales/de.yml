@@ -201,6 +201,7 @@ de:
       notification: Benachrichtigung
       person: Profil
       phone_number: Telefonnummer
+      review_metric: Metrik überprüfen
       room: Raum
       track: Track
   add_association: "%{name} hinzufügen"
@@ -1957,6 +1958,12 @@ de:
     speakers_without_availabilities: Sprecher ohne Verfügbarkeit
     unconfirmed_events: Unbestätigte Events
   resend: Erneut senden
+  review_metrics: Überprüfen Sie die Messdaten
+  review_metrics_module:
+    empty_review_metrics: |
+      Sie können Prüfer bitten, sich auf bestimmte Themen zu konzentrieren
+      Aspekte jeder Einreichung während der Überprüfung durch Hinzufügen
+      Überprüfen Sie die Messdaten in dieser Liste.
   role:
     admin: Admin
     assistant: Assistent

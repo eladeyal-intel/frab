@@ -173,6 +173,7 @@ fr:
       notification: Notification
       person: profil
       phone_number: numéro de téléphone
+      review_metric: Critique métrique
       room: salle
       track: fil
   add_association: Ajouter %{name}
@@ -1966,6 +1967,12 @@ fr:
     speakers_without_availabilities: orateurs sans disponibilités
     unconfirmed_events: événements non confirmés
   resend: Renvoyer
+  review_metrics: Examiner les métriques
+  review_metrics_module:
+    empty_review_metrics: |
+      Vous pouvez demander aux examinateurs de soumission de se concentrer sur des
+      aspects de chaque soumission tout en examinant, en ajoutant
+      examiner les métriques de cette liste.
   role:
     admin: Administrateur
     assistant: Assistant
