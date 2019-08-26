@@ -58,8 +58,8 @@ class EventsController < BaseConferenceController
   # show event ratings
   def ratings
     authorize @conference, :read?
-
-    result = search @conference.events
+    
+    result = search @conference.events.with_review_averages(@conference)
     @events = result.paginate page: page_param
     clean_events_attributes
 
