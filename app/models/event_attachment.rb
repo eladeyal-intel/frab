@@ -1,5 +1,5 @@
 class EventAttachment < ApplicationRecord
-  ATTACHMENT_TITLES = %w(proposal slides poster video other).freeze
+  ATTACHMENT_TITLES = %w(proposal poster slides handouts media video other).freeze
   belongs_to :event
 
   has_attached_file :attachment
