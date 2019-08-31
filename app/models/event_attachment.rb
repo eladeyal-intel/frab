@@ -24,4 +24,16 @@ class EventAttachment < ApplicationRecord
    def to_s
      "#{model_name.human}: #{link_title}"
    end
+ 
+  def short_anonymous_title
+    dt = attachment_updated_at.to_datetime
+    if dt.to_date==Date.today
+      s = I18n.localize(dt.to_time, format: :time)
+    elsif dt.year==Date.today.year
+      s = I18n.localize(dt.to_date, format: :short)
+    else
+      s = dt.year.to_s
+    end
+    "\u{1F5CE} " + s
+  end
 end
