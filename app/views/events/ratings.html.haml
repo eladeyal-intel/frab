@@ -50,7 +50,7 @@
                 %th= sort_link @search, :average_rating, term: params[:term]
                 %th= sort_link @search, :event_ratings_count, term: params[:term]
                 - review_metrics.each do |review_metric|
-                  %th= review_metric.name
+                  %th= sort_link @search, review_metric.safe_name, review_metric.name, term: params[:term]
                 %th
             %tbody
               - @events.includes(:track).each do |event|
