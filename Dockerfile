@@ -1,7 +1,7 @@
 FROM ruby:2.7
 
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs file imagemagick git && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs file imagemagick git vim && \
     apt-get clean && \ 
     rm -rf /var/lib/apt/lists/*
 
