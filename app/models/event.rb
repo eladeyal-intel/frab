@@ -51,7 +51,7 @@ class Event < ApplicationRecord
   scope :without_speaker, -> { where('speaker_count = 0') }
   scope :with_speaker, -> { where('speaker_count > 0') }
   scope :with_more_than_one_speaker, -> { where('speaker_count > 1') }
-
+ 
   scope :with_review_averages, ->(conference) {
     e = select(column_names, conference.review_metrics.map{|rm| "#{rm.safe_name}.score AS #{rm.safe_name}"})
     conference.review_metrics.each do |rm|
@@ -60,6 +60,13 @@ class Event < ApplicationRecord
     e
   }
  
+  ReviewMetric.all.each do |rm|
+    ransacker rm.safe_name do
+      # Sort the NAs and NULL at the bottom
+      Arel.sql("(#{rm.safe_name} IS NULL OR #{rm.safe_name} = 0), #{rm.safe_name}")
+    end
+  end
+  
   has_paper_trail
   has_secure_token :invite_token
 
