@@ -1684,6 +1684,7 @@ en:
     male: Male
     meeting: Meeting
     mobile: Mobile
+    moderator: Moderator
     msn: Msn
     offer: Offer
     orga: Organisator
@@ -1914,6 +1915,7 @@ en:
     crew: Crew
     orga: Orga
     reviewer: Reviewer
+    moderator: Moderator
     submitter: Submitter
   role_str: Role
   rooms: Rooms
