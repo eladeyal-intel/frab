@@ -81,6 +81,8 @@ gem 'transitions', require: ['transitions', 'active_record/transitions']
 gem 'will_paginate'
 gem 'yard'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :production do
   gem 'exception_notification'
 end
