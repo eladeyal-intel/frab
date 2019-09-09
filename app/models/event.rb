@@ -74,7 +74,7 @@ class Event < ApplicationRecord
                                                WHERE events.conference_id = #{conference.id}
                                                AND   event_ratings.person_id = #{reviewer.id} 
                                                AND   event_ratings.rating IS NOT NULL 
-                                               AND   event_ratings.rating IS NOT 0").flatten.map(&:to_i)
+                                               AND   event_ratings.rating <> 0").flatten.map(&:to_i)
     least_reviewed = conference.events.order(event_ratings_count: :asc).pluck(:id)
     least_reviewed -= already_reviewed
     least_reviewed
