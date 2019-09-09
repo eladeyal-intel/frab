@@ -428,6 +428,10 @@ en:
           If you want the conference to accept event submissions with other types
           than the ones available above, write the event types here. Separate different
           event types with semicolon. Example: 'game;discussion panel'
+        attachment_title_is_freeform: |
+          If this option is selected, submitters can provide any title they want
+          for files they upload as attachments. If this option is deselected, they
+          must select between a set of pre-configured titles.
         bulk_notification_enabled: |
           If you enable this, notifications will be sent out in bulk by mail
           or ticket subsystem.
@@ -940,6 +944,14 @@ en:
     add_ticket_hint: Create a ticket for this event.
     all_events: All events
     all_rating: All ratings
+    predefined_title_types:
+      handouts: handouts
+      media: media
+      other: other
+      poster: poster
+      proposal: proposal
+      slides: slides
+      video: video
     average_feedback: 'Average Feedback:'
     average_speaker_feedback: 'Average feedback as speaker:'
     cancel_event: Cancel event

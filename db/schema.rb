@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2019_09_07_000000) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "allowed_event_types", default: "lecture;workshop;podium;lightning_talk;meeting;film;concert;djset;performance;other"
+    t.boolean "attachment_title_is_freeform", default: true
     t.index ["acronym"], name: "index_conferences_on_acronym"
     t.index ["parent_id"], name: "index_conferences_on_parent_id"
   end
