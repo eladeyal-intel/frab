@@ -120,6 +120,7 @@ Rails.application.routes.draw do
         collection do
           get :my
           get :ratings
+          get :attachments_overview
           get :feedbacks
           get :start_review
           get :cards
