@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   include ActionView::Helpers::TextHelper
   include EventState
   include HasEventConflicts
-
+  
   before_create :generate_guid
 
   TYPES = %i(lecture workshop podium lightning_talk meeting film concert djset performance other).freeze
@@ -14,6 +14,8 @@ class Event < ApplicationRecord
   has_many :event_feedbacks, dependent: :destroy
   has_many :event_people, dependent: :destroy
   has_many :event_ratings, dependent: :destroy
+  has_many :review_scores, through: :event_ratings
+  has_many :average_review_scores, dependent: :destroy
   has_many :event_classifiers, dependent: :destroy
   has_many :links, as: :linkable, dependent: :destroy
   has_many :people, through: :event_people
@@ -31,6 +33,8 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :event_attachments, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :ticket, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :event_classifiers, allow_destroy: true
+  accepts_nested_attributes_for :event_ratings, allow_destroy: true
+  accepts_nested_attributes_for :average_review_scores, allow_destroy: true
 
   validates_attachment_content_type :logo, content_type: [/jpg/, /jpeg/, /png/, /gif/]
 
@@ -47,13 +51,31 @@ class Event < ApplicationRecord
   scope :without_speaker, -> { where('speaker_count = 0') }
   scope :with_speaker, -> { where('speaker_count > 0') }
   scope :with_more_than_one_speaker, -> { where('speaker_count > 1') }
-
+  
+  # define some scopes which will be used for sorting the event rating view
+  # PostgreSQL reqruies the ORDER BY term to appear in the SELECT clause; otherwise we could
+  # have used order('score is null').order('score #{dir}'). Instead we also override the SELECT clause.
+  ReviewMetric.pluck(:id).each do |rmid|
+    ['asc', 'desc'].each do |dir|
+      scope :"sort_by_review_metric_#{rmid}_#{dir}", lambda { 
+        joins("LEFT OUTER JOIN average_review_scores ars ON ars.event_id=events.id AND ars.review_metric_id=#{rmid}")
+        .select("events.*, COALESCE(ars.score,#{dir=='asc'? 100 : 0}) AS ordering_term")
+        .order("ordering_term #{dir}")}
+    end
+  end
+  
   has_paper_trail
   has_secure_token :invite_token
 
   def self.ids_by_least_reviewed(conference, reviewer)
-    already_reviewed = connection.select_rows("SELECT events.id FROM events JOIN event_ratings ON events.id = event_ratings.event_id WHERE events.conference_id = #{conference.id} AND event_ratings.person_id = #{reviewer.id}").flatten.map(&:to_i)
-    least_reviewed = connection.select_rows("SELECT events.id FROM events LEFT OUTER JOIN event_ratings ON events.id = event_ratings.event_id WHERE events.conference_id = #{conference.id} GROUP BY events.id ORDER BY COUNT(event_ratings.id) ASC, events.id ASC").flatten.map(&:to_i)
+    already_reviewed = connection.select_rows("SELECT events.id 
+                                               FROM events 
+                                               JOIN event_ratings ON events.id = event_ratings.event_id 
+                                               WHERE events.conference_id = #{conference.id}
+                                               AND   event_ratings.person_id = #{reviewer.id} 
+                                               AND   event_ratings.rating IS NOT NULL 
+                                               AND   event_ratings.rating IS NOT 0").flatten.map(&:to_i)
+    least_reviewed = conference.events.order(event_ratings_count: :asc).pluck(:id)
     least_reviewed -= already_reviewed
     least_reviewed
   end
@@ -89,7 +111,14 @@ class Event < ApplicationRecord
   end
 
   def recalculate_average_rating!
-    update_attributes(average_rating: average(:event_ratings))
+    update_attributes(average_rating: average(:event_ratings), event_ratings_count: event_ratings.where.not(rating: [nil, 0]).count )
+  end
+
+  def recalculate_review_averages!
+    conference.review_metrics.each do |review_metric|
+      avg = average_of_nonzeros(review_scores.where(review_metric: review_metric).pluck(:score))
+      average_review_scores.find_or_create_by(review_metric: review_metric).update_attributes(score: avg)
+    end
   end
 
   def speakers
@@ -168,5 +197,12 @@ class Event < ApplicationRecord
     end
     return nil if rating_count.zero?
     result.to_f / rating_count
+  end
+  
+  def average_of_nonzeros(list)
+    return nil unless list
+    list=list.select{ |x| x && x>0 }
+    return nil if list.empty?
+    list.reduce(:+).to_f / list.size 
   end
 end
