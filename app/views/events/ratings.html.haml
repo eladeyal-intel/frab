@@ -49,7 +49,7 @@
                 %th= sort_link @search, "review_metric_#{review_metric.id}", review_metric.name, term: params[:term]
               %th
           %tbody
-            - @events.each do |event|
+            - @events.includes(:track).each do |event|
               %tr
                 %td= image_box event.logo, :small
                 %td
