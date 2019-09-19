@@ -102,8 +102,7 @@ class Cfp::EventsController < ApplicationController
     @token = params[:token] || ''
     @event = @token.blank? ? nil : Event.find_by(invite_token: @token)
 
-    deadline = @event&.conference&.call_for_participation&.hard_deadline
-    if deadline && Date.today > deadline
+    if @event&.conference&.call_for_participation&.hard_deadline_over?
       return redirect_to cfp_root_path, flash: { error: t('cfp.hard_deadline_over') }
     end
 
