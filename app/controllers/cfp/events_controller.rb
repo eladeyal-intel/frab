@@ -105,8 +105,7 @@ class Cfp::EventsController < ApplicationController
 
     return unless request.post?
 
-    deadline = @event&.conference&.call_for_participation&.hard_deadline
-    if deadline && Date.today > deadline
+    if @event&.conference&.call_for_participation&.hard_deadline_over?
       unless @join_as == 'assistant'
         return redirect_to cfp_root_path, flash: { error: t('cfp.hard_deadline_over') }
       end
