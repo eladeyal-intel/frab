@@ -30,7 +30,7 @@ class MailTemplateTest < ActiveSupport::TestCase
   test 'mail content is personalized' do
     @mail_template.send_sync(:all_speakers_in_confirmed_events)
     m = ActionMailer::Base.deliveries.first
-    assert m.subject == @mail_template.subject
+    assert m.subject == "mail about #{@event.title}"
     assert m.body.include? "|first_name #{@speaker.first_name}|"
     assert m.body.include? "|last_name #{@speaker.last_name}|"
     assert m.body.include? "|public_name #{@speaker.public_name}|"
