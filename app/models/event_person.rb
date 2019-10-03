@@ -69,6 +69,11 @@ class EventPerson < ApplicationRecord
       fail "Field #{state}_#{field} not found" unless string.present?
     end
 
+    substitute_variables(string)
+  end
+  
+  def substitute_variables(string)
+    locale = person.locale_for_mailing(event.conference)
     string.gsub! '%{conference}', conference.title
     string.gsub! '%{event}', event.title
     string.gsub! '%{subtitle}', event.subtitle || ''
