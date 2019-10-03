@@ -10,17 +10,17 @@ class SendBulkMailJob
     when 'all_speakers_in_confirmed_events'
       event_people = event_people
         .where('events.state': 'confirmed')
-        .where('event_people.event_role': 'speaker')
+        .where('event_people.event_role': EventPerson::STAKEHOLDERS)
 
     when 'all_speakers_in_unconfirmed_events'
       event_people = event_people
         .where('events.state': 'unconfirmed')
-        .where('event_people.event_role': 'speaker')
+        .where('event_people.event_role': EventPerson::STAKEHOLDERS)
 
     when 'all_speakers_in_scheduled_events'
       event_people = event_people
         .where('events.state': 'scheduled')
-        .where('event_people.event_role': 'speaker')
+        .where('event_people.event_role': EventPerson::STAKEHOLDERS)
     end
 
     event_people.pluck(:person_id).uniq.each do |p_id|
