@@ -14,7 +14,7 @@ bundler_args: --without capistrano doc production --jobs 2
 before_script:
   - cp config/database.yml.travis config/database.yml
   - sed -i 's/config.eager_load = .*/config.eager_load = true/' config/environments/test.rb
-  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database frab_test'; fi"
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database frab_test character set utf8 collate utf8_general_ci'; fi"
   - sh -c "if [ '$DB' = 'postgresql' ]; then psql -c 'create database frab_test' -U postgres; fi"
 script:
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
