@@ -107,6 +107,32 @@ class EventsController < BaseConferenceController
       redirect_to event_event_rating_path(event_id: ids.first)
     end
   end
+  
+  # batch actions
+  def batch_actions
+    if params[:bulk_email]
+      send_bulk_email
+    else
+      redirect_to events_path, alert: :illegal
+    end
+  end
+  
+  def send_bulk_email
+    authorize @conference, :orga?
+    
+    mail_template = @conference.mail_templates.find_by(name: params[:template_name])
+    events = search @conference.events
+    event_people = EventPerson.for_events(events).stakeholder
+    mailerjob=SendBulkMailJob.new(mail_template, event_people)
+    
+    if Rails.env.production?
+      mailerjob.async.perform
+      redirect_back(notice: t('emails_module.notice_mails_queued'), fallback_location: root_path)
+    else
+      mailerjob.perform
+      redirect_back(notice: t('emails_module.notice_mails_delivered'), fallback_location: root_path)
+    end
+  end
 
   # GET /events/1
   # GET /events/1.json

@@ -22,3 +22,11 @@
   - else
     = render partial: 'filters', locals: { params: params }
     = render 'shared/search_and_table', collection: @events
+  - if @events.any?
+    = simple_form_for(:batch_actions, url: batch_actions_events_path(request.query_parameters), method: :post) do |f|
+      - if policy(@conference).orga? and @conference.mail_templates.any?
+        %small= link_to t('events_module.toggle_send_bulk_mail'), "#send_bulk_mail_form", data: { function: 'toggle', args: { target: '#send_bulk_mail_form' } }
+        #send_bulk_mail_form{style: "display:none;"}
+          .actions
+            = select_tag :template_name, options_for_select(@conference.mail_templates.pluck(:name)), style: "width:400px"
+            = f.button :submit, t('send'), name: 'bulk_email', data: { confirm: t('are_you_sure')}, class: 'danger'

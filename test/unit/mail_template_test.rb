@@ -17,18 +17,18 @@ class MailTemplateTest < ActiveSupport::TestCase
   end
 
   test 'speaker gets email' do
-    @mail_template.send_sync(:all_speakers_in_confirmed_events)
+    @mail_template.send_sync('all_speakers_in_confirmed_events')
     assert !ActionMailer::Base.deliveries.empty?
   end
 
   test 'person gets no email if not not matching filter' do
     @speaker.events = []
-    @mail_template.send_sync(:all_speakers_in_confirmed_events)
+    @mail_template.send_sync('all_speakers_in_confirmed_events')
     assert ActionMailer::Base.deliveries.empty?
   end
 
   test 'mail content is personalized' do
-    @mail_template.send_sync(:all_speakers_in_confirmed_events)
+    @mail_template.send_sync('all_speakers_in_confirmed_events')
     m = ActionMailer::Base.deliveries.first
     assert m.subject == "mail about #{@event.title}"
     assert m.body.include? "|first_name #{@speaker.first_name}|"

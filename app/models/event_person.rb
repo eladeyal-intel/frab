@@ -75,9 +75,9 @@ class EventPerson < ApplicationRecord
     substitute_variables(string)
   end
   
-  def substitute_variables(string)
+  def substitute_variables(s)
     locale = person.locale_for_mailing(event.conference)
-    string.gsub! '%{conference}', conference.title
+    string = s.gsub '%{conference}', conference.title
     string.gsub! '%{event}', event.title
     string.gsub! '%{subtitle}', event.subtitle || ''
     string.gsub! '%{type}', event.localized_event_type(locale)
@@ -100,6 +100,10 @@ class EventPerson < ApplicationRecord
 
   def to_s
     "#{model_name.human}: #{person.full_name} (#{event_role})"
+  end
+  
+  def self.for_events(events)
+    EventPerson.where(event: events)
   end
 
   private

@@ -875,9 +875,10 @@ fr:
     notice_template_destroyed: Modèle de courriel supprimé avec succès.
     notice_template_updated: Modèle de courriel mis à jour avec succès.
     notice_template_added: Modèle de courriel ajouté avec succès.
-    placeholders_hint: |
-      Les emplacements suivants peuvent être utilisés dans la section `content`
-      de chaque modèle.
+    placeholders_hint_header: |
+      Vous pouvez utiliser le poste de variable dynamique dans les sections `subject` et` content` de chaque
+      modèle. Évitez d’utiliser des variables spécifiques à un événement si vous ne voulez pas que les gens soient informés
+      plus d'un message électronique.
     send_mail: Envoyer le courriel
     template_subject: 'Sujet : %{subject}'
   error_signing_in: Courriel ou mot de passe invalide.
@@ -1031,6 +1032,7 @@ fr:
     reject_event_no_email: Rejeter l’évènement (pas de courriel)
     reject_event_no_email_hint: Rejeter cet évènement sans envoyer de courriel automatique.
     toggle_description: Afficher la description >>
+    toggle_send_bulk_mail: Envoyez un courrier à toutes ces personnes >>
     track_select: filtrer par fil
   expenses: Dépenses
   expenses_module:
