@@ -1029,6 +1029,7 @@ en:
     reject_event_no_email: Reject event (no email)
     reject_event_no_email_hint: Reject this event without sending an automated email.
     toggle_description: Toggle Description >>
+    toggle_send_bulk_mail: Send mail to all these people >>
     track_select: filter by track
   expenses: Expenses
   expenses_module:

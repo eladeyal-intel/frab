@@ -1054,6 +1054,7 @@ es:
     reject_event_no_email: Rechazar evento (sin correo electrónico)
     reject_event_no_email_hint: Rechace este evento sin enviar un correo electrónico automático.
     toggle_description: Alternar Descripción >>
+    toggle_send_bulk_mail: Enviar correo a todas estas personas >>
     track_select: filtrar por la pista
   expenses: Gastos
   expenses_module:

@@ -1013,6 +1013,7 @@ de:
     reject_event_no_email: Event rejecten (ohne E-Mail)
     reject_event_no_email_hint: Setzt den Status des Events auf rejected, ohne eine automatisierte E-Mail zu senden.
     toggle_description: Beschreibung umschalten >>
+    toggle_send_bulk_mail: Sende eine Mail an all diese Leute >>
     track_select: Filter nach Track
   expenses: Spesen
   expenses_module:

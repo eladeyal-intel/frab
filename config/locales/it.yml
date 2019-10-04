@@ -1036,6 +1036,7 @@ it:
     reject_event_no_email: Rifiuta l'evento (nessuna email)
     reject_event_no_email_hint: Rifiuta questo evento senza inviare un'e-mail automatica.
     toggle_description: Mostra descrizione >>
+    toggle_send_bulk_mail: Invia mail a tutte queste persone >>
     track_select: filtro per filo
   expenses: la spesa
   expenses_module:
