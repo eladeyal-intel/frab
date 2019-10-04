@@ -14,6 +14,9 @@ RUN chown -R frab:frab /home/frab/app
 
 USER frab
 
+RUN wget https://www.vim.org/scripts/download_script.php?src_id=14498 -O /tmp/AnsiEsc.vba.gz && \
+    vim -c ":so /tmp/AnsiEsc.vba.gz" -c q 
+
 WORKDIR /home/frab/app
 
 RUN bundle install
