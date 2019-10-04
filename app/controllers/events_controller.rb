@@ -9,7 +9,10 @@ class EventsController < BaseConferenceController
 
     clean_events_attributes
     respond_to do |format|
-      format.html { @events = @events.paginate page: page_param }
+      format.html { 
+                    @num_of_matching_events = @events.count
+                    @events = @events.paginate page: page_param 
+                  }
       format.json
     end
   end

@@ -1628,6 +1628,7 @@ fr:
     send_notification: Envoyer des notifications %{name} %{speakers} in %{count}
     send_notification_confirm: Êtes-vous sûr(e) de vouloir envoyer les notifications %{name} pour %{event}?
     send_notification_to_speakers: Envoyer les notifications %{name} à %{speakers} dans %{event}
+    send_unspecified_notification_confirm: Etes-vous sûr de vouloir envoyer des emails pour %{num_events}?
   number:
     currency:
       format:

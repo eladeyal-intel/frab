@@ -1629,6 +1629,7 @@ pt-BR:
     send_notification: enviar notificações %{name} para %{speakers} em %{count}
     send_notification_confirm: Tem certeza de que deseja enviar notificações %{name} para %{event}?
     send_notification_to_speakers: Enviar notificações %{name} para %{speakers} em %{event}
+    send_unspecified_notification_confirm: Tem certeza de que deseja enviar e-mails para %{num_events}?
   number:
     currency:
       format:

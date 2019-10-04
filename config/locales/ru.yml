@@ -1608,6 +1608,7 @@ ru:
     send_notification: отправлять %{name} уведомления %{speakers} в %{count}
     send_notification_confirm: Вы действительно хотите отправить %{name} notifications для %{event}?
     send_notification_to_speakers: Отправить %{name} уведомления %{speakers} в %{event}
+    send_unspecified_notification_confirm: Вы уверены, что хотите отправить электронную почту для %{num_events}?
   number:
     currency:
       format:

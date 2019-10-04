@@ -1608,6 +1608,7 @@ zh:
     send_notification: 将%{name}通知发送到%{count}中的%{speakers}
     send_notification_confirm: 您确定要为%{event}发送%{name} notifications吗？
     send_notification_to_speakers: 将%{name}通知发送到%{event}中的%{speakers}
+    send_unspecified_notification_confirm: 您确定要发送%{num_events}的电子邮件吗？
   number:
     currency:
       format:
