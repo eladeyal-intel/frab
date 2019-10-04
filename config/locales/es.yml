@@ -1054,6 +1054,7 @@ es:
     reject_event_no_email: Rechazar evento (sin correo electrónico)
     reject_event_no_email_hint: Rechace este evento sin enviar un correo electrónico automático.
     toggle_description: Alternar Descripción >>
+    toggle_send_bulk_mail: Enviar correo a todas estas personas >>
     track_select: filtrar por la pista
   expenses: Gastos
   expenses_module:
@@ -1654,6 +1655,7 @@ es:
     send_notification: enviar notificaciones %{name} a %{speakers} en %{count}
     send_notification_confirm: "¿Seguro que quieres enviar notificaciones de %{name} para %{event}?"
     send_notification_to_speakers: Enviar notificaciones %{name} a %{speakers} en %{event}
+    send_unspecified_notification_confirm: "¿Está seguro de que desea enviar correos electrónicos para %{num_events}?"
   number:
     currency:
       format:
