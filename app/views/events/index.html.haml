@@ -32,5 +32,6 @@
             = f.button :submit, 
                        t('send'), 
                        name: 'bulk_email', 
+                       id: 'bulk_email',
                        data: { confirm: t('notifications_module.send_unspecified_notification_confirm', num_events: pluralize(@num_of_matching_events, 'event'))}, 
                        class: 'danger'
