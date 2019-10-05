@@ -94,6 +94,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'faker'
   gem 'i18n-tasks'
+  gem 'imgurr', github: 'Chris911/imgurr', branch: 'fix/rescue-failed-copy'
 end
 
 group :test do
