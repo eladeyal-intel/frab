@@ -58,8 +58,14 @@ class User < ApplicationRecord
                                  last_name: auth.info.last_name)
       user.skip_confirmation! if user.respond_to?(:skip_confirmation!)
     end
-  end
 
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
+    if user&.persisted?
+      user.person.update_from_omniauth(auth)
+    end
+    User.find_by(provider: auth.provider, uid: auth.uid)
+  end
+    
   def newer_than?(user)
     updated_at > user.updated_at
   end
