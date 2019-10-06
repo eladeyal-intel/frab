@@ -2,7 +2,7 @@ require 'test_helper'
 
 class FilterAndSendMailTest < FeatureTest
   setup do
-    @conference = create(:three_day_conference, :with_rooms, :with_events, :with_speakers)
+    @conference = create(:three_day_conference_with_events_and_speakers)
     @event = @conference.events.first
     @admin = create(:admin_user)
   end
