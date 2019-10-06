@@ -63,27 +63,27 @@ class EventsController < BaseConferenceController
       format.pdf
     end
   end
-  
+
   # show a table of all events' attachments
   def attachments
     authorize @conference, :read?
-    
+
     result = search @conference.events
     @events = result.paginate page: page_param
     clean_events_attributes
-    
+
     attachments = EventAttachment.joins(:event).where('events.conference': @conference)
     preset_attachment_titles_in_use = attachments.where(title: EventAttachment::ATTACHMENT_TITLES).group(:title).pluck(:title)
-    
+
     @attachment_titles = EventAttachment::ATTACHMENT_TITLES & preset_attachment_titles_in_use
-    
+
     @other_attachment_titles_exist = attachments.where.not(title: EventAttachment::ATTACHMENT_TITLES).any?
   end
 
   # show event ratings
   def ratings
     authorize @conference, :read?
-    
+
     result = search @conference.events_with_review_averages
     @events = result.paginate page: page_param
     clean_events_attributes
@@ -269,6 +269,15 @@ class EventsController < BaseConferenceController
     filter = filter.where(state: params[:event_state]) if params[:event_state].present?
     filter = filter.where(event_type: params[:event_type]) if params[:event_type].present?
     filter = filter.where(track: @conference.tracks.find_by(:name => params[:track_name])) if params[:track_name].present?
+    helpers.numeric_filters_data.each do |f|
+      if params[f.qname].present?
+        op,val = helpers.get_op_and_val(params[f.qname])
+        op = { '≥' => '>=',
+               '=' => '=',
+               '≤' => '<=' }[op]
+        filter = filter.where("#{f.attribute_name} #{op} #{val}") if op
+      end
+    end
     @search = perform_search(filter, params, %i(title_cont description_cont abstract_cont track_name_cont event_type_is))
     if params.dig('q', 's')&.match('track_name')
       @search.result
