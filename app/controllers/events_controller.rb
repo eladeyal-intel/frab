@@ -126,13 +126,12 @@ class EventsController < BaseConferenceController
     mail_template = @conference.mail_templates.find_by(name: params[:template_name])
     events = search @conference.events
     event_people = EventPerson.for_events(events).stakeholder
-    mailerjob=SendBulkMailJob.new(mail_template, event_people)
     
     if Rails.env.production?
-      mailerjob.async.perform
+      SendBulkMailJob.new.async.perform(mail_template, event_people)
       redirect_back(notice: t('emails_module.notice_mails_queued'), fallback_location: root_path)
     else
-      mailerjob.perform
+      SendBulkMailJob.new.perform(mail_template, event_people)
       redirect_back(notice: t('emails_module.notice_mails_delivered'), fallback_location: root_path)
     end
   end

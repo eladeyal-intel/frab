@@ -10,12 +10,12 @@ class MailTemplate < ApplicationRecord
   end
 
   def send_sync(filter)
-    job = SendBulkMailJob.new(self, filter)
-    job.perform
+    job = SendBulkMailJob.new
+    job.perform(self, filter)
   end
 
   def send_async(filter)
-    job = SendBulkMailJob.new(self, filter)
-    job.async.perform
+    job = SendBulkMailJob.new
+    job.async.perform(self, filter)
   end
 end
