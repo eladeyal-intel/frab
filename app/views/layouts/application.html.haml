@@ -11,6 +11,7 @@
     .topbar
       .fill
         .container
+          = render '/logo'
           - if content_for? :title
             = yield :title
           - else
