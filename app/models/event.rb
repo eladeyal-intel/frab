@@ -62,8 +62,7 @@ class Event < ApplicationRecord
  
   ReviewMetric.all.each do |rm|
     ransacker rm.safe_name do
-      # Sort the NAs and NULL at the bottom
-      Arel.sql("(#{rm.safe_name} IS NULL OR #{rm.safe_name} = 0), #{rm.safe_name}")
+      Arel.sql(rm.safe_name)
     end
   end
   

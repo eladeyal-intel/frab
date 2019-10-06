@@ -31,7 +31,7 @@ class EditingEventReviewTest < FeatureTest
      visit "/#{@conference.acronym}/events/ratings"
      assert_content page, REVIEW_METRIC_NAME 
      assert_content page, '3.75' # average([2,4,4,5])
-     
+
      # Test that when @user deletes the review, the average is updated correctly
      visit "/#{@conference.acronym}/events/#{@event.id}/event_rating"
      click_on 'Delete Event rating'
@@ -40,5 +40,9 @@ class EditingEventReviewTest < FeatureTest
      visit "/#{@conference.acronym}/events/ratings"
      assert_content page, REVIEW_METRIC_NAME 
      assert_content page, '3.67' # average([2,4,5])
-  end
+
+     # Test that sorting by review metric doesn't assert
+     click_on REVIEW_METRIC_NAME
+     assert_content page, REVIEW_METRIC_NAME
+     
 end
