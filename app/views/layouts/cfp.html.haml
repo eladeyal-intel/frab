@@ -12,6 +12,7 @@
     .topbar
       .fill
         .container
+          = render "/logo"
           - if @conference
             = link_to t('titles.cfp_welcome', {conference: @conference.title}), root_url, class: 'brand'
           - else
