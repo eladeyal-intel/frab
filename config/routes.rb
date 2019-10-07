@@ -126,6 +126,7 @@ Rails.application.routes.draw do
           get :cards
           get :export_accepted
           get :export_confirmed
+          post :batch_actions
         end
         member do
           get :people

@@ -101,6 +101,10 @@ class EventPerson < ApplicationRecord
   def to_s
     "#{model_name.human}: #{person.full_name} (#{event_role})"
   end
+  
+  def self.for_events(events)
+    EventPerson.where(event: events)
+  end
 
   private
 

@@ -1046,6 +1046,7 @@ ru:
     reject_event_no_email: Отклонить событие (без электронной почты)
     reject_event_no_email_hint: Отклоните это событие, не отправляя автоматическое письмо.
     toggle_description: Toggle Описание >>
+    toggle_send_bulk_mail: Отправить письмо всем этим людям >>
     track_select: фильтр по треку
   expenses: Затраты
   expenses_module:
@@ -1642,6 +1643,11 @@ ru:
     send_notification: отправлять %{name} уведомления %{speakers} в %{count}
     send_notification_confirm: Вы действительно хотите отправить %{name} notifications для %{event}?
     send_notification_to_speakers: Отправить %{name} уведомления %{speakers} в %{event}
+    send_unspecified_notification_confirm:
+      one: Вы уверены, что хотите отправить электронное письмо на событие %{count}?
+      few: Вы уверены, что хотите отправлять электронные письма о событиях %{count}?
+      many: Вы уверены, что хотите отправлять электронные письма о событиях %{count}?
+      other: Вы уверены, что хотите отправлять электронные письма о событиях %{count}?
   number:
     currency:
       format:
@@ -2015,6 +2021,7 @@ ru:
     select_all_none: Выбрать все / нет
     view_live_version_hint: Просмотрите общедоступную версию своего расписания, как и любой посетитель.
   scheduling: планирование
+  select_one: "-- Выбери один --"
   send: послать
   session:
     login: Авторизоваться
