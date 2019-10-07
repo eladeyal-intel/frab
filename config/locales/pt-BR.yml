@@ -1057,6 +1057,7 @@ pt-BR:
     reject_event_no_email: Rejeitar evento (sem email)
     reject_event_no_email_hint: Rejeite este evento sem enviar um email automático.
     toggle_description: Alternar Descrição >>
+    toggle_send_bulk_mail: Enviar email para todas essas pessoas >>
     track_select: filtrar por faixa
   expenses: Despesas
   expenses_module:
@@ -1664,6 +1665,9 @@ pt-BR:
     send_notification: enviar notificações %{name} para %{speakers} em %{count}
     send_notification_confirm: Tem certeza de que deseja enviar notificações %{name} para %{event}?
     send_notification_to_speakers: Enviar notificações %{name} para %{speakers} em %{event}
+    send_unspecified_notification_confirm:
+      one: Tem certeza de que deseja enviar e-mails para o evento %{count}?
+      other: Tem certeza de que deseja enviar e-mails para eventos %{count}?
   number:
     currency:
       format:
@@ -2054,6 +2058,7 @@ pt-BR:
     select_all_none: Selecione todos / nenhum
     view_live_version_hint: Veja a versão pública ao vivo de sua agenda, assim como qualquer participante pode ver.
   scheduling: Agendamento
+  select_one: "-- Selecione um --"
   send: Enviar
   session:
     login: Entrar

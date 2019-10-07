@@ -1041,6 +1041,7 @@ en:
     reject_event_no_email: Reject event (no email)
     reject_event_no_email_hint: Reject this event without sending an automated email.
     toggle_description: Toggle Description >>
+    toggle_send_bulk_mail: Send mail to all these people >>
     track_select: filter by track
   expenses: Expenses
   expenses_module:
@@ -1637,6 +1638,9 @@ en:
     send_notification: send %{name} notifications to %{speakers} in %{count}
     send_notification_confirm: Are you sure you want to send %{name} notifications for %{event}?
     send_notification_to_speakers: Send %{name} notifications to %{speakers} in %{event}
+    send_unspecified_notification_confirm:
+      one: Are you sure you want to send e-mails for %{count} event?
+      other: Are you sure you want to send e-mails for %{count} events?
   number:
     currency:
       format:
@@ -2013,6 +2017,7 @@ en:
     select_all_none: Select all/none
     view_live_version_hint: View the public live version of your schedule just like any attendee might see it.
   scheduling: Scheduling
+  select_one: "-- Select one --"
   send: Send
   session:
     login: Log in
