@@ -35,10 +35,7 @@ class EventsController < BaseConferenceController
   # current_users events
   def my
     authorize @conference, :read?
-
-    result = search @conference.events.associated_with(current_user.person)
-    clean_events_attributes
-    @events = result.paginate page: page_param
+    redirect_to events_path(events: 'my')
   end
 
   # events as pdf
@@ -269,6 +266,7 @@ class EventsController < BaseConferenceController
         filter = filter.where("#{attrname} #{op} #{val}") if op
       end
     end
+    filter = filter.associated_with(current_user.person) if helpers.showing_my_events
     @search = perform_search(filter, params, %i(title_cont description_cont abstract_cont track_name_cont event_type_is))
     if params.dig('q', 's')&.match('track_name')
       @search.result
