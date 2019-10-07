@@ -1,15 +1,21 @@
 %section
   .page-header
     .pull-right
-      - if policy(@conference).manage?
+      - if policy(@conference).manage? and !showing_my_events
         = action_button "primary", t('events_module.add_event'), new_event_path, hint: t('events_module.add_event_hint')
         = action_button "", t('events_module.print_cards'), cards_events_path(format: :pdf), hint: t('events_module.print_cards_hint')
         = action_button "", t('events_module.print_accepted_cards') , cards_events_path(accepted: true, format: :pdf), hint: t('events_module.print_accepted_cards_hint')
-    %h1= t('titles.event_list')
+
+    %h1=t('titles.event_list') unless showing_my_events
+    %h1=t('events_module.my_events') if showing_my_events
 
   %ul.tabs
-    %li.active= link_to t('events_module.all_events'), events_path
-    %li= link_to t('events_module.my_events'), my_events_path
+    - if showing_my_events
+      %li= link_to t('events_module.all_events'), events_path
+      %li.active= link_to t('events_module.my_events'), events_path(events: :my)
+    - else
+      %li.active= link_to t('events_module.all_events'), events_path
+      %li= link_to t('events_module.my_events'), events_path(events: :my)
     %li= link_to t('events_module.attachments_overview'), attachments_events_path
     %li= link_to t('events_module.event_ratings'), ratings_events_path
     - if @conference.feedback_enabled
@@ -18,7 +24,8 @@
     .row
       .span16
         .blank-slate
-          %p= t('events_module.no_events')
+          %p= t('events_module.no_events') unless showing_my_events
+          %p= t('events_module.not_involved') if showing_my_events
   - else
     = render partial: 'filters', locals: { params: params }
     = render 'shared/search_and_table', collection: @events
