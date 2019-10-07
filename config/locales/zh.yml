@@ -1047,6 +1047,7 @@ zh:
     reject_event_no_email: 拒绝活动(无电子邮件)
     reject_event_no_email_hint: 拒绝此事件而不发送自动电子邮件。
     toggle_description: 切换说明>>
+    toggle_send_bulk_mail: 发送邮件给所有这些人>>
     track_select: 按轨道过滤
   expenses: 花费
   expenses_module:
@@ -1643,6 +1644,9 @@ zh:
     send_notification: 将%{name}通知发送到%{count}中的%{speakers}
     send_notification_confirm: 您确定要为%{event}发送%{name} notifications吗？
     send_notification_to_speakers: 将%{name}通知发送到%{event}中的%{speakers}
+    send_unspecified_notification_confirm:
+      one: 您确定要发送有关%{count}事件的电子邮件吗？
+      other: 您确定要发送有关%{count}事件的电子邮件吗？
   number:
     currency:
       format:
@@ -2016,6 +2020,7 @@ zh:
     select_all_none: 选择全部/无
     view_live_version_hint: 查看您的日程表的公开现场版本，就像任何与会者可能看到的一样。
   scheduling: 调度
+  select_one: "-- 选择一个选项 --"
   send: 发送
   session:
     login: 登录
