@@ -11,6 +11,11 @@ class EventsController < BaseConferenceController
     respond_to do |format|
       format.html { 
                     @num_of_matching_events = @events.count
+                    if helpers.showing_my_events
+                      @events_total = @conference.events.associated_with(current_user.person).count
+                    else
+                      @events_total = @conference.events.count
+                    end
                     @events = @events.paginate page: page_param 
                   }
       format.json
@@ -78,6 +83,8 @@ class EventsController < BaseConferenceController
     result = search @conference.events_with_review_averages
     @events = result.paginate page: page_param
     clean_events_attributes
+    
+    @num_of_matching_events = @events.count
 
     # total ratings:
     @events_total = @conference.events.count
