@@ -176,6 +176,7 @@ en:
       room: room
       review_metric: Review metric
       track: track
+  add: Add
   add_association: Add %{name}
   additional_resources: Additional Resources
   admin: Admin
@@ -571,7 +572,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mar
@@ -597,7 +598,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    -
+    - 
     - January
     - February
     - March
@@ -945,6 +946,36 @@ en:
     ago: "%{time_ago} ago"
     all_events: All events
     all_rating: All ratings
+    bulk_edit:
+      add_person: Add person
+      add_person_confirm:
+        one: Are you sure you want to add a person to this event?
+        other: Are you sure you want to add a person to all %{count} events?
+      set_new_state: Assign state
+      set_new_track: Assign track
+      set_new_event_type: Change event type
+      set_events_confirm:
+        one: Are you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      set_events_type_confirm:
+        one: Are you sure you want to modify this event's type?
+        other: Are you sure you want to modify the type for all %{count} events?
+      set_track_confirm:
+        one: Are you sure you want to change the track of this event?
+        other: Are you sure you want to change the track of all %{count} events?
+      set_events_confirm: 
+        one: you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      toggle: "Edit these events >>"
+      update_successful:
+        one: "%{count} edit completed successfully."
+        other: "%{count} edits completed successfully."
+      update_skipped:
+        one: "%{count} edit skipped."
+        other: "%{count} edits skipped."
+      update_failed:
+        one: "%{count} edit failed."
+        other: "%{count} edits failed."
     predefined_title_types:
       handouts: handouts
       media: media
@@ -1946,10 +1977,10 @@ en:
   resend: Resend
   review_metrics: Review metrics
   review_metrics_module:
-      empty_review_metrics: |
-        You can ask submission reviewers to focus on specific
-        aspects of each submission while reviewing, by adding
-        review metrics to this list.
+    empty_review_metrics: |
+      You can ask submission reviewers to focus on specific
+      aspects of each submission while reviewing, by adding
+      review metrics to this list.
   role:
     admin: Admin
     assistant: Assistant
@@ -2022,6 +2053,7 @@ en:
     login: Log in
     signup: Sign up
     update_password: Update my password
+  set: Set
   settings: Settings
   show: Show
   show_account: Account
