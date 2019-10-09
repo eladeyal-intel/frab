@@ -1040,6 +1040,9 @@ en:
     reject_event_hint: Reject this event. The speaker(s) will be notified of the rejection via email.
     reject_event_no_email: Reject event (no email)
     reject_event_no_email_hint: Reject this event without sending an automated email.
+    listing_n_events: 
+      one: Listing %{n} of %{count} event.
+      other: Listing %{n} of %{count} events.
     toggle_description: Toggle Description >>
     toggle_send_bulk_mail: Send mail to all these people >>
     track_select: filter by track
