@@ -21,6 +21,7 @@ fr:
         name: Nom
       conference:
         acronym: Acronyme
+        allowed_event_types_as_list: Types d'événements autorisés
         attachment_title_is_freeform: Le titre de la pièce jointe est de forme libre
         bulk_notification_enabled: Notifications de groupe
         color: Couleur
@@ -173,8 +174,10 @@ fr:
       notification: Notification
       person: profil
       phone_number: numéro de téléphone
+      review_metric: Critique métrique
       room: salle
       track: fil
+  add: Ajouter
   add_association: Ajouter %{name}
   additional_resources: Ressources supplémentaires
   admin: Admin
@@ -184,6 +187,8 @@ fr:
     update_failed: Impossible d’enregistrer les modifications.
     update_successful: Modifications sauvegardées.
   all: Tous
+  allowed_event_types: Types d'événements autorisés
+  allowed_event_types_extras: Types d'événements autorisés supplémentaires
   are_you_sure: Êtes-vous sûr(e)?
   attachments_overview_module:
     attachments: pièces jointes
@@ -273,6 +278,8 @@ fr:
         start_date: Sélectionnez la date à laquelle l’appel sera ouvert au public.
         welcome_text: Entrez un message de bienvenue ou des instructions supplémentaires que vous souhaitez afficher à vos participants. (HTML)
     join_alternative: 'Où trouver un autre jeton d’invitation :'
+    join_as: Rejoindre en tant que
+    join_as_hint: Si vous rejoignez cet événement en tant que conférencier, nous essaierons de prendre en compte votre disponibilité lors de la planification de cet événement.
     join_confirm: Voulez-vous accepter l’invitation ?
     join_description: 'Avec le jeton fourni, vous pouvez rejoindre cet évènement en tant que conférencier :'
     join_event: Rejoindre l’évènement
@@ -427,6 +434,14 @@ fr:
           Un nom court et unique pour la conférence, n’utilisant que des lettres
           minuscules, des nombres et tirets bas. Ce sera utilisé pour identifier
           la conférence dans les URLs, etc. Exemple : "froscon_2011"
+        allowed_event_types: |
+          Ici, vous pouvez choisir les types d’événements acceptés comme soumissions à
+          cette conférence. Cette liste concerne uniquement les nouvelles soumissions. Soumissions existantes
+          ne sera pas modifié si vous modifiez cette liste.
+        allowed_event_types_extras: |
+          Si vous souhaitez que la conférence accepte les soumissions d'événements avec d'autres types
+          que ceux disponibles ci-dessus, écrivez les types d’événements ici. Séparer différent
+          types d'événements avec point-virgule. Exemple: 'jeu; panneau de discussion'
         attachment_title_is_freeform: |
           Si cette option est sélectionnée, les émetteurs peuvent fournir le titre de leur choix.
           pour les fichiers téléchargés en pièces jointes. Si cette option est désélectionnée, ils
@@ -895,9 +910,10 @@ fr:
     notice_template_destroyed: Modèle de courriel supprimé avec succès.
     notice_template_updated: Modèle de courriel mis à jour avec succès.
     notice_template_added: Modèle de courriel ajouté avec succès.
-    placeholders_hint: |
-      Les emplacements suivants peuvent être utilisés dans la section `content`
-      de chaque modèle.
+    placeholders_hint_header: |
+      Vous pouvez utiliser le poste de variable dynamique dans les sections `subject` et` content` de chaque
+      modèle. Évitez d’utiliser des variables spécifiques à un événement si vous ne voulez pas que les gens soient informés
+      plus d'un message électronique.
     send_mail: Envoyer le courriel
     template_subject: 'Sujet : %{subject}'
   error_signing_in: Courriel ou mot de passe invalide.
@@ -971,6 +987,33 @@ fr:
     attachments_overview: Les pièces jointes
     average_feedback: 'Moyenne des retours :'
     average_speaker_feedback: 'Moyenne des retours par orateur :'
+    bulk_edit:
+      add_person: Ajouter une personne
+      add_person_confirm:
+        one: Êtes-vous sûr de vouloir ajouter une personne à cet événement?
+        other: Êtes-vous sûr de vouloir ajouter une personne à tous les événements %{count}?
+      set_events_confirm:
+        one: vous êtes sûr de vouloir changer d'état pour cet événement?
+        other: Êtes-vous sûr de vouloir changer d'état pour tous les événements %{count}?
+      set_events_type_confirm:
+        one: Êtes-vous sûr de vouloir modifier le type de cet événement?
+        other: Êtes-vous sûr de vouloir modifier le type pour tous les événements %{count}?
+      set_new_event_type: Changer le type d'événement
+      set_new_state: Attribuer l'état
+      set_new_track: Assigner une piste
+      set_track_confirm:
+        one: Êtes-vous sûr de vouloir changer le parcours de cet événement?
+        other: Êtes-vous sûr de vouloir changer le suivi de tous les événements %{count}?
+      toggle: Editer ces événements >>
+      update_failed:
+        one: "%{count} édition a échoué."
+        other: Les modifications de %{count} ont échoué.
+      update_skipped:
+        one: "%{count} édition ignorée."
+        other: "%{count} modifications ignorées."
+      update_successful:
+        one: "%{count} édition terminée avec succès."
+        other: "%{count} modifications terminées avec succès."
     cancel_event: Annuler l’évènement
     cancel_event_hint: |
       Définit cet évènement comme annulé. Généralement, celà veut dire que l’orateur
@@ -1021,6 +1064,9 @@ fr:
         recording_license: License d’enregistrement pour ce talk
         submission_note: 'Visibilité : Admins et utilisateurs; information additionelle.'
         tech_rider: Que faut-il pour cet évènement ?
+    listing_n_events:
+      one: Liste de %{n} de l'événement %{count}.
+      other: Liste %{n} d'événements %{count}.
     my_events: Mes évènements
     my_rating: Ma note
     my_ratings: Mes notes
@@ -1062,6 +1108,7 @@ fr:
     reject_event_no_email: Rejeter l’évènement (pas de courriel)
     reject_event_no_email_hint: Rejeter cet évènement sans envoyer de courriel automatique.
     toggle_description: Afficher la description >>
+    toggle_send_bulk_mail: Envoyez un courrier à toutes ces personnes >>
     track_select: filtrer par fil
   expenses: Dépenses
   expenses_module:
@@ -1659,6 +1706,9 @@ fr:
     send_notification: Envoyer des notifications %{name} %{speakers} in %{count}
     send_notification_confirm: Êtes-vous sûr(e) de vouloir envoyer les notifications %{name} pour %{event}?
     send_notification_to_speakers: Envoyer les notifications %{name} à %{speakers} dans %{event}
+    send_unspecified_notification_confirm:
+      one: Êtes-vous sûr de vouloir envoyer des courriels pour l'événement %{count}?
+      other: Êtes-vous sûr de vouloir envoyer des courriels pour les événements %{count}?
   number:
     currency:
       format:
@@ -1710,6 +1760,7 @@ fr:
   options:
     admin: Administrateur
     aim: AIM
+    assistant: Assistant
     attending: Assiste
     bus: Bus
     business: Business
@@ -1962,8 +2013,15 @@ fr:
     speakers_without_availabilities: orateurs sans disponibilités
     unconfirmed_events: événements non confirmés
   resend: Renvoyer
+  review_metrics: Examiner les métriques
+  review_metrics_module:
+    empty_review_metrics: |
+      Vous pouvez demander aux examinateurs de soumission de se concentrer sur des
+      aspects de chaque soumission tout en examinant, en ajoutant
+      examiner les métriques de cette liste.
   role:
     admin: Administrateur
+    assistant: Assistant
     coordinator: Coordinateur
     crew: Membre de l’équipe
     moderator: Modérateur
@@ -2029,11 +2087,13 @@ fr:
     select_all_none: Sélection (Tous / Aucun)
     view_live_version_hint: Afficher la version publique du programme, comme n’importe quelle personne la verrait
   scheduling: Programmation
+  select_one: "-- Choisissez un --"
   send: Envoyer
   session:
     login: Connexion
     signup: Créer mon compte
     update_password: Changer mon mot de passe
+  set: Ensemble
   settings: Paramètres
   show: Afficher
   show_account: Compte

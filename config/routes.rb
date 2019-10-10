@@ -92,6 +92,7 @@ Rails.application.routes.draw do
         get :edit_schedule
         get :edit_rooms
         get :edit_classifiers
+        get :edit_review_metrics
         get :edit_ticket_server
         get :edit_notifications
         post :send_notification
@@ -125,6 +126,7 @@ Rails.application.routes.draw do
           get :cards
           get :export_accepted
           get :export_confirmed
+          post :batch_actions
         end
         member do
           get :people

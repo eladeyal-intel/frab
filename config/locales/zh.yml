@@ -21,6 +21,7 @@ zh:
         name: 名称
       conference:
         acronym: 缩写
+        allowed_event_types_as_list: 允许的事件类型
         attachment_title_is_freeform: 附件标题为自由格式
         bulk_notification_enabled: 批量通知已启用
         color: 颜色
@@ -173,8 +174,10 @@ zh:
       notification: 通知
       person: 轮廓
       phone_number: 电话号码
+      review_metric: 审核指标
       room: 房间
       track: 跟踪
+  add: 加
   add_association: 添加%{name}
   additional_resources: 其他资源
   admin: 管理员
@@ -184,6 +187,8 @@ zh:
     update_failed: 无法更新
     update_successful: 更改已成功保存！
   all: 所有
+  allowed_event_types: 允许的事件类型
+  allowed_event_types_extras: 其他允许的事件类型
   are_you_sure: 你确定？
   attachments_overview_module:
     attachments: 附件
@@ -271,6 +276,8 @@ zh:
         start_date: 选择一个您的CfP应该向公众开放的日期。
         welcome_text: 输入欢迎信息或您想要向参与者显示的其他说明。 (HTML)
     join_alternative: 或查找另一个邀请令牌：
+    join_as: 加入为
+    join_as_hint: 如果您以演讲者身份参加此活动，我们将在安排此活动时尝试考虑您的空缺情况。
     join_confirm: 你想接受邀请吗？
     join_description: 提供令牌后，您可以作为演讲者加入此活动：
     join_event: 加入活动
@@ -424,6 +431,14 @@ zh:
           为您的会议提供一个简短而独特的手柄，仅使用小写字母
           字母，数字和下划线。这将用于识别你的
           网址会议等。例如：'froscon2011''“
+        allowed_event_types: |
+          在这里，您可以选择接受哪些类型的事件作为提交给
+          这个会议。此列表仅影响新提交。现有提交
+          如果您更改此列表，则不会被修改。
+        allowed_event_types_extras: |
+          如果您希望会议接受其他类型的事件提交
+          比上面可用的事件类型，请在此处写下事件类型。分开不同
+          分号的事件类型。示例：“游戏；讨论面板”
         attachment_title_is_freeform: |
           如果选择此选项，提交者可以提供他们想要的任何标题
           他们以附件形式上传的文件。如果取消选择此选项，则它们
@@ -874,9 +889,10 @@ zh:
     notice_template_destroyed: 邮件模板已成功销毁。
     notice_template_updated: 邮件模板已成功更新。
     notice_template_added: 邮件模板已成功添加。
-    placeholders_hint: |
-      以下占位符可用于每个的“内容”部分
-      模板。
+    placeholders_hint_header: |
+      您可以在每个主题的`学科`和`内容`部分中使用动态变量变电站。
+      模板。如果您不希望别人得到事件，请避免使用特定于事件的变量
+      一封以上的邮件。
     send_mail: 发送邮件
     template_subject: 主题：%{subject}
   error_signing_in: 无效的电子邮件或密码。
@@ -950,6 +966,33 @@ zh:
     attachments_overview: 附件
     average_feedback: 平均反馈：
     average_speaker_feedback: 以演讲者的平均反馈：
+    bulk_edit:
+      add_person: 加人
+      add_person_confirm:
+        one: 您确定要向此活动添加人吗？
+        other: 您确定要向所有%{count}事件添加人员吗？
+      set_events_confirm:
+        one: 您确定要更改此事件的状态？
+        other: 您确定要更改所有%{count}事件的状态吗？
+      set_events_type_confirm:
+        one: 您确定要修改此事件的类型吗？
+        other: 您确定要修改所有%{count}事件的类型吗？
+      set_new_event_type: 变更事件类型
+      set_new_state: 分配状态
+      set_new_track: 分配曲目
+      set_track_confirm:
+        one: 您确定要更改此事件的进度吗？
+        other: 您确定要更改所有%{count}事件的记录吗？
+      toggle: 编辑这些事件>>
+      update_failed:
+        one: "%{count}编辑失败。"
+        other: "%{count}编辑失败。"
+      update_skipped:
+        one: "%{count}编辑已跳过。"
+        other: "%{count}编辑已跳过。"
+      update_successful:
+        one: "%{count}编辑成功完成。"
+        other: "%{count}编辑成功完成。"
     cancel_event: 取消活动
     cancel_event_hint: 将此事件标记为已取消。通常这意味着扬声器必须取消它们的外观。
     col_toggle_rooms: 切换房间：
@@ -998,6 +1041,9 @@ zh:
         recording_license: 录制本次演讲的许可证
         submission_note: visibiliy：管理员和用户;附加信息。
         tech_rider: 这个活动需要什么？
+    listing_n_events:
+      one: 列出%{count}事件的%{n}。
+      other: 列出%{count}事件的%{n}。
     my_events: 我的活动
     my_rating: 我的评价
     my_ratings: 我的评分
@@ -1042,6 +1088,7 @@ zh:
     reject_event_no_email: 拒绝活动(无电子邮件)
     reject_event_no_email_hint: 拒绝此事件而不发送自动电子邮件。
     toggle_description: 切换说明>>
+    toggle_send_bulk_mail: 发送邮件给所有这些人>>
     track_select: 按轨道过滤
   expenses: 花费
   expenses_module:
@@ -1638,6 +1685,9 @@ zh:
     send_notification: 将%{name}通知发送到%{count}中的%{speakers}
     send_notification_confirm: 您确定要为%{event}发送%{name} notifications吗？
     send_notification_to_speakers: 将%{name}通知发送到%{event}中的%{speakers}
+    send_unspecified_notification_confirm:
+      one: 您确定要发送有关%{count}事件的电子邮件吗？
+      other: 您确定要发送有关%{count}事件的电子邮件吗？
   number:
     currency:
       format:
@@ -1689,6 +1739,7 @@ zh:
   options:
     admin: 管理员
     aim: 目标
+    assistant: 助理
     attending: 参加
     bus: 总线
     business: 商业
@@ -1938,8 +1989,15 @@ zh:
     speakers_without_availabilities: 没有可用性的扬声器
     unconfirmed_events: 未经证实的事件
   resend: 重发
+  review_metrics: 查看指标
+  review_metrics_module:
+    empty_review_metrics: |
+      您可以要求提交审稿人专注于特定的
+      审核时，通过添加每个提交的方面
+      查看此列表的指标。
   role:
     admin: 管理员
+    assistant: 助理
     coordinator: 协调员
     crew: 船员
     moderator: 主持人
@@ -2003,11 +2061,13 @@ zh:
     select_all_none: 选择全部/无
     view_live_version_hint: 查看您的日程表的公开现场版本，就像任何与会者可能看到的一样。
   scheduling: 调度
+  select_one: "-- 选择一个选项 --"
   send: 发送
   session:
     login: 登录
     signup: 注册
     update_password: 更新我的密码
+  set: 组
   settings: 设置
   show: 显示
   show_account: 帐户

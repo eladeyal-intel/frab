@@ -22,6 +22,7 @@ en:
       conference:
         acronym: Acronym
         attachment_title_is_freeform: Attachment title is freeform
+        allowed_event_types_as_list: Allowed event types
         bulk_notification_enabled: Bulk notifications
         color: Color
         default_recording_license: Default recording license
@@ -174,7 +175,9 @@ en:
       person: profile
       phone_number: phone number
       room: room
+      review_metric: Review metric
       track: track
+  add: Add
   add_association: Add %{name}
   additional_resources: Additional Resources
   admin: Admin
@@ -184,6 +187,8 @@ en:
     update_failed: Failed to update
     update_successful: Changes saved successfully!
   all: All
+  allowed_event_types: Allowed event types
+  allowed_event_types_extras: Additional allowed event types
   are_you_sure: Are you sure?
   attachments_overview_module:
     no_event: There are no events in this conference yet. Once events with file attachments are added, they will appear here.
@@ -271,15 +276,17 @@ en:
         start_date: Pick a date when your CfP should be open for the public.
         welcome_text: Enter a welcome message or additional instructions you want to display to participants. (HTML)
     join_alternative: 'Or lookup another invitation token:'
+    join_as: Join as a
+    join_as_hint: If you join this event as a speaker, we'll try to take into account your availability when scheduling this event.
     join_confirm: Do you want to accept the invitation?
-    join_description: 'With the token provided you can join this event as a speaker:'
+    join_description: 'With the token provided you can join this event:'
     join_event: Join event
     join_submitters_hint: Share this token with speakers you want to allow to join this event. After they have created an account, they can use the token in the 'Join event' interface.
-    join_success: You have been added as speaker on this event.
-    join_token_already_used: You already were a speaker on this event.
+    join_success: You have been added to this event.
+    join_token_already_used: You already joined this event.
     join_token_link: This link directly leads to the 'Join event' page for this event.
     join_token_lookup: Lookup token
-    join_token_lookup_description: Enter the token that allows you to join an event as a speaker.
+    join_token_lookup_description: Enter the token that you were given in order to join an event.
     join_token_lookup_hint: 'Hint: The token can be viewed by the original submitter in the event''s edit view.'
     join_token_unknown: Token %{token} unknown.
     languages_spoken: Languages spoken
@@ -424,6 +431,14 @@ en:
           A short and unique handle for your conference, using only lower-case
           letters, numbers and underscores. This will be used to identify your
           conference in URLs etc. Example: 'froscon2011'
+        allowed_event_types: |
+          Here you can pick which types of events are accepted as submissions to
+          this conference. This list affects only new submissions. Existing submissions
+          will not be modified if you alter this list.
+        allowed_event_types_extras: |
+          If you want the conference to accept event submissions with other types
+          than the ones available above, write the event types here. Separate different
+          event types with semicolon. Example: 'game;discussion panel'
         attachment_title_is_freeform: |
           If this option is selected, submitters can provide any title they want
           for files they upload as attachments. If this option is deselected, they
@@ -568,7 +583,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mar
@@ -594,7 +609,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    -
+    - 
     - January
     - February
     - March
@@ -867,10 +882,11 @@ en:
     notice_mails_queued: Mail deliveries queued.
     notice_template_destroyed: Mail template was successfully destroyed.
     notice_template_updated: Mail template was successfully updated.
-    placeholders_hint: |
-      The following place holders may be used in the `content` section of each
-      template.
     notice_template_added: Mail template was successfully added.
+    placeholders_hint_header: |
+      You can use dynamic variable substation in the in the `subject` and `content` sections of each
+      template. Avoid using event-specific variables if you don't want people to get
+      more than one mail message.
     send_mail: Send Mail
     template_subject: 'Subject: %{subject}'
   error_signing_in: Invalid email or password.
@@ -941,6 +957,36 @@ en:
     ago: "%{time_ago} ago"
     all_events: All events
     all_rating: All ratings
+    bulk_edit:
+      add_person: Add person
+      add_person_confirm:
+        one: Are you sure you want to add a person to this event?
+        other: Are you sure you want to add a person to all %{count} events?
+      set_new_state: Assign state
+      set_new_track: Assign track
+      set_new_event_type: Change event type
+      set_events_confirm:
+        one: Are you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      set_events_type_confirm:
+        one: Are you sure you want to modify this event's type?
+        other: Are you sure you want to modify the type for all %{count} events?
+      set_track_confirm:
+        one: Are you sure you want to change the track of this event?
+        other: Are you sure you want to change the track of all %{count} events?
+      set_events_confirm: 
+        one: you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      toggle: "Edit these events >>"
+      update_successful:
+        one: "%{count} edit completed successfully."
+        other: "%{count} edits completed successfully."
+      update_skipped:
+        one: "%{count} edit skipped."
+        other: "%{count} edits skipped."
+      update_failed:
+        one: "%{count} edit failed."
+        other: "%{count} edits failed."
     predefined_title_types:
       handouts: handouts
       media: media
@@ -1036,7 +1082,11 @@ en:
     reject_event_hint: Reject this event. The speaker(s) will be notified of the rejection via email.
     reject_event_no_email: Reject event (no email)
     reject_event_no_email_hint: Reject this event without sending an automated email.
+    listing_n_events: 
+      one: Listing %{n} of %{count} event.
+      other: Listing %{n} of %{count} events.
     toggle_description: Toggle Description >>
+    toggle_send_bulk_mail: Send mail to all these people >>
     track_select: filter by track
   expenses: Expenses
   expenses_module:
@@ -1633,6 +1683,9 @@ en:
     send_notification: send %{name} notifications to %{speakers} in %{count}
     send_notification_confirm: Are you sure you want to send %{name} notifications for %{event}?
     send_notification_to_speakers: Send %{name} notifications to %{speakers} in %{event}
+    send_unspecified_notification_confirm:
+      one: Are you sure you want to send e-mails for %{count} event?
+      other: Are you sure you want to send e-mails for %{count} events?
   number:
     currency:
       format:
@@ -1685,6 +1738,7 @@ en:
     admin: Administrator
     aim: AIM
     attending: Attending
+    assistant: Assistant
     bus: Bus
     business: Business
     canceled: Canceled
@@ -1932,8 +1986,15 @@ en:
     speakers_without_availabilities: speakers without availabilities
     unconfirmed_events: events that are unconfirmed
   resend: Resend
+  review_metrics: Review metrics
+  review_metrics_module:
+    empty_review_metrics: |
+      You can ask submission reviewers to focus on specific
+      aspects of each submission while reviewing, by adding
+      review metrics to this list.
   role:
     admin: Admin
+    assistant: Assistant
     coordinator: Coordinator
     crew: Crew
     orga: Orga
@@ -1997,11 +2058,13 @@ en:
     select_all_none: Select all/none
     view_live_version_hint: View the public live version of your schedule just like any attendee might see it.
   scheduling: Scheduling
+  select_one: "-- Select one --"
   send: Send
   session:
     login: Log in
     signup: Sign up
     update_password: Update my password
+  set: Set
   settings: Settings
   show: Show
   show_account: Account
