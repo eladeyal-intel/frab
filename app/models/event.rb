@@ -84,7 +84,7 @@ class Event < ApplicationRecord
   
   def localized_event_type(locale = nil)
     return '' unless event_type.present?
-    I18n.t(event_type, scope: 'options', locale: locale)
+    I18n.t(event_type, scope: 'options', locale: locale, default: event_type)
   end
 
   def track_name
