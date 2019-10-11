@@ -11,9 +11,8 @@ class FilterAndSendMailTest < FeatureTest
   it 'can create a template and use it for filter and send', js: true do
     sign_in_user(@admin)
     
-    # Create a template
-    visit "/#{@conference.acronym}/mail_templates"
-    click_on "Add mail template"
+    # Add mail template
+    visit "/#{@conference.acronym}/mail_templates/new"
     fill_in 'Name', with: 'template1'
     fill_in 'Subject', with: 'mail regarding %{event}'
     fill_in 'Content', with: 'come to %{room} please'
@@ -40,7 +39,7 @@ class FilterAndSendMailTest < FeatureTest
     find('input', id: 'bulk_email').trigger('click')
     
     assert_content page, 'Mails delivered'
-
+    
     emails = ActionMailer::Base.deliveries                                      
     assert emails.count == 1 # without filtering, we would've seen 3            
     
