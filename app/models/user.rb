@@ -49,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user=where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.person ||= Person.new(email: auth.info.email,
@@ -59,11 +59,9 @@ class User < ApplicationRecord
       user.skip_confirmation! if user.respond_to?(:skip_confirmation!)
     end
 
-    user = User.find_by(provider: auth.provider, uid: auth.uid)
-    if user&.persisted?
-      user.person.update_from_omniauth(auth)
-    end
-    User.find_by(provider: auth.provider, uid: auth.uid)
+    user.person.update_from_omniauth(auth)
+
+    return user
   end
     
   def newer_than?(user)

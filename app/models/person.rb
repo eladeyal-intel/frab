@@ -159,7 +159,8 @@ class Person < ApplicationRecord
         return if existing_avatar_data == new_image_data
       end
         
-      update_attributes(avatar: StringIO.new(new_image_data)) # TODO store filename/original URL
+      update_attributes(avatar: StringIO.new(new_image_data),
+                        avatar_file_name: auth.provider)
     rescue => e
       Rails.logger.error "Person::update_from_omniauth(provider=#{auth.provider}) exception during image import: #{e}; Ignored"
     end
