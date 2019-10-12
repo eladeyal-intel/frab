@@ -16,6 +16,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   alias :ldap :all
 
+  alias :github :all
+
   alias :google_oauth2 :all
 
   def failure
