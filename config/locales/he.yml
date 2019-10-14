@@ -1,0 +1,2284 @@
+---
+he:
+  ability:
+    denied: פעולה זו אסורה.
+  accepted_event_durations: משך אירוע מקובל
+  accepted_only: מקובל בלבד
+  actions: פעולות
+  activerecord:
+    attributes:
+      availability:
+        end_date: תאריך סיום
+        start_date: תאריך התחלה
+      call_for_participation:
+        contact_email: דוא"ל ליצירת קשר
+        end_date: תאריך סיום
+        hard_deadline: תאריך יעד קשה
+        info_url: כתובת אתר מידע
+        start_date: תאריך התחלה
+        welcome_text: טקסט ברוך הבא
+      classifier:
+        description: תיאור
+        name: שם
+      conference:
+        acronym: ראשי תיבות
+        allowed_event_types_as_list: סוגי אירועים מותרים
+        attachment_title_is_freeform: כותרת הקובץ המצורף היא צורה חופשית
+        bulk_notification_enabled: התראות בכמות גדולה
+        color: צבע
+        default_recording_license: רישיון הקלטה כברירת מחדל
+        default_timeslots: מספר זמני ברירת מחדל
+        email: אימייל
+        event_state_visible: מצב האירוע גלוי
+        expenses_enabled: מעקב אחר הוצאות
+        feedback_enabled: משוב
+        max_timeslots: מקסימום חריצי זמן
+        program_export_base_url: כתובת אתר לייצוא של התוכנית
+        schedule_custom_css: קבעו CSS מותאם אישית
+        schedule_html_intro: קבע מבוא HTML
+        schedule_open: לוח הזמנים פתוח
+        schedule_public: לוח הזמנים לציבור
+        schedule_version: גרסת תזמון
+        ticket_type: סוג כרטיס
+        timeslot_duration: משך זמן משך הזמן
+        timezone: אזור זמן
+        title: כותרת
+        transport_needs_enabled: תובלה זקוקה למעקב
+      conference_export:
+        locale: אזור
+      conference_user:
+        conference_id: כנס
+        role: תפקיד
+      conflict:
+        conflict_type: סוג סכסוך
+        conflicting_event_id: אירוע סותר
+        severity: חומרה
+      day:
+        end_date: תאריך סיום
+        start_date: התחל
+      event:
+        abstract: סיכום
+        average_feedback: משוב ממוצע
+        average_rating: דירוג ממוצע
+        description: תיאור
+        do_not_record: אל תקליט
+        event_feedback_count: ספירת משוב על אירוע
+        event_ratings_count: ספירת דירוגי אירועים
+        event_type: סוג אירוע
+        guid: מדריך
+        invite_token: הזמן אסימון
+        language: שפה
+        logo: לוגו
+        note: הערה
+        public: ציבורי
+        recording_license: רישיון הקלטה
+        speaker_count: ספירת דובר
+        speakers: רמקולים
+        start_time: שעת התחלה
+        state: מדינה
+        submission_note: הערות הגשה
+        subtitle: מחברים
+        tech_rider: רוכב טכני
+        time_slots: חריצי זמן
+        title: כותרת
+        track: מסלול
+      event_attachment:
+        public: ציבורי
+        title: כותרת
+      event_classifier:
+        value: ערך
+      event_feedback:
+        comment: תגובה
+        note: הערה
+      event_rating:
+        comment: תגובה
+        rating: דירוג
+      expense:
+        name: שם
+        reimbursed: הוחזר
+        value: ערך
+      im_account:
+        im_address: כתובת
+        im_type: סוג צ'אט
+      langage:
+        code: קוד
+      link:
+        title: כותרת
+        url: כתובת
+      mail_template:
+        content: תוכן
+        name: שם
+        subject: נושא
+      notification:
+        accept_body: קבל גוף
+        accept_subject: קבל נושא
+        locale: שפה
+        reject_body: דחה את הגוף
+        reject_subject: דחה את הנושא
+        schedule_body: גוף לוח זמנים
+        schedule_subject: קבע נושא
+      person:
+        abstract: תקציר
+        description: תיאור
+        email: אימייל
+        email_public: אימייל ציבורי
+        first_name: שם פרטי
+        gender: מגדר
+        include_in_mailings: כלול בדיוור
+        last_name: שם משפחה
+        public_name: שם ציבורי
+        use_gravatar: השתמש ב Gravatar
+      phone_number:
+        phone_number: מספר טלפון
+        phone_type: סוג
+      room:
+        name: שם
+        rank: דרגה
+        size: גודל
+      ticket:
+        object_id: מזהה
+        object_type: סוג
+        remote_ticket_id: כרטיס מרחוק
+      ticket_server:
+        password: סיסמה
+        queue: תור
+        url: כתובת שרת
+        user: משתמש
+      track:
+        color: צבע
+        name: שם
+      transport_need:
+        at: בשעה
+        booked: הוזמן
+        note: הערה
+        seats: מקומות ישיבה
+        transport_type: סוג תחבורה
+      user:
+        email: אימייל
+        password: סיסמה
+        password_confirmation: אימות סיסמה
+        remember_me: זכור אותי
+        role: תפקיד
+    models:
+      call_for_participation: התקשרו להשתתפות
+      classifier: מסווג
+      conference: ועידה
+      conference_user: משתמש ועידה
+      day: יום
+      event: אירוע
+      event_attachment: קובץ
+      event_classifier: קטגוריה
+      event_person: אדם
+      im_account: חשבון צ'אט
+      language: שפה
+      link: קישור
+      notification: הודעה
+      person: פרופיל
+      phone_number: מספר טלפון
+      review_metric: בדוק את הערך
+      room: חדר
+      track: מסלול
+  add: לְהוֹסִיף
+  add_association: הוסף %{name}
+  additional_resources: משאבים נוספים
+  admin: מנהל
+  admin_accounts: חשבונות ניהול
+  admin_visibility_only_hint: 'חשיפה: מנהל בלבד.'
+  alert_notifications:
+    update_failed: העדכון נכשל
+    update_successful: השינויים נשמרו בהצלחה!
+  all: את כל
+  allowed_event_types: סוגי אירועים מותרים
+  allowed_event_types_extras: סוגי אירועים נוספים מותרים
+  apply_filter: החל מסנן
+  are_you_sure: האם אתה בטוח?
+  attachments_overview_module:
+    attachments: קבצים מצורפים
+    no_attachments: |
+      עדיין לא מצורפים קבצים לאף אחד מהאירועים. פעם אנשים
+      תתחיל להעלות קבצים לאירועים שלהם, תוכל
+      ראה את כל הקבצים המצורפים במסך זה.
+    no_event: אין אירועים בוועידה זו עדיין. לאחר הוספת אירועים עם קבצים מצורפים, הם יופיעו כאן.
+  availabilities:
+    alerts:
+      available_for_day: זמין ליום %{day}
+      no_availabilities: |
+        ל- %{person} אין כרגע אף זמינות.
+        עליך לשלוח טופס זה.
+    available_from: מ
+    available_to: ל
+    error_person_unavailable: ל- %{person} אין כרגע אף זמינות.
+    success_update: הזמינות עודכנה בהצלחה.
+  availability: זמינות
+  available: זמין
+  basic_information: ידיעות בסיסיות
+  blank_indication: "(רֵיק)"
+  by: על ידי
+  call_for_participation: התקשרו להשתתפות
+  cancel: בטל
+  cfp:
+    abstract_hint: פיסקה קצרה אחת שמתארת אתכם בתמציתיות. (HTML)
+    avatar_hint: העלה תמונה חדשה.
+    back: חזור
+    basic_information: מידע בסיסי
+    bio: ביו
+    change_password_button: שנה את הסיסמה שלי
+    change_password_headline: שנה את סיסמתך
+    changed_from: השתנה מ
+    classifiers_hint: עזור לקהל שלך ולסקרים להבין את הגשתך. בחר ואז שקלל את הקטגוריות המתאימות להגשתך.
+    come_back: אנא חזור כאשר "הקריאה להשתתפות" פתוחה!
+    conference_in_the_past: אינך יכול להגיש שיחה, מכיוון שהוועידה הזו הייתה בעבר.
+    confirm: לאשר
+    confirm_attendance: אשר נוכחות
+    confirm_attendance_explanation: אנא לחץ על הכפתור כדי לאשר מחדש שאתה מדבר באירוע
+    confirmation_button: בקש שוב את הוראות האישור
+    confirmation_description: זה יכול להיות אחד המקרים הנדירים שבהם דוא"ל לא הועבר למעשה. אם כבר חיכיתם זמן מה ובדקתם את תיקיות הספאם שלכם, אנא
+    confirmation_headline: נרשמתי אך לא קיבלתי את הוראות האישור שלי
+    confirmation_instructions_sent: הוראות האישור נשלחו לכתובת שסיפקת.
+    contact_data: נתוני קשר
+    contact_description_html: אם משהו משתבש בהגשתך או אם יש לך שאלה כלשהי, אנא אל תהסס לפנות אלינו לכתובת %{mail_to}
+    contact_headline: איש קשר
+    create_event_headline: צור אירוע חדש
+    current_password_hint: אנו זקוקים לסיסמא הנוכחית שלך כדי לאשר את השינויים שלך
+    deadline_description: אנא הקפד להגיש את ההצעה שלך עד ** %{date} **
+    description_hint: תיאור ארוך יותר של עצמך. השתמש בזה כדי למסור פרטים נוספים שלא השתלבו בתקציר. (HTML)
+    detailed_description: תיאור מפורט
+    edit_account: ערוך את חשבונך
+    edit_availability: ערוך זמינות
+    edit_availability_description: אנא הודע לנו מתי תהיה זמין לקיים את האירועים שאתה מגיש. אנו ננסה כמיטב יכולתנו לשלב משאלות אלה בעת תכנון לוח הזמנים.
+    edit_availability_headline: ערוך זמינות
+    edit_event_headline: עריכת אירוע
+    edit_profile: ערוך את הפרופיל האישי שלך
+    email_accept_upcoming_infos: האם אתה רוצה לקבל מידע על הוועידות הקרובות בדואר?
+    email_hint: אנא הכנס את כתובת הדוא"ל בה עלינו להשתמש כאמצעי העיקרי ליצירת קשר.
+    email_public_hint: אם תרצה, כתובת דוא"ל זו יכולה להתפרסם בתוכנית הציבורית שלנו.
+    error_confirming: אירעה שגיאה באישור חשבונך. אנא וודא שהדבקת את הקישור המלא מהדוא"ל ושלא אישרת את החשבון לפני כן.
+    error_sending_confirmation_instructions: לא ניתן היה לשלוח הוראות אישור. אנא וודא שהזנת את כתובת הדוא"ל הנכונה וכי חשבונך לא אושר כבר.
+    event_abstract_hint: פיסקה אחת קצרה המתארת את האירוע בתמציתיות. (HTML)
+    event_confirmed: האירוע אושר
+    event_created_notice: האירוע נוצר בהצלחה.
+    event_description_hint: תיאור ארוך יותר של האירוע. השתמש בזה כדי למסור פרטים נוספים שלא השתלבו בתקציר. שניהם, מופשטים ותיאוריים, יוצגו באתר הכנס. (HTML)
+    event_time_slots_hint: אורך האירוע שלך בשעות ודקות. לשיחות רגילות וכו 'פשוט השתמש בברירת המחדל.
+    event_updated_notice: האירוע עודכן בהצלחה.
+    event_withdrawn_notice: ההגשה שלך בוטלה.
+    events_submitted: 'אירועים שכבר הגשת:'
+    fail_layout_use: אל תשתמש בכינוס הפעלה ללא כנס
+    forgot_password_button: בקש סיסמה חדשה
+    forgot_password_description: היית כאן לפני, אבל לא זוכר את הסיסמה שלך? אנו יודעים איך זה, אז אל תהסס לעשות זאת
+    forgot_password_headline: שכחת ססמה?
+    hard_deadline_over: מצטערים, המועד האחרון להגשת אירועים הסתיים.
+    im_accounts: חשבונות להודעות מיידיות
+    info_url_description_html: 'לא בטוחים מה להגיש? קרא את הכל על קריאת ההשתתפות בכתובת: %{link}'
+    information_headline: מידע
+    input_appreciation: 'אנו מעריכים את התשומות שלך עד כה. אל תהסס להגיש או להצטרף לאירוע אחר:'
+    inputs:
+      hints:
+        contact_email: כתובת דוא"ל בה המשתתפים יכולים ליצור איתך קשר במקרה שיש לך שאלות.
+        end_date: בחר מועד אחרון להגשת המשתתפים. מועד אחרון זה יוצג למשתמשים אך לא נאכף אחרת.
+        hard_deadline: בחר תאריך יעד קשה. לא יתאפשר הגשה לאחר תאריך זה. השאר ריק אם ברצונך לאפשר הגשות ללא הגבלת זמן.
+        info_url: 'דף אינטרנט המכיל מידע נוסף על קריאת ההשתתפות. אנא הכנס URL מלא הכולל ''http: //'''
+        start_date: בחר תאריך שבו CfP שלך אמור להיות פתוח לציבור.
+        welcome_text: הזן הודעת קבלת פנים או הוראות נוספות שברצונך להציג למשתתפים. (HTML)
+    join_alternative: 'או חפש אסימון הזמנה אחר:'
+    join_as: הצטרף כ
+    join_as_hint: אם תצטרף לאירוע זה כדובר, אנו ננסה לקחת בחשבון את הזמינות שלך בעת תזמון האירוע הזה.
+    join_confirm: האם אתה רוצה לקבל את ההזמנה?
+    join_description: 'עם האסימון המסופק תוכלו להצטרף לאירוע זה:'
+    join_event: הצטרף לאירוע
+    join_submitters_hint: שתף אסימון זה עם הרמקולים שברצונך לאפשר להצטרף לאירוע זה. לאחר שיצרו חשבון, הם יכולים להשתמש באסימון בממשק 'הצטרף לאירוע'.
+    join_success: נוספה לאירוע זה.
+    join_token_already_used: הצטרפת כבר לאירוע הזה.
+    join_token_link: קישור זה מוביל ישירות לדף 'הצטרף לאירוע' לאירוע זה.
+    join_token_lookup: אסימון לחפש
+    join_token_lookup_description: הזן את האסימון שנתון בכדי להצטרף לאירוע.
+    join_token_lookup_hint: 'רמז: האסימון יכול להיות מוסר על ידי המוסר המקורי בתצוגת העריכה של האירוע.'
+    join_token_unknown: אסימון %{token} לא ידוע.
+    languages_spoken: שפות מדוברות
+    links: קישורים
+    login: התחברות
+    login_existing_description: אתה יכול להיכנס אם יצרת חשבון לשיחת השתתפות זו, או לכל אירוע קודם.
+    login_existing_headline: התחבר באמצעות חשבון קיים
+    login_required: לאחר הכניסה תוכלו להזין את ההגשה.
+    login_required_title: היכנס כדי להשתתף
+    looking_for_login_form: האם אתם מחפשים כניסה של מוסרים?
+    no_confirmation_token: מפתח האישור שלך אינו תקף. אנא בדוק את מצב האירוע שלך בממשק השיחה להשתתפות.
+    not_forget_personal_details: ואל תשכח למלא את הפרטים האישיים שלך אם לא עשית זאת כבר. זכור שתמיד תוכל לחזור ולערוך את הפרופיל שלך באמצעות הכפתור בסרגל הצד הימני.
+    notifications:
+      launched: השקת קריאה להשתתפות.
+    pages:
+      conference_open_mode: הכנס נמצא במצב פתוח. תזמון עצמי מותר
+      event_confirm_attendence: אשר נוכחות
+      event_confirmation_request: 'האישור שלך נדרש לאירוע: ** %{event} **.'
+      not_started_cfp: |
+        לרוע המזל, קריאת ההשתתפות טרם החלה. בבקשה תישא איתנו
+        ותשאיר לנו עוד קצת זמן להכנות שלנו.
+      profile_data: 'נתוני פרופיל:'
+      start_date_tip: |
+        קריאת ההשתתפות תתחיל בתאריך ** %{start_date} **. אנא חזרו בתאריך זה או לאחריו.
+        אנו מצפים להגשתך.
+      thank_for_interest: תודה על התעניינותך להשתתף ב- %{conference}.
+      unexisting_cfp: לרוע המזל, קריאת ההשתתפות אינה קיימת (עדיין?).
+    password_hint: השאר ריק אם אינך רוצה לשנות אותו
+    password_updated: עדכן בהצלחה את הסיסמה שלך.
+    person_created_notice: הפרופיל נוצר בהצלחה.
+    person_updated_notice: הפרופיל עודכן בהצלחה.
+    personal_details_description: אנא מלא את הטופס הבא כדי לאפשר לנו (ואם ההגשות שלך נבחרות, משתתפי הכנס) להכיר אותך קצת יותר טוב.
+    personal_details_headline: פרטים אישיים - ספר לנו עלייך
+    personal_details_later: שימו לב שתוכלו למלא את המינימום כעת ותמיד לחזור אחר כך להוסיף פרטים נוספים.
+    phone_numbers: מספרי טלפון
+    problem_sending_password_reset_instructions: לא ניתן היה לשלוח הוראות לאיפוס סיסמה. אנא וודא שהזנת את כתובת הדוא"ל הנכונה.
+    public_name_hint: זה השם שיוצג בתוכנית הציבורית.
+    resend_confirmation_button: שלח שוב את הוראות האישור
+    resend_confirmation_headline: שלח שוב את הוראות האישור
+    save_availability: חסוך זמינות
+    save_cfp: שמור את השיחה להשתתפות
+    scheduled: זמן מתוכנן
+    send_reset_instructions: שלח לי איפוס הוראות בסיסמה
+    sent_password_reset_instructions: הוראות כיצד לאפס את הסיסמה שלך נשלחו לכתובת הדוא"ל שציינת.
+    set_to: מכוון ל
+    show:
+      conference_empty_days: הוועידה לא תופיע עד שנוספו ימים.
+      dates_hint: קריאת ההשתתפות מתחילה ב- %{start_date} ומסתיימת ב- %{end_date}.
+      deadline_passed: המועד האחרון של ה- CFP עבר, אין הגשות אפשריות.
+      edit_cfp_hint: ערוך את נתוני קריאת ההשתתפות הזו
+      empty_description: קריאת ההשתתפות פועלת, אך "טקסט ברוך הבא" ריק. frab לא יקשר ל- CFP.
+      new_events_by_day: אירועים חדשים ביום
+      submitters_interface_link: 'הממשק למגישים זמין ב:'
+      total_event_count: סך כל האירועים
+    sign_in: היכנס
+    sign_up: הירשם
+    sign_up_description: אם אתה חדש ב- %{title}, אנא קח את הזמן ליצור חשבון. זה ממש קל ומהיר.
+    sign_up_headline: הירשם לחשבון חדש
+    signed_up: נרשמת בהצלחה. דוא"ל עם הוראות אישור נשלח לכתובת שסיפקת. אנא עקוב אחר ההוראות הבאות כדי להשלים את הרישום שלך.
+    specify_availability: 'אנא יידעו אותנו, באילו זמנים תהיו זמינים לקיים את האירוע שלכם:'
+    submission_note_hint: גלוי למנהלי מערכת ומשתמשים, מכיל מידע נוסף.
+    submit_another_event: הגישו אירוע נוסף
+    submit_new_event: הגישו אירוע חדש
+    successfully_confirmed: חשבונך אושר בהצלחה. תודה שנרשמתם!
+    take_time_to_submit: 'אנא קח את הזמן להגשת ההצעה שלך או להצטרף לאירוע קיים:'
+    thanks_for_confirmation: תודה שאשרת את השתתפותך.
+    thanks_for_interest: תודה על התעניינותך להשתתף ב- %{title}.
+    to: ל
+    update: עדכון
+    update_availability_notice: תודה שציינת את הזמינות שלך.
+    updated: עודכן בהצלחה. יש לאשר מחדש כתובות דוא"ל חדשות.
+    uploaded_files: קבצים שהועלו
+    welcome: ברוך הבא
+    welcome_text: ברוך הבא לשיחת ההשתתפות. כדי ליצור או לבדוק את ההגשות עליך להתחבר. אם אתה חדש ב- %{title} אתה צריך להירשם לחשבון.
+    withdraw: לסגת
+    withdrawal_confirmation: האם באמת למשוך את האירוע הזה מקריאת ההשתתפות?
+  classifiers: סיווגים
+  classifiers_module:
+    current_classifiers: 'המסווגים המוגדרים כעת הם:'
+    empty_classifiers: |
+      כאן תוכלו ליצור ולערוך את המסווגים שמגישים
+      יכול לתת לאירועים שלהם
+    modify_classifier_with_parent: |
+      ניתן לשנות את הסווגים לכנס זה רק עם
+      זכויות ניהול לוועידת ההורים %{parent}
+  clear: ברור
+  col_abstract: 'סיכום:'
+  col_availability: 'זמינות:'
+  col_avg_audience_feedback: 'משוב ממוצע של קהל:'
+  col_classifiers: 'סיווגים:'
+  col_col_template: "%{data}:"
+  col_conference: 'הכנס:'
+  col_description: 'תיאור:'
+  col_email: 'אימייל:'
+  col_email_for_login: 'אימייל לשם התחברות:'
+  col_event_state: מצב אירוע
+  col_files: 'קבצים:'
+  col_filters: 'מסננים:'
+  col_first_name: 'שם פרטי:'
+  col_full_name: 'שם מלא:'
+  col_gender: 'מין:'
+  col_language: 'שפה:'
+  col_last_login: 'כניסה אחרונה:'
+  col_last_name: 'שם משפחה:'
+  col_links: 'קישורים:'
+  col_non_reimbursed_expenses: 'הוצאות שלא הוחזרו:'
+  col_notes_admin: 'הערות (מנהל):'
+  col_phone_number_with_type: 'מספר טלפון (%{type}):'
+  col_public: 'ציבורי:'
+  col_public_name: 'שם ציבורי:'
+  col_reimbursed_expenses: 'הוצאות שהוחזרו:'
+  col_role: 'תפקיד:'
+  col_room: 'חדרים:'
+  col_rooms: 'חדרים:'
+  col_speakers: 'רמקולים:'
+  col_start_time: 'שעת התחלה:'
+  col_submission_notes: 'הערות הגשה (משתמש ומנהל):'
+  col_ticket: 'כרטיס:'
+  col_time_slots: 'חריצי זמן:'
+  col_total: 'סה"כ:'
+  col_track: 'מסלול:'
+  col_tracks: 'מסלולים:'
+  col_type: 'סוג:'
+  comment: תגובה
+  comments: הערות
+  conference: כנס
+  conference_management: ניהול ועידה
+  conferences: ועידות
+  conferences_module:
+    accepting: מקבלים
+    add_conference: הוסף ועידה
+    add_conference_hint: הוסף ועידה חדשה
+    canceled: מבוטל
+    conference_in_past: ימי הכנס היו בעבר. אין הגשות אפשריות.
+    confirmed: אושר
+    current_conferences: ועידות נוכחיות
+    error_specified_conference_not_found: ועידה שצוינה לא נמצאה
+    footer: לוח הזמנים הזה נוצר באמצעות [frab] (http://frab.github.io/frab/).
+    inputs:
+      hints:
+        accepted_event_durations: |
+          השתמש בתיבות הסימון שלמעלה כדי לקבוע אילו אפשרויות מוצגות
+          מגישים לציון משך האירוע המוצע שלהם.
+          המגישים יוכלו לבחור כאן את אחד הערכים שבדקתם.
+          כצוות הכנס תוכל לשנות מאוחר יותר אירועים לכל אחד מהם
+          משך הזמן, לא רק אלה שנבדקו כאן.
+        acronym: |
+          ידית קצרה וייחודית לוועידה שלך, באמצעות אותיות קטנות בלבד
+          אותיות, מספרים וקווים תחתונים. זה ישמש לזיהוי שלך
+          ועידה בכתובות URL וכו 'דוגמה:' froscon2011 '
+        allowed_event_types: |
+          כאן תוכלו לבחור לאילו סוגי אירועים יתקבלו כהגשה
+          הכנס הזה. רשימה זו משפיעה על הגשות חדשות בלבד. הגשות קיימות
+          לא ישתנה אם תשנה רשימה זו.
+        allowed_event_types_extras: |
+          אם אתה רוצה שהכנס יקבל הגשות לאירועים עם סוגים אחרים
+          מאלה הזמינים לעיל, כתוב כאן את סוגי האירועים. להפריד שונה
+          סוגי אירועים עם נקודה-פסיק. דוגמה: 'משחק; לוח דיונים'
+        attachment_title_is_freeform: |
+          אם אפשרות זו נבחרת, מוסרים יכולים לספק כל כותרת שהם רוצים
+          עבור קבצים שהם מעלים כקבצים מצורפים. אם אפשרות זו אינה מסומנת, לא
+          חובה לבחור בין קבוצה של כותרות שהוגדרו מראש.
+        bulk_notification_enabled: |
+          אם תאפשר זאת, ההודעות יישלחו בכמויות גדולות בדואר
+          או תת-מערכת כרטיסים.
+        color: אתה יכול להגדיר צבע לוועידה שלך.
+        default_recording_license: רישיון הקלטה כברירת מחדל לכל השיחות
+        default_timeslots: |
+          מהו אורך ברירת המחדל של האירועים שלך? דוגמה: אם בחרת
+          משך זמן של 15 דקות לחשבון על הפסקות, אך שלך
+          אורכה של שעה בדרך כלל שעה, בחר 4, מכיוון ש -4 פעמים 15 דקות זה שעה.
+        email: |
+          צור קשר עם כתובת הדוא"ל לכנס שלך. ישמש כתגובה
+          כתובת בהודעות דוא"ל שנשלחו על ידי המערכת.
+        event_languages: בחר באילו שפות ניתן לערוך אירועים בכנס זה.
+        event_state_visible: |
+          אם תאפשר זאת, הרמקולים יוכלו לחפש את המצב
+          למסירתם בממשק CFP ולאשר את נוכחותם
+          על ידי לחיצה על כפתור האישור.
+        expenses_enabled: אם תאפשר זאת, frab יאפשר לך לעקוב אחר הוצאות של אנשים.
+        feedback_enabled: |
+          אם תאפשר זאת, ייצוא התוכנית שלך יכלול קישורים למשוב
+          טופס בו המשתתפים יכולים לדרג אירוע.
+        max_timeslots: מה האורך המרבי של אירוע בודד (למשל שיחת יחיד)?
+        timeslot_duration: |
+          כמה זמן אתה רוצה שנקודות הזמנים הקטנות ביותר יהיו? זה בעצם
+          מגדיר את הרשת עליה אתה יכול לתכנן את התוכנית שלך. אזהרה: זה
+          אחד הוא מסובך ולא ניתן לשנות אותו בקלות אחר כך, אז תן לזה כמה
+          חשבתי. באופן כללי, לוחות זמנים גדולים יותר הופכים את הדברים להרבה יותר פשוטים, אבל
+          הקטנים יותר הופכים אותך לגמיש יותר. דוגמא: אם כל מה שאתה צריך זה
+          קבע שיחות של 30 דקות שמתאימות באופן מושלם עם שעות שלמות וחצי,
+          בחר 30 דקות כגודל החריץ. אם יש לך שיחות ארוכות של שעה ו
+          הפסקות של 15 דקות ביניהן, 15 דקות זה גודל החריץ המושלם.
+          שים לב שתוכל להקטין את גודל החריץ בהמשך, כל עוד
+          גודל חריץ ישן הוא מכפל מזה החדש. אז הולך מרבע שעה
+          הירידה ל -5 זה בסדר, בעוד הירידה ל 10 דקות לא תעבוד.
+        timezone: |
+          אנא בחר באיזה שעה הכינוס שלך יתקיים.
+          זה נחוץ כדי להציג נכון את זמני האירועים שלך.
+        title: |
+          שם הכנס שלך כפי שהוא יופיע בכל האתר.
+          דוגמה: 'FrOSCon'
+        transport_needs_enabled: |
+          אם תאפשר זאת, frab יאפשר לך לעקוב אחר צרכי התחבורה של
+          אנשים.
+    manage_conferences: ניהול כנסים
+    manage_conferences_hint: נהל את כל הכנסים
+    new: חדש
+    new_welcome: |
+      ברוך הבא! נראה כאילו זו הפעם הראשונה שלך כאן.
+      כדי להתחיל לארגן כנס אתה צריך תחילה
+      הזן כמה נתונים על זה. אתה יכול לשנות את רוב מה
+      אתה נכנס עכשיו מאוחר יותר. אך לא ניתן לשנות כמה דברים
+      בקלות לאחר שתשלח טופס זה, אנא קרא את הטקסט
+      רמזים לכל שדה טופס בזהירות ובדיקה כפולה
+      מה שאתה נכנס.
+    no_conference: אין עדיין ועידה אחת.
+    no_conference_with_cfp: אין ועידה נוכחית עם קריאה להשתתפות. אולי אתה צריך להתחבר?
+    no_conferences: |
+      אין עדיין ועידה אחת.
+      התחל להוסיף ועידה על ידי לחיצה על
+      כפתור מימין.
+    notice_bulk_notification_queued: התראות בכמויות גדולות לאירועים במתחם %{notification}.
+    notice_conference_created: הכנס נוצר בהצלחה.
+    notice_conference_not_updated: הכנס לא עודכן.
+    notice_conference_updated: הכנס עודכן בהצלחה.
+    past_conferences: ועידות עבר
+    recent_changes: שינויים אחרונים
+    recent_changes_text: |
+      ברגע שאתה, או אחרים מתחילים ליצור נתונים בשביל זה
+      ועידה תמצאו מי שינה את מה שכאן.
+      זה מעניין במיוחד אם אתה מנהל שיחה
+      להשתתפות. במקרה זה, אזור זה מאפשר
+      אתה יכול לראות במהירות אם הגשות חדשות נכנסו.
+    rejected: נדחה
+    rejecting: דוחה
+    review: סקירה
+    scheduled: מתוזמן
+    search: לחפש
+    search_hint: חיפוש כנסים
+    show_no_event: |
+      בוועידה זו אין אירועים עדיין.
+      (שים לב שלאורך כל היישום, ה-
+      המונח הגנרי 'אירוע' משמש להתייחס לכל
+      ישיבות במסגרת הכנס שלך, לא משנה אם
+      הם שיחות, סדנאות, פאנלים או משהו כזה
+      אחר לגמרי).
+
+      התחל להוסיף אירועים על ידי לחיצה על
+      הכרטיסייה _ אירועים למעלה. או התחל שיחה עבור
+      השתתפות, כדי לאפשר לאחרים להגיש
+      אירועים שתוכלו לבדוק.
+    show_welcome: |
+      ברוך הבא, נראה שזה עתה יצרת את זה
+      ועידה. צעד ראשון טוב יהיה לעבור
+      לכרטיסייה _ הגדרות ועידה 'למעלה
+      ולהוסיף חדר לכנס הזה. זה יהיה
+      יהיה צורך לתזמן את התוכנית שלך.
+    statistics: סטטיסטיקה
+    statistics_empty: |
+      לאחר שיצרת כמה אירועים לכנס זה,
+      או שנאספו הגשות באמצעות קריאה להשתתפות,
+      תוכלו למצוא כמה נתונים סטטיסטיים עליהם כאן.
+    total: סה"כ
+    unconfirmed: לא מאושר
+    variables:
+      conference: שם הכנס
+      date: תאריך הצגת
+      duration: משך האירוע
+      event: כותרת האירוע
+      event_id: מזהה אירוע פנימי
+      forename: שם שם הדובר
+      joinlink: קישור להצטרפות לאירוע
+      link: קישור אישור
+      public_name: שם הציבור הרמקול
+      room: חדר המצגת
+      subtitle: מחברים (ולא כתובית)
+      surname: שם משפחה דובר
+      time: זמן ההצגה
+      track: שם המסלול
+      type: סוג אירוע
+    version: גרסת %{version}
+    withdrawn: נסוג
+  conflict:
+    events_overlap: חופף עם
+    has_no_availability: טרם הוזמן זמינות.
+    person_already_speaking: כבר מדבר בשעה
+    person_unavailable: אינו זמין במועד שנקבע.
+  contact_information: פרטי התקשרות
+  content: תוכן
+  create_new_conference: צור ועידה חדשה
+  create_your_first_conference: צור את הכנס הראשון שלך
+  created_at: נוצר ב
+  creation_date: תאריך יצירה
+  crew: צוות
+  crew_accounts: חשבונות צוות
+  date:
+    abbr_day_names:
+    - שמש
+    - יום שני
+    - שלישי
+    - להתחתן
+    - יום ג '
+    - יום ו '
+    - ישב
+    abbr_month_names:
+    - 
+    - יאן
+    - פברואר
+    - מרץ
+    - אפריל
+    - מאי
+    - יוני
+    - יולי
+    - אוגוסט
+    - ספטמבר
+    - אוקטובר
+    - נובמבר
+    - דצמבר
+    day_names:
+    - יום ראשון
+    - יום שני
+    - יום שלישי
+    - יום רביעי
+    - יום חמישי
+    - יום שישי
+    - יום שבת
+    formats:
+      default: "%d/%m/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    - 
+    - ינואר
+    - פברואר
+    - מרץ
+    - אפריל
+    - מאי
+    - יוני
+    - יולי
+    - אוגוסט
+    - ספטמבר
+    - אוקטובר
+    - נובמבר
+    - דצמבר
+    order:
+    - :year
+    - :month
+    - :day
+  date_not_set: התאריך טרם נקבע
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: כשעה
+        other: בערך %{count} שעות
+      about_x_months:
+        one: בערך חודש
+        other: בערך %{count} חודשים
+      about_x_years:
+        one: כשנה
+        other: בערך %{count} שנים
+      almost_x_years:
+        one: כמעט שנה
+        other: כמעט %{count} שנים
+      half_a_minute: חצי דקה
+      less_than_x_minutes:
+        one: פחות מדקה
+        other: פחות מ- %{count} דקות
+      less_than_x_seconds:
+        one: פחות משנייה אחת
+        other: פחות מ- %{count} שניות
+      over_x_years:
+        one: מעל שנה
+        other: במשך %{count} שנים
+      x_days:
+        one: יום 1
+        other: "%{count} ימים"
+      x_minutes:
+        one: דקה 1
+        other: "%{count} דקות"
+      x_months:
+        one: חודש 1
+        other: "%{count} חודשים"
+      x_seconds:
+        one: שניה אחת
+        other: "%{count} שניות"
+    prompts:
+      day: יום
+      hour: שעה
+      minute: דקה
+      month: חודש
+      second: שניות
+      year: שנה
+  day: יום
+  days: ימים
+  days_module:
+    configured_days: 'הימים המוגדרים כעת הם:'
+    empty_days: |
+      כאן תוכלו ליצור ולערוך את ימי הכנס.
+      'הימים' שלך יכולים להתחיל ולהסתיים בכל עת, אך לא צריכים
+      חפיפה.
+    inherited_conference_change: |
+      ניתן לשנות את הימים לכנס זה רק עם
+      זכויות ניהול לוועידת ההורים %{parent}
+      וניתן לשנות רק באמצעות הממשל
+      ממשק של אותו ועידה.
+  default_text: טקסט ברירת מחדל
+  destroy: להרוס
+  detailed_changes: שינויים מפורטים
+  details: פרטים
+  devise:
+    cancel_account: בטל את חשבוני
+    cancel_account_text: לא מאושר? %{link}
+    change_my_password: שנה את הסיסמה שלי
+    confirmations:
+      confirmed: כתובת הדוא"ל שלך אושרה בהצלחה.
+      send_instructions: תקבל דוא"ל עם הנחיות לאישור כתובת הדוא"ל שלך תוך מספר דקות.
+      send_paranoid_instructions: אם כתובת הדוא"ל שלך קיימת בבסיס הנתונים שלנו, תקבל דוא"ל עם הנחיות לאישור כתובת הדוא"ל שלך תוך מספר דקות.
+    current_password_hint: אנו זקוקים לסיסמא הנוכחית שלך כדי לאשר את השינויים שלך
+    failure:
+      already_authenticated: אתה כבר מחובר.
+      inactive: חשבונך עדיין לא מופעל.
+      invalid: "%{authentication_keys} או סיסמא לא חוקיים."
+      last_attempt: יש לך ניסיון אחד נוסף לפני נעילת חשבונך.
+      locked: החשבון שלך נעול.
+      not_found_in_database: "%{authentication_keys} או סיסמא לא חוקיים."
+      timeout: פג תוקף ההפעלה שלך. אנא היכנס שוב כדי להמשיך.
+      unauthenticated: עליך להיכנס או להירשם לפני שתמשיך.
+      unconfirmed: עליך לאשר את כתובת הדוא"ל שלך לפני שתמשיך.
+    leave_password_blank_hint: השאר ריק אם אינך רוצה לשנות אותו
+    links:
+      google_oauth2: גוגל
+      ldap: שרת LDAP
+      no_unlock_instructions: לא קיבלת הוראות ביטול נעילה?
+      sign_in_with: היכנס באמצעות %{provider}
+    mailer:
+      confirmation_instructions:
+        headline: ברוך הבא %{email}!
+        link: אשר את חשבוני
+        subject: הוראות אישור
+        text: 'עליך לאשר את כתובת הדוא"ל שלך באמצעות הקישור הבא:
+
+'
+      email_change:
+        headline: שלום, %{email}!
+        text_been_changed: 'אנו פונים אליך כדי להודיע לך שהדוא"ל שלך השתנה ל- %{email}.
+
+'
+        text_being_changed: 'אנו יוצרים איתך קשר כדי להודיע לך שהדוא"ל שלך משתנה ל- %{email}.
+
+'
+      email_changed:
+        subject: אימייל השתנה
+      password_change:
+        headline: שלום, %{email}!
+        subject: סיסמא שונתה
+        text: |
+          אנו פונים אליך כדי ליידע אותך כי הסיסמה שלך הייתה
+          השתנה.
+      password_change_instructions:
+        headline: שלום, %{email}!
+        text: |
+          מישהו ביקש קישור לשינוי הסיסמה שלך. אתה יכול לעשות
+          זאת דרך הקישור למטה.
+
+          %{link}
+
+          אם לא ביקשת זאת, אנא התעלם מאימייל זה.
+
+          הסיסמה שלך לא תשתנה עד שתיגש לקישור שלמעלה ותיצור סיסמה חדשה.
+      reset_password_instructions:
+        subject: אפס הוראות סיסמא
+      unlock_instructions:
+        headline: שלום, %{email}!
+        subject: בטל את נעילת ההוראות
+        text: |
+          חשבונך ננעל עקב מספר מוגזם של ניסיונות כניסה לא מוצלחים.
+
+          לחץ על הקישור למטה כדי לבטל את נעילת חשבונך:
+
+          %{link}
+    omniauth_callbacks:
+      failure: לא ניתן היה לאמת אותך מ- %{kind} מכיוון ש- "%{reason}".
+      success: אושר בהצלחה מחשבון %{kind}.
+      unknown_failure: אימות נכשל.
+    passwords:
+      no_token: אינך יכול לגשת לדף זה מבלי להגיע מדוא"ל לאיפוס סיסמה. אם אתה מגיע מדוא"ל לאיפוס סיסמה, אנא וודא שהשתמשת בכתובת האתר המלאה שסופקה.
+      send_instructions: תקבל דוא"ל עם הנחיות כיצד לאפס את הסיסמה שלך תוך מספר דקות.
+      send_paranoid_instructions: אם כתובת הדוא"ל שלך קיימת בבסיס הנתונים שלנו, תקבל קישור לשחזור סיסמא בכתובת הדוא"ל שלך תוך מספר דקות.
+      updated: הסיסמה שלך שונתה בהצלחה. אתה מחובר כעת.
+      updated_not_active: הסיסמה שלך שונתה בהצלחה.
+    registrations:
+      destroyed: ביי! חשבונך בוטל בהצלחה. אנחנו מקווים לראות אותך שוב בקרוב.
+      signed_up: ברוך הבא! נרשמת בהצלחה.
+      signed_up_but_inactive: נרשמת בהצלחה. עם זאת, לא הצלחנו להיכנס אליך מכיוון שחשבונך טרם הופעל.
+      signed_up_but_locked: נרשמת בהצלחה. עם זאת, לא הצלחנו להיכנס אליך מכיוון שחשבונך נעול.
+      signed_up_but_unconfirmed: הודעה עם קישור אישור נשלחה לכתובת הדוא"ל שלך. אנא עקוב אחר הקישור להפעלת חשבונך.
+      update_needs_confirmation: עדכנת את חשבונך בהצלחה, אך עלינו לאמת את כתובת הדוא"ל החדשה שלך. אנא בדוק את הדוא"ל שלך ובצע את קישור האישור כדי לאשר את כתובת הדוא"ל החדשה שלך.
+      updated: חשבונך עודכן בהצלחה.
+    resend_password_instructions: שלח לי איפוס הוראות בסיסמה
+    resend_unlock_instructions: שלח שוב את הוראות הנעילה
+    sessions:
+      already_signed_out: התנתק בהצלחה.
+      signed_in: כניסה בהצלחה.
+      signed_out: התנתק בהצלחה.
+    unlock_my_account: בטל את נעילת חשבוני
+    unlocks:
+      send_instructions: תקבל דוא"ל עם הנחיות לביטול הנעילה של חשבונך תוך מספר דקות.
+      send_paranoid_instructions: אם חשבונך קיים, תקבל דוא"ל עם הנחיות לביטול הנעילה תוך מספר דקות.
+      unlocked: נעילת החשבון שלך בהצלחה. אנא היכנס כדי להמשיך.
+    update_account: עדכן את חשבוני
+    waiting_for_confirmation: 'אישור ממתין כרגע ל: %{email}'
+  edit: ערוך
+  edit_account: ערוך חשבון
+  edit_conference: ערוך ועידה
+  edit_conference_classifiers: ערוך מסווגי ועידה
+  edit_conference_days: ערוך ימי כנס
+  edit_conference_rooms: ערוך חדרי ישיבות
+  edit_conference_schedule: ערוך את לוח הזמנים של הכנס
+  edit_conference_tracks: ערוך מסלולי ועידה
+  edit_person: ערוך אדם
+  edit_profile: פרופיל
+  edit_ticket_server: ערוך את שרת הכרטיסים
+  email: אימייל
+  emails:
+    event_acceptance:
+      accepted_event: |
+        אנו שמחים מאוד לומר לך כי קיבלנו את הגשתך
+
+        %{event}
+      check_data: |
+        כשאתה בעניין: לאחר שתאשר את השימוש בקישור הזה, תעשה זאת
+        להיות מחובר למערכת תכנון הכנס. אנא קח את הזמן
+        כדי לבדוק את הנתונים שלך שם. הנתונים ישמשו הרשמית
+        תוכנית הכנס. אתה יכול גם לציין את הזמינות שלך בשעה
+        זמנים שונים שם. אנו ננסה לשקול זאת בעת תכנון
+        לוח הזמנים הסופי.
+      confirmation: |
+        אנא אישר במהירות שאתה תהיה נוכח ומסור
+        השיחה שלך באמצעות הקישור הבא:
+
+        %{link}
+      goodbye: |
+        בברכה
+
+        צוות %{conference}
+      greeting: "%{forename} היקר,"
+      subject: הגשתך ל- %{conference}
+    event_rejection:
+      goodbye: |
+        בברכה
+
+        צוות %{conference}
+      greeting: "%{forename} היקר,"
+      rejection: |
+        אנו רוצים להודות לך מאוד על הגשתך. היינו
+        מופתע ומופתע מהכמות העצומה של האיכות הגבוהה
+        הגשות שקיבלנו.
+
+        לאחר תהליך בחירה נרחב היינו צריכים לדחות את הצער שלך
+        הגשה
+
+        %{event}
+
+        אנו יכולים להבטיח לכם שזו לא הייתה החלטה קלה לקבל.
+        אנו מקווים שנוכל עדיין לקבל את פניכם בוועידה.
+      subject: הגשתך ל- %{conference}
+    event_schedule:
+      goodbye: |
+        נתראה ב- %{conference}
+
+        צוות %{conference}
+      greeting: "%{forename} היקר,"
+      info: |
+        אנו שמחים לבשר לך שהגשתך
+
+        %{event}
+
+        נקבע ל %{date} ב- %{time}.
+
+        אתה תדבר ב- %{room}.
+      subject: הגשתך ל- %{conference} מתוזמנת ב- %{date} ב- %{time}
+  emails_module:
+    add_mail_template: הוסף תבנית דואר
+    add_mail_template_hint: הוסף תבנית דואר חדשה.
+    edit_template: ערוך תבנית דואר
+    edit_template_hint: ערוך תבנית דואר זו.
+    edit_template_title: תבנית דואר "%{template}"
+    error_failed_setting_notification: 'הגדרת התראת ברירת המחדל נכשלה: %{ex}.'
+    error_missing_conference_email: 'לא ניתן לשלוח מיילים: אנא ציין כתובת דוא"ל לכנס זה.'
+    error_missing_notification_text: |
+      לא קיים טקסט התראה. אנא שנה את טקסט ברירת המחדל עבור שלך
+      לפני שאתה מקבל / דוחה אירועים.
+    error_missing_speaker_email: 'לא ניתן לשלוח מיילים: לא לכל הדוברים יש כתובות דוא"ל.'
+    error_state_update: לא ניתן לעדכן את המצב.
+    error_state_update_ex: 'לא ניתן לעדכן את המצב: %{ex}.'
+    error_template_add_failed: יצירת תבנית הדואר נכשלה.
+    error_unnotifiable_state: אירוע שלא במצב של הודעה.
+    filters:
+      all_speakers_in_confirmed_events: כל הדוברים שהיו מעורבים בכל האירועים המאושרים
+      all_speakers_in_scheduled_event: כל הדוברים המעורבים בכל האירועים המתוזמנים
+      all_speakers_in_unconfirmed_events: כל הנואמים המעורבים בכל האירועים הבלתי מאושרים
+    mail_subject: נושא
+    mail_template_hint: |
+      השתמש בתבנית דואר זו כדי לשלוח דואר לכל האנשים המעורבים באירועים
+      של הכנס הזה.
+    new_mail_template: תבנית דואר חדשה
+    notice_event_updated: האירוע עודכן בהצלחה.
+    notice_mails_delivered: הודעות דוא"ל שנמסרו.
+    notice_mails_queued: מסירות דואר הגיעו לתור.
+    notice_template_added: תבנית דואר נוספה בהצלחה.
+    notice_template_destroyed: תבנית הדואר נהרסה בהצלחה.
+    notice_template_updated: תבנית הדואר עודכנה בהצלחה.
+    placeholders_hint_header: |
+      אתה יכול להשתמש בתחנות משתנה דינאמיות בקטע 'נושא' ו'תוכן 'של כל אחת
+      תבנית. הימנע משימוש במשתנים ספציפיים לאירועים אם אינך רוצה שאנשים יקבלו
+      יותר מהודעת דואר אחת.
+    send_mail: שלח מייל
+    template_subject: 'נושא: %{subject}'
+  error_signing_in: האימייל או הסיסמא שגויים.
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: חייבים להתקבל
+      already_confirmed: כבר אושר, נסה להיכנס
+      blank: לא יכול להיות ריק
+      confirmation: לא תואם %{attribute}
+      confirmation_period_expired: צריך להיות מאושר בתוך %{period}, אנא בקש אחד חדש
+      empty: לא יכול להיות ריק
+      equal_to: חייב להיות שווה ל- %{count}
+      even: חייב להיות שווה
+      exceeds: לא יכול לחרוג מ- %{what}
+      exclusion: שמור
+      expired: פג תוקף, בבקשה לבקש חדש
+      greater_than: חייב להיות גדול מ- %{count}
+      greater_than_or_equal_to: חייב להיות גדול או שווה ל- %{count}
+      inclusion: אינו כלול ברשימה
+      invalid: לא תקף
+      less_than: חייב להיות פחות מ- %{count}
+      less_than_or_equal_to: חייב להיות פחות או שווה ל- %{count}
+      not_a_number: הוא לא מספר
+      not_an_integer: חייב להיות מספר שלם
+      not_found: לא נמצא
+      not_locked: לא היה נעול
+      not_saved:
+        one: 'שגיאה 1 אסרה לשמור את %{resource} זה:'
+        other: 'שגיאות %{count} אסרו לשמור %{resource} זה:'
+      odd: חייב להיות מוזר
+      other_than: חייב להיות אחר מאשר %{count}
+      present: חייב להיות ריק
+      record_invalid: 'האימות נכשל: %{errors}'
+      restrict_dependent_destroy:
+        many: לא ניתן למחוק רשומה מכיוון שקיימת %{record}
+        one: לא ניתן למחוק רשומה מכיוון שקיימת %{record}
+      taken: נלקח כבר
+      too_long:
+        one: ארוך מדי (מקסימום 1 תו)
+        other: הוא ארוך מדי (המקסימום הוא %{count} תווים)
+      too_short:
+        one: הוא קצר מדי (מינימום הוא תו אחד)
+        other: הוא קצר מדי (מינימום הוא %{count} תווים)
+      wrong_length:
+        one: הוא באורך הלא נכון (צריך להיות תו אחד)
+        other: הוא באורך הלא נכון (צריך להיות תווים %{count})
+    template:
+      body: 'היו בעיות בשדות הבאים:'
+      header:
+        one: שגיאה 1 אסרה לשמור את %{model} זה
+        other: שגיאות %{count} אסרו לשמור %{model} זה
+  event: אירוע
+  event_languages: שפות אירועים
+  events: אירועים
+  events_in: אירועים ב-
+  events_module:
+    accept_event: קבל אירוע
+    accept_event_hint: |
+      קבל את האירוע הזה. הדוברים / ים ידברו על ההקבלה באמצעות
+      אימייל. אם יש להם גישה למערכת קריאה להשתתפות, הם יעשו זאת
+      קבל קישור לאישור נוכחותם גם כן.
+    accept_event_no_email: קבל אירוע (ללא דוא"ל)
+    accept_event_no_email_hint: קבל אירוע זה מבלי לשלוח דוא"ל אוטומטי.
+    add_event: הוסף אירוע
+    add_event_at: הוסף אירוע ב- %{time}
+    add_event_hint: הוסף אירוע חדש.
+    add_ticket: הוסף כרטיס
+    add_ticket_hint: צרו כרטיס לאירוע זה.
+    ago: "%{time_ago} לפני"
+    all_events: כל האירועים
+    all_rating: כל הדירוגים
+    attachments_overview: קבצים מצורפים
+    average_feedback: 'משוב ממוצע:'
+    average_speaker_feedback: 'משוב ממוצע כדובר:'
+    bulk_edit:
+      add_person: הוסף אדם
+      add_person_confirm:
+        one: האם אתה בטוח שברצונך להוסיף אדם לאירוע זה?
+        other: האם אתה בטוח שברצונך להוסיף אדם לכל אירועי %{count}?
+      set_duration: הגדר משך זמן
+      set_duration_confirm:
+        one: האם אתה בטוח שברצונך לשנות את משך האירוע הזה?
+        other: האם אתה בטוח שברצונך לשנות את משך כל האירועים %{count}?
+      set_events_confirm:
+        one: האם אתה בטוח שברצונך לשנות מצב באירוע זה?
+        other: האם אתה בטוח שברצונך לשנות מצב עבור כל אירועי %{count}?
+      set_events_type_confirm:
+        one: האם אתה בטוח שברצונך לשנות את סוג האירוע הזה?
+        other: האם אתה בטוח שברצונך לשנות את הסוג לכל אירועי %{count}?
+      set_new_event_type: שנה את סוג האירוע
+      set_new_state: הקצה מדינה
+      set_new_track: הקצה מסלול
+      set_track_confirm:
+        one: האם אתה בטוח שברצונך לשנות את מסלול האירוע הזה?
+        other: האם אתה בטוח שברצונך לשנות את המסלול של כל אירועי %{count}?
+      show: ערוך אירועים אלה
+      title:
+        one: 'ערוך את האירוע %{count}:'
+        other: 'ערוך אירועי %{count}:'
+      update_failed:
+        one: עריכת %{count} נכשלה.
+        other: עריכות %{count} נכשלו.
+      update_skipped:
+        one: עריכה.
+        other: דילוגים על עריכות %{count}.
+      update_successful:
+        one: עריכת %{count} הושלמה בהצלחה.
+        other: עריכות %{count} הושלמו בהצלחה.
+    cancel_event: בטל אירוע
+    cancel_event_hint: סמן אירוע זה כמבוטל. בדרך כלל זה אומר שהרמקולים היו צריכים לבטל את הופעתם.
+    col_toggle_rooms: 'החלף חדרים:'
+    confirm_event: אשר את האירוע
+    confirm_event_hint: אשר כי הדוברים / ים יהיו נוכחים וכי האירוע אכן יתקיים.
+    custom_notification: הודעה בהתאמה אישית
+    custom_notification_hint: הוסף התראות בהתאמה אישית לכל הרמקולים. אלה יישלחו במקום התראת ברירת המחדל בהפעלת ההודעות בכמות גדולה הבאה. שנה אותם בכרטיסייה 'ערוך אנשים'.
+    delete_rating: מחק דירוג אירוע
+    edit_event: ערוך אירוע
+    edit_event_hint: ערוך את נתוני האירוע הזה.
+    edit_people: ערוך אנשים
+    edit_people_hint: הוסף או הסר אנשים מהאירוע הזה.
+    error_no_day: |
+      לפני שתוכל לתזמן אירועים כלשהם, אתה צריך
+      להגדיר לפחות יום אחד לזה
+      ועידה. עבור אל <em> הגדרות ועידה </ em>
+      למעלה כדי להיכנס ליום.
+    error_no_event: |
+      בוועידה זו אין אירועים עדיין.
+      צור כמה תחת הלשונית _Events_ שלמעלה,
+      או פתיחת קריאה להשתתפות בכדי לאסוף אירועים.
+      ברגע שיש לכם אירועים, תוכלו לתזמן אותם
+      פה.
+    error_no_room: |
+      לפני שתוכל לתזמן אירועים כלשהם, אתה צריך
+      שיהיה מוגדר לפחות חדר אחד לזה
+      ועידה. לך להגדרות_
+      למעלה כדי להיכנס לחדר.
+    event_attachments: קבצים שהועלו
+    event_classifiers: מסווגי אירועים
+    event_details: פרטי האירוע
+    event_feedbacks: פידבקים על אירועים
+    event_ratings: דירוגי אירועים
+    event_type_select: סנן לפי סוג אירוע
+    events_by_gender: אירועים לפי מין
+    events_by_language: אירועים לפי שפה
+    events_by_state: אירועים לפי מדינה
+    events_in_current_conference: אירועים בכנס הנוכחי
+    events_in_other_conferences: אירועים בכנסים אחרים
+    feedback_not_enabled: מערכת המשוב אינה מופעלת.
+    hide_all: להסתיר הכל
+    indicator:
+      full:
+        submitted_after_hard_deadline: הוגש לאחר מועד קשה
+        submitted_after_soft_deadline: הוגש לאחר המועד האחרון
+      short:
+        submitted_after_hard_deadline: מאוחר
+        submitted_after_soft_deadline: מאוחר
+    inputs:
+      hints:
+        do_not_record: האם האירוע הזה יוקלט?
+        note: 'חשיפה: מנהל בלבד.'
+        public: האם אירוע זה גלוי בלוח הזמנים הציבורי?
+        recording_license: רישיון הקלטה לשיחה זו
+        submission_note: 'visibiliy: מנהל ומשתמש; מידע נוסף.'
+        subtitle: 'שמות מחברי ההגשה. השתמש בתבנית: שם פרטי, שם פרטי, שם משפחה, ... - רשימה זו תשמש בעת פרסום סדר היום.'
+        tech_rider: מה דרוש לאירוע זה?
+    listing_n_events:
+      one: רישום %{n} של אירוע %{count}.
+      other: רישום %{n} של אירועי %{count}.
+    my_events: האירועים שלי
+    my_rating: הדירוג שלי
+    my_ratings: הדירוגים שלי
+    no_attende_more_infos: |
+      אפשר משוב מהמשתתפים בכנס
+      ההגדרות ולוח הזמנים של תוכנית האינטרנט יכלול א
+      טופס למשתתפים שלך בכדי לספק משוב. זה
+      משוב יופיע כאן.
+    no_attendee: אין עדיין משוב משתתפים לאירוע זה.
+    no_events: |
+      בוועידה זו אין אירועים עדיין. התחל להוסיף אירועים על ידי לחיצה על
+      כפתור מימין. או התחל קריאה להשתתפות, כדי לאפשר לאחרים להגיש אירועים עבור
+      לך לסקור.
+    no_ratings: |
+      איש עדיין לא הזין דירוג לאירוע זה. להיות הראשון
+      ולדרג את האירוע באמצעות הטופס שלמעלה.
+    not_applicable: לא
+    not_involved: |
+      אתה עדיין לא מעורב בשום אירוע בזה
+      ועידה. הוסף את עצמך לאירוע בכל אשר יהיה
+      תפקיד שאתה אוהב והאירוע יופיע בזה
+      רשימה.
+    predefined_title_types:
+      handouts: חלוקות
+      media: מדיה
+      other: אחר
+      poster: פוסטר
+      proposal: הצעה
+      slides: שקופיות
+      video: וידאו
+    print_accepted_cards: הדפסת כרטיסים (מקובל בלבד)
+    print_accepted_cards_hint: |
+      הורד קובץ PDF עם האירועים המקובלים כרטיסים בלבד (ארבעה קלפים בעמוד).
+      שימושי במיוחד לתכנון לוח הזמנים של התוכנית באופן לא מקוון.
+    print_cards: הדפס כרטיסים
+    print_cards_hint: |
+      הורד קובץ PDF עם כל האירועים ככרטיסים (ארבעה קלפים בעמוד). הדפס את זה
+      לצאת לתכנון שלך במצב לא מקוון.
+    public_attachment_hint: האם התקשרות זו גלויה לציבור?
+    rate_next: דרג את האירוע הבא
+    reject_event: דחה את האירוע
+    reject_event_hint: דחה את האירוע הזה. הדוברים / ות ידברו על הדחייה באמצעות הדוא"ל.
+    reject_event_no_email: דחה אירוע (ללא דוא"ל)
+    reject_event_no_email_hint: דחה אירוע זה מבלי לשלוח דוא"ל אוטומטי.
+    select_filter_for: 'בחר מסנן עבור %{filtername}:'
+    toggle_description: החלף תיאור >>
+    toggle_send_bulk_mail: שלח דואר לכל האנשים האלה >>
+    track_select: סנן לפי מסלול
+  expenses: הוצאות
+  expenses_module:
+    error_person_have_no_expense: "%{person} כרגע לא כולל הוצאות."
+    is_this_reimbursed_hint: האם הוחזר הוצאה זו?
+    new_expense: הוצאה חדשה
+    notice_expense_created: הוצאה נוספה בהצלחה.
+    notice_expense_destroyed: ההוצאה נהרסה בהצלחה.
+    notice_expense_updated: ההוצאה עודכנה בהצלחה.
+    notice_expenses_disabled: הוצאות אינן מופעלות עבור ועידה זו
+    reimbursed: הוחזר
+    sum_not_reimbursed: סכום כל הלא-החזר
+    sum_reimbursed: סכום כל החזר
+  export_profile: ייצוא פרופיל
+  features: תכונות נוספות
+  feedback: משוב
+  feedback_system: מערכת משוב
+  frab_footer: |
+    [frab] (http://frab.github.io/frab/) היא מערכת תכנון וניהול ועידה.
+    זה עוזר לאסוף הגשות, לנהל שיחות ורמקולים וליצור לוח זמנים.
+
+    [מדריך למשתמש] (https://github.com/frab/frab/wiki/Mual) נשמר ב
+    [wiki] (https://github.com/frab/frab/wiki/). קוד המקור מתארח בתאריך
+    [Github] (https://github.com/frab/frab).
+  full_name: שם מלא
+  helpers:
+    select:
+      prompt: בבקשה תבחר
+    submit:
+      create: צור %{model}
+      submit: שמור %{model}
+      update: עדכן %{model}
+  hint: רמז
+  home: בית
+  import: יבוא
+  inputs:
+    hints:
+      password_length: מינימום %{length} תווים
+  is_not_public: לא ציבורי
+  is_public: ציבורי
+  languages:
+    Ga: אירית
+    ab: אבחזית
+    ace: סיני
+    ach: אקולי
+    ada: אדנגמה
+    ady: עדי
+    ae: אבסטן
+    af: אפריקנית
+    afa: שפה אפרו-אסייתית
+    afh: Afrihili
+    ain: אינו
+    ak: אקאן
+    akk: אכדית
+    ale: עליות
+    alg: שפה אלגונקיאנית
+    alt: דרום אלטאי
+    am: אמהרית
+    an: אראגוני
+    ang: אנגלית ישנה
+    anp: אנגיקה
+    apa: שפת אפאצ'י
+    ar: ערבית
+    arc: ארמית
+    arn: עראוקני
+    arp: ערפאהו
+    art: שפה מלאכותית
+    arw: אראווק
+    as: אסמי
+    ast: אסטורי
+    ath: שפה אתאפאסקנית
+    aus: שפה אוסטרלית
+    av: שחלתית
+    awa: עוואדי
+    ay: איימרה
+    az: אזרביג'אן
+    ba: בשקיר
+    bad: בנדה
+    bai: שפת Bamileke
+    bal: בלוצ'י
+    ban: באלינזי
+    bas: באסה
+    bat: שפה בלטית
+    be: בלארוסית
+    bej: בז'ה
+    bem: במבה
+    ber: ברבר
+    bg: בולגרית
+    bh: ביהארי
+    bho: בהוג'פורי
+    bi: ביסלאמה
+    bik: ביקול
+    bin: ביני
+    bla: סיקסיקה
+    bm: במבה
+    bn: בנגלית
+    bnt: בנטו
+    bo: טיבטי
+    br: ברטון
+    bra: בראג '
+    bs: בוסני
+    btk: בטק
+    bua: בוריאט
+    bug: בוגיני
+    byn: בלין
+    ca: קטלאנית
+    cad: קדדו
+    cai: שפה הודית מרכז אמריקאית
+    car: קריב
+    cau: שפה קווקזית
+    cch: אטאם
+    ce: צ'צ'ני
+    ceb: סבונו
+    cel: שפה קלטית
+    ch: Chamorro
+    chb: צ'יבצ'ה
+    chg: Chagatai
+    chk: צ'וקי
+    chm: מארי
+    chn: צ'ינוק ג'רגון
+    cho: צ'וקטאו
+    chp: צ'יפוויאן
+    chr: צ'ירוקי
+    chy: שייאן
+    cmc: שפה קסמית
+    co: קורסיקנית
+    cop: קופטי
+    cpe: קריאולי או פידגין מבוסס אנגלית
+    cpf: קריאולי או פידגין מבוסס צרפתית
+    cpp: קריאולי או פידגין מבוסס פורטוגזית
+    cr: קרי
+    crh: טורקית קרים
+    crp: קריאולי או פידגין
+    cs: צ'כית
+    csb: קשוביאן
+    cu: כנסייה סלאבית
+    cus: שפה כושית
+    cv: חובש
+    cy: וולשי
+    da: דנית
+    dak: דקוטה
+    dar: דרגווה
+    day: דייאק
+    de: גרמנית
+    de-AT: גרמנית אוסטרית
+    de-CH: גרמנית גבוהה שוויצרית
+    del: דלאוור
+    den: עבד
+    dgr: דוגריב
+    din: דינקה
+    doi: דוגרי
+    dra: שפה דראווידיאנית
+    dsb: סורביאן תחתון
+    dua: דואלה
+    dum: הולנדית תיכונית
+    dv: דיבהי
+    dyu: דיולה
+    dz: דזונגקה
+    ee: כבשים
+    efi: אפיק
+    egy: מצרי עתיק
+    eka: אקאג'וק
+    el: יווני
+    elx: אלמית
+    en: אנגלית
+    en-AU: אנגלית אוסטרלית
+    en-CA: אנגלית קנדית
+    en-GB: אנגלית בריטית
+    en-US: אנגלית אמריקאית
+    enm: אנגלית תיכונית
+    eo: אספרנטו
+    es: ספרדית
+    es-ES: ספרדית איברי
+    et: אסטונית
+    eu: בסקית
+    ewo: אבונדו
+    fa: פרסית
+    'false': נורווגית
+    fan: פאנג
+    fat: פנטי
+    ff: פולה
+    fi: פינית
+    fil: פיליפיני
+    fiu: שפה פינו-אוגרית
+    fj: פיג'יאן
+    fo: פארו
+    fon: פונט
+    fr: צרפתית
+    fr-CA: צרפתית קנדה
+    fr-CH: צרפתית שוויצרית
+    frm: צרפתית התיכונה
+    fro: צרפתית ישנה
+    frr: צפון פריזית
+    frs: מזרח פריזית
+    fur: פריוליאנית
+    fy: מערבית פריזית
+    ga: אירית
+    gaa: גא
+    gay: גייו
+    gba: גביה
+    gd: גאלית סקוטית
+    gem: שפה גרמנית
+    gez: וואי
+    gil: גילברטס
+    gl: גליציאנית
+    gmh: גרמנית אמצע גבוהה
+    gn: גוארני
+    goh: גרמנית גבוהה עתיקה
+    gon: גונדי
+    gor: גורונטלו
+    got: גותי
+    grb: גרבו
+    grc: יוון העתיקה
+    gsw: גרמנית שוויצרית
+    gu: גוג'ראטי
+    gv: מאנקס
+    gwi: Gwichʼin
+    ha: האוסה
+    hai: חאידה
+    haw: הוואי
+    he: עברי
+    hi: הינדי
+    hil: היליגנון
+    him: הימאצ'אלי
+    hit: חיתית
+    hmn: המונג
+    ho: הירי מוטו
+    hr: קרואטית
+    hsb: סורביאן עליון
+    ht: האיטי
+    hu: הונגרית
+    hup: חופה
+    hy: ארמנית
+    hz: הרירו
+    ia: אינטרלינגואה
+    iba: איבן
+    id: אינדונזית
+    ie: אינטראקציה
+    ig: איגבו
+    ii: סצ'ואן יי
+    ijo: איג'ו
+    ik: אינופיאק
+    ilo: אילוקו
+    inc: שפת אינדיקציה
+    ine: שפה הודו-אירופאית
+    inh: אינגוש
+    io: עידו
+    ira: שפה איראנית
+    iro: שפה אירוקית
+    is: איסלנדית
+    it: איטלקית
+    iu: Inuktitut
+    ja: יפנית
+    jbo: לויבן
+    jpr: ג'ודו-פרסי
+    jrb: ערבית יהודית
+    jv: ג'וואנים
+    ka: גרוזיני
+    kaa: קארה-קלפק
+    kab: קביל
+    kac: קצין
+    kaj: ג'ג'ו
+    kam: קמבה
+    kar: קארן
+    kaw: קאווי
+    kbd: קבארדי
+    kcg: טייאפ
+    kfo: קורו
+    kg: קונגו
+    kha: חסי
+    khi: שפת Khoisan
+    kho: חותנז
+    ki: קיקויו
+    kj: Kuanyama
+    kk: קזחית
+    kl: קלייליסוט
+    km: חמר
+    kmb: קימבונדו
+    kn: קנאדה
+    ko: קוריאנית
+    kok: קונקני
+    kos: Kosraean
+    kpe: קפל
+    kr: קאנורי
+    krc: קראצ'י-בלקר
+    krl: קרליאן
+    kro: קרו
+    kru: קורוך
+    ks: קשמיר
+    ku: כורדי
+    kum: קומיק
+    kut: קוטנאי
+    kv: קומי
+    kw: קורניש
+    ky: קירגיז
+    la: לטינית
+    lad: לאדינו
+    lah: להנדה
+    lam: למבה
+    lb: לוקסמבורגית
+    lez: לזגיאן
+    lg: גנדה
+    li: לימבורגית
+    ln: לינגאלה
+    lo: לאו
+    lol: מונגו
+    loz: לוזי
+    lt: ליטאי
+    lu: לובה-קטנגה
+    lua: לובה-לולואה
+    lui: לואיסנו
+    lun: לונדה
+    luo: לואו
+    lus: לושאי
+    lv: לטבית
+    mad: מדוריז
+    mag: מגאהי
+    mai: מיתילי
+    mak: מקאסר
+    man: מנדינגו
+    map: השפה האוסטרונית
+    mas: מסאי
+    mdf: מוקשה
+    mdr: מנדאר
+    men: מנדה
+    mg: מלגזי
+    mga: אירי התיכון
+    mh: מרשל
+    mi: מאורי
+    mic: מיקרמק
+    min: מיננגקבאו
+    mis: שפה שונות
+    mk: מקדונית
+    mkh: שפת שני-חמר
+    ml: מלילם
+    mn: מונגולי
+    mnc: מנצ'ו
+    mni: מניפורי
+    mno: שפת Manobo
+    mo: מולדביה
+    moh: מוהוק
+    mos: מוסי
+    mr: מרתי
+    ms: מלאית
+    mt: מלטזית
+    mul: שפות מרובות
+    mun: שפת מונדה
+    mus: הנחל
+    mwl: מירנדזית
+    mwr: מרווארי
+    my: בורמזי
+    myn: שפת המאיה
+    myv: ארציה
+    na: נאורו
+    nah: Nahuatl
+    nai: שפה הודית צפון אמריקאית
+    nap: נפוליטנית
+    nb: בוקמmål נורווגית
+    nd: צפון נדבלה
+    nds: גרמנית נמוכה
+    ne: נפאלי
+    new: ניוארי
+    ng: נדונגה
+    nia: ניאס
+    nic: שפה ניגרית-קורדופנית
+    niu: ניואן
+    nl: הולנדית
+    nl-BE: פלמית
+    nn: נינורק נורווגית
+    nog: נוגאי
+    non: נורדי ישן
+    nqo: N’Ko
+    nr: דרום נדבלה
+    nso: צפון סותו
+    nub: שפה נובית
+    nv: נאוואחו
+    nwc: Newari קלאסי
+    ny: ניאנג'ה
+    nym: ניאמווזי
+    nyn: ניאנקול
+    nyo: ניורו
+    nzi: נזימה
+    oc: אוקסיטני
+    oj: אוג'יבווה
+    om: אורומו
+    or: אוריה
+    os: אוסטטי
+    osa: אוסאז '
+    ota: תורכי עות'מאני
+    oto: שפה אוטומית
+    pa: פונג'אבי
+    paa: שפת פפואן
+    pag: פנגסינאן
+    pal: פהלווי
+    pam: פמפנגה
+    pap: פפיאמנטו
+    pau: פלואן
+    peo: פרסית זקנה
+    phi: שפה פיליפינית
+    phn: פיניקית
+    pi: פאלי
+    pl: פולני
+    pon: פוחנפיאן
+    pra: שפת פרקריט
+    pro: פרובנסאל ישן
+    ps: פשטו
+    pt: פורטוגזית
+    pt-BR: פורטוגזית ברזילאית
+    pt-PT: פורטוגזית איבריה
+    qu: קווצ'ואה
+    raj: רג'סטאני
+    rap: Rapanui
+    rar: רארוטונגן
+    rm: רייטו-רומנטיקה
+    rn: רונדי
+    ro: רומנית
+    roa: שפה רומנטית
+    rom: רומניה
+    ru: רוסית
+    rup: ארומני
+    rw: קינארוונדה
+    sa: סנסקריט
+    sad: סנדאווה
+    sah: יקות
+    sai: שפה הודית דרום אמריקאית
+    sal: שפת סאלישן
+    sam: ארמית שומרונית
+    sas: סאסאק
+    sat: סנטלי
+    sc: סרדיני
+    scn: סיציליאני
+    sco: סקוטים
+    sd: סינדי
+    se: צפון סמי
+    sel: סלקופ
+    sem: שפה שמית
+    sg: סנגו
+    sga: אירי ישן
+    sgn: שפת סימנים
+    sh: סרבו-קרואטית
+    shn: שאן
+    si: סינהלה
+    sid: סידמו
+    sio: שפת סיואן
+    sit: שפה סינית-טיבטית
+    sk: סלובקית
+    sl: סלובנית
+    sla: שפה סלאבית
+    sm: סמואני
+    sma: דרום סמי
+    smi: שפה סמית
+    smj: לולה סמי
+    smn: ינארי סמי
+    sms: סקולט סמי
+    sn: שונה
+    snk: סונינקה
+    so: סומאלי
+    sog: Sogdien
+    son: סונגהאי
+    sq: אלבנית
+    sr: סרבית
+    srn: טונגו הסורני
+    srr: Serer
+    ss: סוואטי
+    ssa: שפה נילו-סהרה
+    st: דרום סותו
+    su: סונדנית
+    suk: סוקומה
+    sus: סוסו
+    sux: שומרי
+    sv: שוודית
+    sw: סווהילית
+    syc: סורי קלאסי
+    syr: סורי
+    ta: טמילית
+    tai: שפת טאי
+    te: טלוגו
+    tem: טימן
+    ter: טרנו
+    tet: טטום
+    tg: טג'יק
+    th: תאילנדי
+    ti: טיגריניה
+    tig: טיגר
+    tiv: טיב
+    tk: טורקמנים
+    tkl: טוקלאו
+    tl: תגאלוג
+    tlh: קלינגון
+    tli: תלינגיט
+    tmh: תמשק
+    tn: Tswana
+    to: טונגה
+    tog: ניאסה טונגה
+    tpi: טוק פיסין
+    tr: טורקי
+    trv: טרוקו
+    ts: צונגה
+    tsi: צימשיאן
+    tt: טטר
+    tum: טומבוקה
+    tup: שפת טופי
+    tut: שפה אלטאית
+    tvl: טובאלו
+    tw: טווי
+    ty: טהיטי
+    tyv: טוויניאן
+    udm: אודמורט
+    ug: אוויגור
+    uga: אוגרית
+    uk: אוקראינית
+    umb: אומבונדו
+    und: שפה לא ידועה או לא חוקית
+    ur: אורדו
+    uz: אוזבקית
+    vai: וואי
+    ve: ונדה
+    vi: וייטנאמי
+    vo: Volapük
+    vot: וווטי
+    wa: וולוני
+    wak: שפת וואקשן
+    wal: וואלמו
+    war: עריכה
+    was: וושי
+    wen: שפה סורבית
+    wo: וולוף
+    xal: קלמיק
+    xh: קסוסה
+    yao: יאו
+    yap: יפית
+    yi: יידיש
+    yo: יורובה
+    ypk: שפת יופיק
+    za: ג'ואנג
+    zap: זאפוטק
+    zbl: בליסימבולס
+    zen: זנגה
+    zh: סינית
+    zh-Hans: סינית פשוטה
+    zh-Hant: סינית מסורתית
+    znd: זנדה
+    zu: זולו
+    zun: זוני
+    zxx: אין תוכן לשוני
+    zza: זאזא
+  launch_call_for_participation: התחל שיחה להשתתפות
+  layouts:
+    public_schedule:
+      booklet: ספר
+      timeline: ציר זמן
+  lectures: הרצאות
+  lectures_commited: הרצאות בוצעו
+  lectures_confirmed: הרצאות אושרו
+  lectures_only: הרצאות בלבד
+  lectures_unconfirmed: הרצאות שלא אושרו
+  links: קישורים
+  logout: להתנתק
+  mail_templates: תבניות דואר
+  mailers:
+    user_mailer:
+      confirmation_instructions: הפעלת חשבון
+      password_reset_instructions: לאפס את הסיסמה
+  manage_conference: נהל את הכנס הזה
+  manage_conference_flash: אתה מחובר לאיש צוות בכנס זה. האם אתה רוצה לנהל את הכנס הזה?
+  manual: מדריך ל
+  more: יותר...
+  multiple_indication: מרובות
+  name: שם
+  navigation:
+    back: חזור
+    conferences: ועידות
+    event: פרטי האירוע
+    feedbacks: פידבקים
+    history: הִיסטוֹרִיָה
+    more: עוד >>
+    people: אנשים
+    ratings: דירוגים
+    users: משתמשים
+  new_conference: ועידה חדשה
+  no_data: אין מידע
+  non_reimbursed_expenses: הוצאות שלא הוחזרו
+  not_speaking: לא מדבר
+  not_specified: לא מוגדר
+  note: הערה
+  notes: הערות
+  notifications: התראות
+  notifications_module:
+    edit_send_notifications: ערוך ושלח התראות
+    event_without_ticket_warning: 'תשומת לב: %{events} ללא כרטיס:'
+    inputs:
+      hints:
+        locale: יישובים זמינים לכנס זה ולדובריו
+    missing_locale: 'לא ניתן לשלוח התראות בכמות גדולה: הודעה ליישובים %{locales} חסרה'
+    n_events:
+      one: אירוע אחד
+      other: אירועי %{count}
+    n_events_in_state_x:
+      one: אירוע אחד במדינה %{state}
+      other: אירועי %{count} במדינה
+    no_events_tickets: אין אירועים עם כרטיסים
+    notif:
+      acceptance: קַבָּלָה
+      rejection: דְחִיָה
+      scheduling: תזמון
+    possible_variables: משתנים אפשריים
+    send_notification: שלח התראות %{name} ל- %{speakers} ב- %{count}
+    send_notification_confirm: האם אתה בטוח שברצונך לשלוח התראות %{name} עבור %{event}?
+    send_notification_to_speakers: שלח התראות %{name} ל- %{speakers} ב- %{event}
+    send_notification_to_subscribers:
+      one: שלח התראות %{name} לאדם אחד המעורב ב- %{event}
+      other: שלח התראות %{name} לאנשים %{count} המעורבים ב- %{event}
+    send_unspecified_notification_confirm:
+      one: האם אתה בטוח שברצונך לשלוח הודעות דואר אלקטרוני לאירוע %{count}?
+      other: האם אתה בטוח שברצונך לשלוח הודעות דואר אלקטרוני לאירועי %{count}?
+    warning_events_without_speakers:
+      one: 'אזהרה: אירוע אחד ללא רמקולים:'
+      other: 'אזהרה: אירועי %{count} ללא רמקולים:'
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "% u% n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "% n% u"
+        units:
+          billion: מיליארד
+          million: מיליון
+          quadrillion: ריבוע
+          thousand: אלף
+          trillion: טריליון
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "% n% u"
+        units:
+          byte:
+            one: בייט
+            other: ביטים
+          gb: GB
+          kb: KB
+          mb: תואר שני
+          tb: שחפת
+    percentage:
+      format:
+        delimiter: ''
+        format: "% n%"
+    precision:
+      format:
+        delimiter: ''
+  options:
+    admin: מנהל
+    aim: מטרה
+    assistant: עוזר
+    attending: משתתף
+    bus: אוטובוס
+    business: עסקים
+    canceled: מבוטל
+    concert: קונצרט
+    confirmed: אושר
+    coordinator: רכז
+    crew: איש צוות
+    declined: נדחה
+    dect: DECT
+    djset: סט DJ
+    fax: פקס
+    female: נקבה
+    film: סרט צילום
+    icq: ICQ
+    idea: רעיון
+    integrated: משולב
+    jabber: ג'אבר / XMPP
+    lecture: הרצאה
+    lightning_talk: שיחות בזק
+    male: זכר
+    meeting: מפגש
+    mobile: נייד
+    moderator: מנחה
+    msn: מס
+    offer: הצעה
+    orga: מארגן
+    other: אחר
+    otrs: OTRS
+    performance: תיאטרון / מופע
+    phone: מכשיר טלפון
+    podium: פודיום
+    private: פרטי
+    redmine: Redmine
+    reviewer: סוקר
+    rt: בקש Tracker
+    secretary: מזכיר
+    shuttle: שאטל
+    skype: סקייפ
+    speaker: רמקול
+    submitter: מגיש
+    talk: מדברים
+    unclear: לא ברור
+    work: עבודה
+    workshop: סדנה
+    yahoo: יאהו
+  others_only: אחרים בלבד
+  page_titles:
+    admin_users: משתמשים -
+    change_password: frab - שינוי סיסמא
+    crew_users: משתמשי צוות
+    edit_account: frab - ערוך חשבון
+    login: התחבר ל- frab
+    my_profile: frab - הפרופיל שלי
+    resend_confirmation: frab - שלח שוב את הוראות האישור
+    signup: הירשם לשבריר
+    unlock_instructions: frab - ביטול נעילת הוראות
+    welcome: ברוך הבא ל- frab
+  paper_trail:
+    events:
+      create: נוצר
+      destroy: נמחק
+      touch: נגע
+      update: מעודכן
+  participate: השתתף
+  people: אנשים
+  people_module:
+    add_person: הוסף אדם
+    add_person_hint: הוסף אדם חדש.
+    add_ticket: הוסף כרטיס
+    add_ticket_hint: צור כרטיס לאדם זה.
+    all_people: כל האנשים
+    attending: משתתף
+    attending_hint: סמן אדם כנוכח.
+    edit_person: ערוך אדם
+    edit_person_hint: ערוך את הנתונים של אדם זה.
+    inputs:
+      hints:
+        event_role: |
+          רכזים הם חלק מצוות הכנס, הם מתאמים את הנואם
+          נוכחות ואירועים. המגישים עונים ל- CFP כדי להזין אירועים לשבריר.
+          הדוברים משתתפים באירועים, הזמינות שלהם חשובה. מנהלים לוקחים
+          להשתתף בדיוני הפאנלים, חשיבות זמינותם. "
+        notification_body: 'משתנים תקפים: %{variables}'
+        person_filter: |
+          סנן אנשים בתפריט האפשרויות למטה לפי שם פרטי, שם משפחה
+          שם, כתובת דוא"ל או זיהוי משתמש. השאר ריק ללא סינון. "
+      notification_body: גוף הודעה
+      notification_subject: נושא ההודעה
+    list_of_people: רשימת אנשים
+    new_person: אדם חדש
+    no_people_data: |
+      אין לך עדיין נתונים על אנשים. השתמש בלחצן מימין ל
+      התחל להוסיף אנשים. שימו לב שהם לא יופיעו כאן ממש
+      הרחק, אלא אם כן הם מעורבים באחד מאירועי הוועידה. להשתמש ב
+      _ כל הכרטיסיות אנשים למעלה כדי לראות את כל האנשים בכל הכנסים שלך.
+    no_people_in_event: |
+      אין עדיין אנשים המשויכים לאירוע זה.
+      השתמש בלחצן שמימין כדי להוסיף אנשים. אנא
+      שים לב שאתה יכול להוסיף רק אנשים שכבר נמצאים
+      במערכת. אם האדם שאתה רוצה להוסיף
+      עדיין לא נמצא במערכת, עבור אל _People_
+      הכרטיסיה שלמעלה וצור קודם את האדם הזה.
+    no_people_involved: |
+      אין עדיין אנשים הקשורים לכנס זה. אנשים יהיו
+      תתחילו להופיע כאן, ברגע שהם יקבלו תפקיד בכל זה
+      אירועי הכנס.
+    no_user_account: לאדם עדיין אין חשבון משתמש והוא לא יכול להתחבר. לחץ על כרטיסיית המשתמש כדי ליצור חשבון.
+    no_user_account_for_person: |
+      %{person} אין כרגע חשבון משתמש ולכן אינו יכול להתחבר.
+      אתה יכול ליצור חשבון משתמש ברגע זה על ידי מילוי טופס זה.
+    notice_person_created: האדם נוצר בהצלחה.
+    notice_person_updated: האדם עודכן בהצלחה.
+  person: אדם
+  preview: תצוגה מקדימה
+  profile: פרופיל
+  public:
+    feedback:
+      new:
+        feedback_for: 'משוב עבור: %{title}'
+        how_would_you_rate: איך היית מדרג אירוע זה? 5 הוא הדירוג הטוב ביותר ו -1 הוא הגרוע ביותר.
+        please_let_us_know: 'אנא יידע אותנו כיצד אהבת את האירוע הזה:'
+        submit_feedback: הגש משוב
+        what_did_you_like: מה מצא חן בעיניך? מה לא אהבת? כיצד ניתן היה לשפר אירוע זה? אנא שתפו את מחשבותיכם.
+      thank_you:
+        return: חזור ללוח הזמנים
+        thank_you: תודה!
+        thank_you_for_helping_us: תודה שעזרת לנו לשפר את האירועים שלנו. אנא דרג כמה שיותר אירועים שהשתתפת בהם. אם צפיתם בזרמים, ספרו לנו על האיכות.
+    schedule:
+      booklet:
+        events: אירועים
+      day:
+        schedule: לוח זמנים - %{label}
+        schedule_for_day: לוח הזמנים ליום %{index} - %{label}
+      event:
+        concurrent_events: אירועים במקביל
+        day: יום
+        duration: משך הזמן
+        feedback: משוב
+        feedback_link: לחץ כאן כדי ליידע אותנו כיצד אהבת את האירוע הזה.
+        files: קבצים
+        info: מידע
+        language: שפה
+        links: קישורים
+        no_recording: אירוע זה לא יתועד
+        room: חדר
+        speakers: רמקולים
+        start_time: שעת התחלה
+        track: מסלול
+      events:
+        events: אירועים
+        speakers: רמקולים
+        title: כותרת
+        track: מסלול
+      events_by_track:
+        events: אירועים לפי מסלול
+      index:
+        booklet: ספר
+        day: יום %{index} - %{label}
+        events: אירועים
+        events_by_track: אירועים לפי מסלול
+        schedule: לוח זמנים - %{label}
+        schedule_index: סקירת לוח הזמנים
+        speakers: רמקולים
+        timeline: ציר זמן
+      nav:
+        day: יום %{index}
+        events: אירועים
+        index: סקירה כללית
+        qrcode: קוד QR
+        schedule: לוח זמנים
+        speakers: רמקולים
+      qrcode:
+        link_to_public_schedule: |
+          קוד QR זה מכיל את כתובת האתר לגירסה הקריאה במכונה של קובץ לוח הזמנים הציבורי.
+          סרוק אותו באמצעות אפליקציה כמו Giggity או BarfBag כדי לייבא את לוח הזמנים של ועידה זו.
+      speaker:
+        contact: איש קשר
+        email: אימייל
+        events_in_this_conference: אירועים בכנס זה
+        links: קישורים
+        speaker: רמקול
+      speakers:
+        events: אירועים
+        name: שם
+        speakers: רמקולים
+      timeline:
+        events: אירועים
+      title: לוח הזמנים %{title}
+  public_name: שם ציבורי
+  rating: דירוג
+  ratings: דירוגים
+  ratings_module:
+    error_creating: 'יצירת דירוג האירוע נכשלה: %{error}'
+    error_updating: עדכון דירוג האירוע נכשל
+    no_event: |
+      אין אירועים בוועידה זו עדיין. פעם אחת
+      אתה מוסיף אירועים, הם יופיעו כאן יחד
+      עם הדירוגים הנוכחיים שלהם. אתה יכול לערוך את
+      דירוג על ידי לחיצה על אירוע, או שתוכל להשתמש בו
+      כפתור "התחל לסקור" מימין, אל
+      דרג שורה שלמה של אירועים ברצף.
+    notice_already_rated_everything: 'בדקת כבר את כל האירועים:'
+    notice_rating_created: הדירוג נשמר בהצלחה.
+    notice_rating_deleted: הדירוג נמחק בהצלחה.
+    notice_rating_saved: הדירוג עודכן בהצלחה.
+    notice_rating_updated: הערה עודכנה בהצלחה.
+    show ratings: הצג דירוג
+    show_ratings: הצג דירוגים
+    start_reviewing: התחל לבדוק
+    start_reviewing_hint: |
+      סקור שורה של אירועים ברציפות. תוצג בפניך האירוע
+      שיש לו את הדירוג הנמוך ביותר תחילה ויכול בקלות לנווט אל הבא
+      אירוע בשורה.
+    statistics: סטטיסטיקה
+    total_number_of_events: 'מספר האירועים הכולל:'
+    total_number_of_events_no_review: 'המספר הכולל של אירועים ללא ביקורת:'
+    total_number_of_not_reviewed: 'אירועים שלא ביקרת:'
+    total_number_of_reviewed: 'אירועים שסקרת:'
+  remove: הסר
+  remove_association: הסר את %{name}
+  reports: דיווחים
+  reports_module:
+    all: סקירה כללית על צרכי התחבורה
+    all_transportation_needs: סקירה כללית על צרכי התחבורה
+    available_reports: דוחות זמינים
+    confirmed_events_by_track: מספרי אירועים שאושרו לפי מסלול
+    do_not_record_events: אירועים עם ערכת דגל 'לא מקליטה'
+    event_timeslot_deviation: פרט את כל ההרצאות עם מספר זמני הזמנים שאינו ברירת מחדל
+    event_timeslot_sum: זמני שימוש משומשים (שעות)
+    events_by_track: מספרי אירועים לפי מסלול
+    events_not_public: אירועים שאינם ציבוריים
+    events_that_are_no_lectures: אירועים שאינם הרצאות ולא סדנאות
+    events_that_are_workshops: רשימת כל הסדנאות
+    events_with_a_note: אירועים עם פתק
+    events_with_more_than_one_speaker: אירועים עם יותר מרמקול אחד
+    events_with_tech_rider: פרט את כל האירועים המתוזמנים עם רוכבי טק
+    events_with_unusual_state_speakers: אירועים עם דוברים במצב בעייתי
+    events_without_abstract: אירועים ללא מופשט
+    events_without_speaker: אירועים ללא דובר
+    expected_speakers: חסרים רמקולים ל -4 השעות הבאות
+    found_x_results: נמצאו תוצאות %{nb}.
+    lectures_not_confirmed: הרצאות חדשות או ביקורת
+    lectures_with_speaker: הרצאות עם הדובר
+    no_search_results: מצטערים, אך החיפוש שלך לא הניב תוצאות.
+    non_attending_speakers: דוברים שאינם משתתפים בשעתיים הקרובות
+    people_speaking_at: אישרו אנשים שנאמרו בכנס
+    people_speaking_by_day: דוברים אישרו ביום עם מצב הנוכחות
+    people_with_a_note: אנשים עם פתק בהגשתם
+    people_with_more_than_one: אנשים עם יותר מגישה אחת
+    people_with_non_reimbursed_expenses: אנשים עם הוצאות שלא הוחזרו
+    query_speakers: דוברי שאילתה
+    speakers_without_availabilities: רמקולים ללא זמינות
+    unconfirmed_events: אירועים שאינם מאושרים
+    unconfirmed_lectures: הרצאות לא מאושרות
+  resend: שלח שוב
+  review_metrics: סקור ערכים
+  review_metrics_module:
+    empty_review_metrics: |
+      אתה יכול לבקש מבוחני הגשות להתמקד בפרט
+      היבטים של כל הגשה תוך כדי סקירה, על ידי הוספה
+      סקור ערכים לרשימה זו.
+  reviewing: סוקר
+  reviewing_module:
+    current_review_metrics: 'מדדי הביקורת המוגדרים כעת הם:'
+    empty_review_metrics: |
+      אתה יכול לבקש מסוקרי הגשות להתמקד בספציפי
+      היבטים של כל הגשה במהלך הסקירה, על ידי הוספה
+      סקור מדדים לרשימה זו.
+    modify_review_metric_with_parent: |
+      ניתן לשנות מדדי סקירה לכנס זה רק באמצעות
+      זכויות ניהול לוועידת ההורים %{parent}
+  role:
+    admin: מנהל
+    assistant: עוזר
+    coordinator: רכז
+    crew: צוות
+    moderator: מנחה
+    orga: אורגה
+    reviewer: סוקר
+    submitter: מגיש
+  role_str: תפקיד
+  rooms: חדרים
+  rooms_module:
+    configured_rooms: 'החדר המוגדר כעת הם:'
+    empty_rooms: |
+      כאן תוכלו ליצור ולערוך את החדרים בהם
+      האירועים שלך מתקיימים. אנא הכנס לפחות אחד
+      חדר. זה נחוץ כדי לקבוע את מספר ה-
+      עמודות בלוח הזמנים של התוכנית שלך.
+    modify_room_with_parent: |
+      ניתן לשנות את החדרים לכנס זה רק עם
+      זכויות ניהול לוועידת ההורים %{parent}
+  schedule: לוח זמנים
+  schedule_configuration: קבע את התצורה
+  schedule_module:
+    col_orientation: 'נטייה:'
+    col_rooms_per_page: 'חדרים להציג בעמוד:'
+    col_select_day: 'בחר יום:'
+    col_select_paper_format: 'בחר פורמט השתתפות:'
+    col_select_rooms: 'בחר חדרים:'
+    col_use_half_page: 'השתמש רק ברוחב חצי עמוד:'
+    create_locale: צור %{export_locale}
+    create_locale_hint: צור ייצוא HTML סטטי של לוח הזמנים של התוכנית שלך.
+    create_pdf: צור PDF
+    create_pdf_export: צור ייצוא PDF מותאם אישית
+    create_pdf_export_hint: צור גרסת PDF של לוח הזמנים של התוכנית שלך שניתן להדפיס בקלות.
+    create_static_export: צור ייצוא לוח זמנים סטטי
+    download_static_export: הורד ייצוא לוח זמנים סטטי
+    error_day_not_found: נכשל במציאת היום.
+    error_event_not_public: אין אירועים ציבוריים ומתוזמנים.
+    html_exports: יצוא HTML
+    inputs:
+      hints:
+        program_export_base_url: |
+          אם ברצונך להשתמש בייצוא התוכנית הסטטית, הזן את כתובת האתר איפה
+          אתה רוצה להכניס את הקבצים למטה. כל הפניות יהיו
+          שנוצר באמצעות זה כקידומת. זה ישמש לקוד ה- QR
+          קישור ללוח הזמנים.
+        schedule_custom_css: CSS מותאם אישית שנוסף לייצוא HTML. (CSS)
+        schedule_html_intro: טקסט מבוא לייצוא HTML. (HTML)
+        schedule_open: |
+          אפשר לדוברים לתזמן את שיחותיהם באופן עצמי. הכל יהיה
+          מקובל אוטומטית. אולי נסוב את זה ובודק לפני התזמון.
+        schedule_public: |
+          האם לוח הזמנים הדינאמי הוא ציבורי? אתה עדיין יכול ליצור יצוא סטטי
+          ללא קשר להגדרה זו.
+        schedule_version: מהי גרסת לוח הזמנים הנוכחית?
+    notice_no_base_url: יש להגדיר את program_export_base_url
+    notice_no_export_found: לא נמצא ייצוא להורדה.
+    notice_static_export_started: ייצוא לוח הזמנים הסטטי התחיל. טען מחדש דף זה לאחר דקה.
+    preview_public_schedule: תצוגה מקדימה של לוח הזמנים הציבורי
+    preview_schedule: לוח זמנים לתצוגה מקדימה
+    publish_html_export: פרסם ייצוא HTML
+    publish_html_export_hint: צור גרסת HTML של לוח הזמנים של התוכנית שלך שניתן להעתיק לשרת אינטרנט אחר.
+    select_all_none: בחר הכל / אין
+    view_live_version_hint: צפו בגרסה החיה הציבורית של לוח הזמנים שלכם ממש כמו שכל משתתף עשוי לראות אותה.
+  scheduling: תזמון
+  select_one: "-- תבחר אחד --"
+  send: שלח
+  session:
+    login: התחברות
+    signup: הירשם
+    update_password: עדכן את הסיסמה שלי
+  set: מַעֲרֶכֶת
+  settings: הגדרות
+  show: הופעה
+  show_account: חשבון
+  sign_in_successful: כניסה בהצלחה.
+  simple_form:
+    error_notification:
+      default_message: 'אנא עיין בבעיות שלהלן:'
+    labels:
+      languages:
+        code: שפה
+    'no': לא
+    required:
+      mark: "*"
+      text: נדרש
+    'yes': כן
+  speakers: רמקולים
+  state: מדינה
+  static_program_export: ייצוא תוכנית סטטית
+  submission_configuration: תצורת הגשה
+  support:
+    array:
+      last_word_connector: ", ו"
+      two_words_connector: " ו"
+      words_connector: ","
+  switch_conference: החלף ועידה
+  this_conference: הכנס הזה
+  ticket: כרטיס
+  ticket_server: שרת כרטיסים
+  tickets:
+    error_failed_to_create: 'יצירת הכרטיס נכשלה: %{message}'
+    error_failed_to_receive_id: קבלת מזהה מרוחק נכשל
+    error_no_ticket_server: לא הוגדר שרת כרטיסים
+    inputs:
+      hints:
+        password: סיסמא או מפתח גישה לממשק API המשמשים בכניסה למערכת כרטיסים
+        queue: שם תור אירועים זה
+        url: 'כתובת האתר של מערכת הכרטיסים שלך, למשל https: // localhost / otrs /'
+        user: שם משתמש שימש ליצירת כרטיסים
+  time:
+    am: בבוקר
+    formats:
+      day: TODO
+      default: "%A,%d. %B%Y,%H:%M"
+      long: "%A,%d. %B%Y,%H:%M"
+      month_datetime: "%d. %b%H:%M"
+      pretty_datetime: "%Y-%m-%d%H:%M"
+      short: "%d. %B,%H:%M"
+      short_datetime: "%d. %H:%M"
+      time: "%H:%M"
+    pm: אחר הצהריים
+    time_range_seperator: " ל"
+  time_and_place: זמן ומקום
+  timeslot_configuration: תצורת Timeslot
+  title: כותרת
+  titles:
+    admin_accounts: רשימת חשבונות מנהל
+    attachments_overview: סקירה כללית של קבצים מצורפים
+    cfp_edit_cfp: ערוך שיחה להשתתפות
+    cfp_new_cfp: התחל שיחת השתתפות
+    cfp_view: התקשרו להשתתפות
+    cfp_welcome: "%{conference} - קריאה להשתתפות"
+    change_your_password: שנה את סיסמתך
+    conferences_index: רשימת הכנסים
+    conferences_list: רשימת הכנסים
+    cpf_event_confirm: אשר את הנוכחות שלך
+    create_account: צור חשבון עבור %{person}
+    crew_users: רשימת חשבונות הצוות
+    edit_account: 'ערוך חשבון: %{person}'
+    edit_an_account: ערוך %{name}
+    edit_mail_template: ערוך תבנית דואר
+    edit_people_for_event: עריכת אנשים עבור "%{event}"
+    edit_person: 'ערוך אדם: %{person}'
+    event: 'אירוע: %{event}'
+    event_list: רשימת אירועים
+    event_ratings: דירוגי אירועים
+    forgot_your_password: שכחת ססמה?
+    frab: frab - ניהול ועידות
+    frab_conference: "%{conference} - ניהול ועידות"
+    list_mail_templates: רשימת תבניות דואר
+    new_event: אירוע חדש
+    person: 'אדם: %{person}'
+    resend_confirmation_instructions: שלח שוב את הוראות האישור
+    session_login: התחברות
+    session_signup: צור חשבון חדש
+    unlock_instructions: בטל את נעילת ההוראות
+  total: סה"כ
+  track: מסלול
+  tracks: מסלולים
+  tracks_module:
+    configured_tracks: 'הרצועות המוגדרות כרגע הן:'
+    empty_tracks: |
+      אם אתה מארגן את הוועידה שלך למסילות שונות,
+      זה המקום ליצור אותם. גם אם לא
+      יש יותר ממסלול אחד, קדימה והיכנס לזה
+      מסלול אחד.
+    empty_tracks_more_infos: |
+      לרצועות יש שם וצבע. משתמשים בצבע ב
+      התוכנית מבוססת האינטרנט, אז אל תהסס להתאים אותה אישית
+      כמה שאתה רוצה.
+    modify_track_with_parent: |
+      ניתן לשנות את הרצועות לכנס זה רק עם
+      זכויות ניהול לוועידת ההורים %{parent}
+  transport_needs: צרכי תחבורה
+  transport_needs_module:
+    booked_question: הוזמן?
+    is_booked_hint: האם הובלה זו הובלה?
+    nb_seats: מספר מושבים
+    nb_seats_needed_hint: כמה מקומות יש צורך?
+    new_transport_need: צורך תחבורה חדש
+    notice_need_created: צורך בהובלה נוסף בהצלחה.
+    notice_need_destroyed: צורך ההובלה נהרס בהצלחה.
+    notice_need_disabled: צרכי תחבורה אינם מופעלים עבור ועידה זו.
+    notice_need_updated: צורך בהובלה עודכן בהצלחה.
+    transport_needs: צרכי תחבורה
+    what_type_id_needed_hints: איזה סוג תחבורה נחוץ?
+    when: מתי
+  type: סוג
+  unknown_id: מזהה לא ידוע
+  user: משתמש
+  user_account: חשבון משתמש
+  user_role: תפקיד
+  user_settings: הגדרות
+  users: משתמשים
+  users_module:
+    edit_user_account: ערוך חשבון משתמש
+    edit_user_account_hint: ערוך חשבון משתמש זה.
+    error_invalid_person: לא אדם תקף
+    error_invalid_public_name: כתובת הדוא"ל שלך אינה שם ציבורי תקף, אנא שנה אותה.
+    not_in_crew: משתמש זה אינו חלק מאף צוות ועידות.
+    notice_profile_updated: הפרופיל שלך עודכן בהצלחה.
+    notice_user_created: המשתמש נוצר בהצלחה.
+    notice_user_updated: המשתמש עודכן בהצלחה.
+    save_needed_before_changes: עליך לשמור לפני שתוסיף ועידות לאיש צוות.
+  value: ערך
+  version_on_item: "%{version} על %{item}"
+  will_paginate:
+    next_label: "הבא \U0001F846"
+    page_gap: "..."
+    previous_label: "\U0001F844 הקודם"
+  work_in_progress: עובד...
+  workshops: סדנאות
+  workshops_only: סדנאות בלבד
+  your_submission: ההגשה שלך

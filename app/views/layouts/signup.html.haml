@@ -1,8 +1,8 @@
 !!!
-%html
+%html{:dir => locale_direction}
   %head
     %title= t('titles.cfp_welcome', {conference: @conference.title})
-    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "application_#{locale_direction}"
     = csrf_meta_tags
   %body
     .container

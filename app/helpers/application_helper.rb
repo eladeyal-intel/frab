@@ -130,4 +130,12 @@ module ApplicationHelper
     return t('role.submitter') if current_user.is_submitter?
     fail 'should not happen: user without acl'
   end
+
+  def locale_direction
+    if I18n.locale == :he
+      'rtl'
+    else
+      'ltr'
+    end
+  end
 end

@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    supported_languages = %w[en de es pt-BR fr zh ru it]
+    supported_languages = %w[en de he es pt-BR fr zh ru it]
 
     if supported_languages.include?(params[:locale])
       I18n.locale = params[:locale]
