@@ -173,6 +173,7 @@ fr:
       notification: Notification
       person: profil
       phone_number: numéro de téléphone
+      review_metric: Critique métrique
       room: salle
       track: fil
   add_association: Ajouter %{name}
@@ -273,6 +274,8 @@ fr:
         start_date: Sélectionnez la date à laquelle l’appel sera ouvert au public.
         welcome_text: Entrez un message de bienvenue ou des instructions supplémentaires que vous souhaitez afficher à vos participants. (HTML)
     join_alternative: 'Où trouver un autre jeton d’invitation :'
+    join_as: Rejoindre en tant que
+    join_as_hint: Si vous rejoignez cet événement en tant que conférencier, nous essaierons de prendre en compte votre disponibilité lors de la planification de cet événement.
     join_confirm: Voulez-vous accepter l’invitation ?
     join_description: 'Avec le jeton fourni, vous pouvez rejoindre cet évènement en tant que conférencier :'
     join_event: Rejoindre l’évènement
@@ -895,9 +898,10 @@ fr:
     notice_template_destroyed: Modèle de courriel supprimé avec succès.
     notice_template_updated: Modèle de courriel mis à jour avec succès.
     notice_template_added: Modèle de courriel ajouté avec succès.
-    placeholders_hint: |
-      Les emplacements suivants peuvent être utilisés dans la section `content`
-      de chaque modèle.
+    placeholders_hint_header: |
+      Vous pouvez utiliser le poste de variable dynamique dans les sections `subject` et` content` de chaque
+      modèle. Évitez d’utiliser des variables spécifiques à un événement si vous ne voulez pas que les gens soient informés
+      plus d'un message électronique.
     send_mail: Envoyer le courriel
     template_subject: 'Sujet : %{subject}'
   error_signing_in: Courriel ou mot de passe invalide.
@@ -1035,6 +1039,7 @@ fr:
     no_ratings: |
       Personne n’a noté cet évènement pour le moment. Soyez le premier en
       utilisant le formulaire ci-dessous.
+    not_applicable: N/A
     not_involved: |
       Vous n’êtes pas encore impliqué dans un évènement pour cette conférence.
       Ajoutez-vous à un évènement pour le rôle que vous souhaitez tenir, et
@@ -1710,6 +1715,7 @@ fr:
   options:
     admin: Administrateur
     aim: AIM
+    assistant: Assistant
     attending: Assiste
     bus: Bus
     business: Business
@@ -1962,8 +1968,15 @@ fr:
     speakers_without_availabilities: orateurs sans disponibilités
     unconfirmed_events: événements non confirmés
   resend: Renvoyer
+  review_metrics: Examiner les métriques
+  review_metrics_module:
+    empty_review_metrics: |
+      Vous pouvez demander aux examinateurs de soumission de se concentrer sur des
+      aspects de chaque soumission tout en examinant, en ajoutant
+      examiner les métriques de cette liste.
   role:
     admin: Administrateur
+    assistant: Assistant
     coordinator: Coordinateur
     crew: Membre de l’équipe
     moderator: Modérateur

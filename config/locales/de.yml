@@ -201,6 +201,7 @@ de:
       notification: Benachrichtigung
       person: Profil
       phone_number: Telefonnummer
+      review_metric: Metrik überprüfen
       room: Raum
       track: Track
   add_association: "%{name} hinzufügen"
@@ -299,6 +300,8 @@ de:
         start_date: Wählen Sie ein Datum aus, an dem Ihr CfP öffentlich zugänglich sein soll.
         welcome_text: Geben Sie eine Willkommensnachricht oder zusätzliche Anweisungen ein, die Sie den Teilnehmern anzeigen möchten. (HTML)
     join_alternative: 'Alternativ können Sie nach einem anderen Event suchen:'
+    join_as: Join as a
+    join_as_hint: Wenn Sie als Redner an dieser Veranstaltung teilnehmen, werden wir versuchen, Ihre Verfügbarkeit bei der Planung dieser Veranstaltung zu berücksichtigen.
     join_confirm: Wollen Sie dem Event als Sprecher beitreten?
     join_description: 'Mit dem angegebenen Token können Sie sich als Sprecher zum diesem Event eintragen:'
     join_event: Event beitreten
@@ -880,9 +883,10 @@ de:
     notice_template_destroyed: E-Mail-Vorlage wurde erfolgreich gelöscht.
     notice_template_updated: E-Mail-Vorlage wurde erfolgreich aktualisiert.
     notice_template_added: E-Mail-Vorlage wurde erfolgreich hinzugefügt.
-    placeholders_hint: |
-      Die folgenden Platzhalter können jeweils im Abschnitt "Inhalt" verwendet werden
-      Vorlage.
+    placeholders_hint_header: |
+      Sie können die dynamische variable Unterstation in den Abschnitten `Betreff` und `Inhalt` verwenden
+      Vorlage. Vermeiden Sie die Verwendung von ereignisspezifischen Variablen, wenn Sie nicht möchten, dass Personen sie abrufen
+      mehr als eine E-Mail-Nachricht.
     send_mail: E-Mail senden
     template_subject: 'Betreff: %{subject}'
   error_signing_in: E-Mail-Adresse oder Passwort ungültig.
@@ -1016,6 +1020,7 @@ de:
     no_ratings: |
       Bisher hat noch niemand eine Bewertung für dieses Event abgegeben. Seien Sie der erste
       und bewerten Sie das Event mit dem obigen Formular.
+    not_applicable: N/A
     not_involved: |
       Sie sind für diese Konferenz in keinem Event involviert. Wenn Sie ein Event einreichen
       oder einem beitreten, taucht er in dieser Liste auf.
@@ -1708,6 +1713,7 @@ de:
   options:
     admin: Administrator
     aim: AIM
+    assistant: Assistent
     attending: attending
     bus: Bus
     business: Geschäftlich
@@ -1953,8 +1959,15 @@ de:
     speakers_without_availabilities: Sprecher ohne Verfügbarkeit
     unconfirmed_events: Unbestätigte Events
   resend: Erneut senden
+  review_metrics: Überprüfen Sie die Messdaten
+  review_metrics_module:
+    empty_review_metrics: |
+      Sie können Prüfer bitten, sich auf bestimmte Themen zu konzentrieren
+      Aspekte jeder Einreichung während der Überprüfung durch Hinzufügen
+      Überprüfen Sie die Messdaten in dieser Liste.
   role:
     admin: Admin
+    assistant: Assistent
     coordinator: Koordinator
     crew: Crew
     moderator: Moderator

@@ -74,8 +74,8 @@ class EventsController < BaseConferenceController
   # show event ratings
   def ratings
     authorize @conference, :read?
-
-    result = search @conference.events
+    
+    result = search @conference.events_with_review_averages
     @events = result.paginate page: page_param
     clean_events_attributes
 
@@ -85,7 +85,7 @@ class EventsController < BaseConferenceController
     @events_no_review_total = @events_total - @events_reviewed_total
 
     # current_user rated:
-    @events_reviewed = @conference.events.joins(:event_ratings).where('event_ratings.person_id' => current_user.person.id).count
+    @events_reviewed = @conference.events.joins(:event_ratings).where('event_ratings.person_id' => current_user.person.id).where.not('event_ratings.rating' => [nil, 0]).count
     @events_no_review = @events_total - @events_reviewed
   end
 
@@ -211,7 +211,7 @@ class EventsController < BaseConferenceController
     redirect_to @event, notice: t('emails_module.notice_event_updated')
   end
 
-  # add custom notifications to all the event's speakers
+  # add custom notifications to all the event's stakeholders
   # POST /events/2/custom_notification
   def custom_notification
     @event = authorize Event.find(params[:id])
@@ -228,7 +228,7 @@ class EventsController < BaseConferenceController
     end
 
     begin
-      @event.event_people.presenter.each { |p| p.set_default_notification(state) }
+      @event.event_people.stakeholder.each { |p| p.set_default_notification(state) }
     rescue Errors::NotificationMissingException => ex
       return redirect_to(@event, alert: t('emails_module.error_failed_setting_notification', {ex: ex}))
     end

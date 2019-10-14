@@ -217,6 +217,7 @@ es:
       notification: Notificación
       person: perfil
       phone_number: número telefónico
+      review_metric: Revisar métrica
       room: sala
       track: área
   add_association: Agregar %{name}
@@ -316,6 +317,8 @@ es:
         start_date: Elija una fecha cuando su CfP debe estar abierta al público.
         welcome_text: Ingrese un mensaje de bienvenida o instrucciones adicionales que desee mostrar a los participantes. (HTML)
     join_alternative: 'O busca otro token de invitación:'
+    join_as: Únete como
+    join_as_hint: Si se une a este evento como orador, trataremos de tener en cuenta su disponibilidad al programar este evento.
     join_confirm: "¿Quieres aceptar la invitación?"
     join_description: 'Con el token proporcionado, puedes unirte a este evento como orador:'
     join_event: Unirse al evento
@@ -922,9 +925,10 @@ es:
     notice_template_destroyed: La plantilla de correo fue destruida exitosamente.
     notice_template_updated: La plantilla de correo se actualizó correctamente.
     notice_template_added: La plantilla de correo se agregó con éxito.
-    placeholders_hint: |
-      Los siguientes marcadores de posición se pueden usar en la sección `content` de cada
-      modelo.
+    placeholders_hint_header: |
+      Puede usar la subestación dinámica variable en las secciones `subject` y `content` de cada
+      modelo. Evite el uso de variables específicas del evento si no desea que las personas obtengan
+      Más de un mensaje de correo.
     send_mail: Enviar correo
     template_subject: 'Asunto: %{subject}'
   error_signing_in: E-mail o contraseña inválidos
@@ -1056,6 +1060,7 @@ es:
     no_ratings: |
       Nadie ha ingresado una calificación para este evento todavía. Sé el primero
       y califica el evento usando el formulario de arriba.
+    not_applicable: N/A
     not_involved: |
       Todavía no estás involucrado en ningún evento en este
       conferencia. Sumérgete en un evento en lo que sea
@@ -1740,6 +1745,7 @@ es:
   options:
     admin: Administrador
     aim: OBJETIVO
+    assistant: Asistente
     attending: Asistiendo
     bus: Autobús
     business: negocio
@@ -1988,8 +1994,15 @@ es:
     speakers_without_availabilities: altavoces sin disponibilidad
     unconfirmed_events: eventos que no están confirmados
   resend: Reenviar
+  review_metrics: Revisar métricas
+  review_metrics_module:
+    empty_review_metrics: |
+      Puede solicitar a los revisores de envío que se centren en
+      aspectos de cada presentación durante la revisión, agregando
+      revise las métricas de esta lista.
   role:
     admin: Administración
+    assistant: Asistente
     coordinator: Coordinador
     crew: Tripulación
     moderator: Moderador

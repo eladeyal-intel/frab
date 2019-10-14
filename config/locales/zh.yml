@@ -173,6 +173,7 @@ zh:
       notification: 通知
       person: 轮廓
       phone_number: 电话号码
+      review_metric: 审核指标
       room: 房间
       track: 跟踪
   add_association: 添加%{name}
@@ -271,6 +272,8 @@ zh:
         start_date: 选择一个您的CfP应该向公众开放的日期。
         welcome_text: 输入欢迎信息或您想要向参与者显示的其他说明。 (HTML)
     join_alternative: 或查找另一个邀请令牌：
+    join_as: 加入为
+    join_as_hint: 如果您以演讲者身份参加此活动，我们将在安排此活动时尝试考虑您的空缺情况。
     join_confirm: 你想接受邀请吗？
     join_description: 提供令牌后，您可以作为演讲者加入此活动：
     join_event: 加入活动
@@ -874,9 +877,10 @@ zh:
     notice_template_destroyed: 邮件模板已成功销毁。
     notice_template_updated: 邮件模板已成功更新。
     notice_template_added: 邮件模板已成功添加。
-    placeholders_hint: |
-      以下占位符可用于每个的“内容”部分
-      模板。
+    placeholders_hint_header: |
+      您可以在每个主题的`学科`和`内容`部分中使用动态变量变电站。
+      模板。如果您不希望别人得到事件，请避免使用特定于事件的变量
+      一封以上的邮件。
     send_mail: 发送邮件
     template_subject: 主题：%{subject}
   error_signing_in: 无效的电子邮件或密码。
@@ -1014,6 +1018,7 @@ zh:
     no_ratings: |
       尚未有人为此活动输入评分。成为第一个
       并使用上面的表格对事件进行评分。
+    not_applicable: N/A
     not_involved: |
       您尚未参与此活动
       会议。把自己添加到任何事件中
@@ -1689,6 +1694,7 @@ zh:
   options:
     admin: 管理员
     aim: 目标
+    assistant: 助理
     attending: 参加
     bus: 总线
     business: 商业
@@ -1938,8 +1944,15 @@ zh:
     speakers_without_availabilities: 没有可用性的扬声器
     unconfirmed_events: 未经证实的事件
   resend: 重发
+  review_metrics: 查看指标
+  review_metrics_module:
+    empty_review_metrics: |
+      您可以要求提交审稿人专注于特定的
+      审核时，通过添加每个提交的方面
+      查看此列表的指标。
   role:
     admin: 管理员
+    assistant: 助理
     coordinator: 协调员
     crew: 船员
     moderator: 主持人

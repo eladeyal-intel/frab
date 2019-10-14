@@ -174,6 +174,7 @@ en:
       person: profile
       phone_number: phone number
       room: room
+      review_metric: Review metric
       track: track
   add_association: Add %{name}
   additional_resources: Additional Resources
@@ -271,15 +272,17 @@ en:
         start_date: Pick a date when your CfP should be open for the public.
         welcome_text: Enter a welcome message or additional instructions you want to display to participants. (HTML)
     join_alternative: 'Or lookup another invitation token:'
+    join_as: Join as a
+    join_as_hint: If you join this event as a speaker, we'll try to take into account your availability when scheduling this event.
     join_confirm: Do you want to accept the invitation?
-    join_description: 'With the token provided you can join this event as a speaker:'
+    join_description: 'With the token provided you can join this event:'
     join_event: Join event
     join_submitters_hint: Share this token with speakers you want to allow to join this event. After they have created an account, they can use the token in the 'Join event' interface.
-    join_success: You have been added as speaker on this event.
-    join_token_already_used: You already were a speaker on this event.
+    join_success: You have been added to this event.
+    join_token_already_used: You already joined this event.
     join_token_link: This link directly leads to the 'Join event' page for this event.
     join_token_lookup: Lookup token
-    join_token_lookup_description: Enter the token that allows you to join an event as a speaker.
+    join_token_lookup_description: Enter the token that you were given in order to join an event.
     join_token_lookup_hint: 'Hint: The token can be viewed by the original submitter in the event''s edit view.'
     join_token_unknown: Token %{token} unknown.
     languages_spoken: Languages spoken
@@ -867,10 +870,11 @@ en:
     notice_mails_queued: Mail deliveries queued.
     notice_template_destroyed: Mail template was successfully destroyed.
     notice_template_updated: Mail template was successfully updated.
-    placeholders_hint: |
-      The following place holders may be used in the `content` section of each
-      template.
     notice_template_added: Mail template was successfully added.
+    placeholders_hint_header: |
+      You can use dynamic variable substation in the in the `subject` and `content` sections of each
+      template. Avoid using event-specific variables if you don't want people to get
+      more than one mail message.
     send_mail: Send Mail
     template_subject: 'Subject: %{subject}'
   error_signing_in: Invalid email or password.
@@ -1017,6 +1021,7 @@ en:
     no_ratings: |
       No one has entered a rating for this event yet. Be the first
       and rate the event using the form above.
+    not_applicable: N/A
     not_involved: |
       You are not yet involved in any event in this
       conference. Add yourself to an event in whatever
@@ -1685,6 +1690,7 @@ en:
     admin: Administrator
     aim: AIM
     attending: Attending
+    assistant: Assistant
     bus: Bus
     business: Business
     canceled: Canceled
@@ -1932,8 +1938,15 @@ en:
     speakers_without_availabilities: speakers without availabilities
     unconfirmed_events: events that are unconfirmed
   resend: Resend
+  review_metrics: Review metrics
+  review_metrics_module:
+      empty_review_metrics: |
+        You can ask submission reviewers to focus on specific
+        aspects of each submission while reviewing, by adding
+        review metrics to this list.
   role:
     admin: Admin
+    assistant: Assistant
     coordinator: Coordinator
     crew: Crew
     orga: Orga

@@ -2,9 +2,11 @@ class EventPerson < ApplicationRecord
   include UniqueToken
   include Rails.application.routes.url_helpers
 
-  ROLES = %i(coordinator submitter speaker moderator).freeze
+  ROLES = %i(coordinator submitter speaker moderator assistant).freeze
   STATES = %i(canceled confirmed declined idea offer unclear attending).freeze
-  SPEAKER = %i(speaker moderator).freeze
+  SPEAKERS = %i(speaker moderator).freeze
+  STAKEHOLDERS = %i(speaker moderator assistant).freeze
+  JOINABLES = %i(speaker assistant).freeze
 
   belongs_to :event
   belongs_to :person
@@ -15,9 +17,10 @@ class EventPerson < ApplicationRecord
 
   has_paper_trail meta: { associated_id: :event_id, associated_type: 'Event' }
 
-  scope :presenter, -> { where(event_role: SPEAKER) }
+  scope :presenter, -> { where(event_role: SPEAKERS) }
+  scope :stakeholder, -> { where(event_role: STAKEHOLDERS) }
   scope :presenter_at, ->(conference) {
-    joins(event: :conference).where('conferences.id': conference).where('event_people.event_role': EventPerson::SPEAKER)
+    joins(event: :conference).where('conferences.id': conference).where('event_people.event_role': EventPerson::SPEAKERS)
   }
 
   def confirm!
@@ -69,7 +72,12 @@ class EventPerson < ApplicationRecord
       fail "Field #{state}_#{field} not found" unless string.present?
     end
 
-    string.gsub! '%{conference}', conference.title
+    substitute_variables(string)
+  end
+  
+  def substitute_variables(s)
+    locale = person.locale_for_mailing(event.conference)
+    string = s.gsub '%{conference}', conference.title
     string.gsub! '%{event}', event.title
     string.gsub! '%{subtitle}', event.subtitle || ''
     string.gsub! '%{type}', event.localized_event_type(locale)
@@ -97,7 +105,7 @@ class EventPerson < ApplicationRecord
   private
 
   def update_speaker_count
-    event.speaker_count = EventPerson.where(event_id: event.id, event_role: SPEAKER).count
+    event.speaker_count = EventPerson.where(event_id: event.id, event_role: SPEAKERS).count
     event.save
   end
 

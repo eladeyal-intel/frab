@@ -173,6 +173,7 @@ it:
       notification: notifica
       person: profilo
       phone_number: numero di telefono
+      review_metric: Revisionare la metrica
       room: sala
       track: filo
   add_association: Aggiungi %{name}
@@ -273,6 +274,8 @@ it:
         start_date: Seleziona la data in cui la chiamata sarà aperta al pubblico.
         welcome_text: Immettere un messaggio di benvenuto o ulteriori istruzioni che si desidera visualizzare ai partecipanti. (HTML)
     join_alternative: 'Dove trovare un altro token di invito:'
+    join_as: Partecipa come a
+    join_as_hint: Se partecipi a questo evento come relatore, proveremo a tenere conto della tua disponibilità durante la pianificazione di questo evento.
     join_confirm: Vuoi accettare l'invito?
     join_description: 'Con il token fornito, puoi partecipare a questo evento come oratore:'
     join_event: Partecipa all'evento
@@ -899,9 +902,10 @@ it:
     notice_template_destroyed: Modello di email eliminato con successo.
     notice_template_updated: Modello email aggiornato correttamente.
     notice_template_added: Modello email aggiunto con successo.
-    placeholders_hint: |
-      Le seguenti posizioni possono essere utilizzate nella sezione `content`
-      di ogni modello.
+    placeholders_hint_header: |
+      Puoi usare la sottostazione variabile dinamica nelle sezioni `soggetto` e `contenuto` di ciascuna
+      modello. Evita di usare variabili specifiche dell'evento se non vuoi che le persone lo ottengano
+      più di un messaggio di posta.
     send_mail: Invia email
     template_subject: 'Oggetto: %{subject}'
   error_signing_in: Email o password non valida.
@@ -1039,6 +1043,7 @@ it:
     no_ratings: |
       Nessuno ha ancora valutato questo evento. Sii il primo a
       utilizzando il modulo sottostante.
+    not_applicable: N/A
     not_involved: |
       Non sei ancora coinvolto in un evento per questa conferenza.
       Aggiungi te stesso a un evento per il ruolo che vuoi tenere, e
@@ -1714,6 +1719,7 @@ it:
   options:
     admin: amministratore
     aim: AIM
+    assistant: Assistente
     attending: assist
     bus: Pulman
     business: affari
@@ -1966,8 +1972,15 @@ it:
     speakers_without_availabilities: altoparlanti senza disponibilità
     unconfirmed_events: eventi non confermati
   resend: ritorno
+  review_metrics: Revisionare le metriche
+  review_metrics_module:
+    empty_review_metrics: |
+      Puoi chiedere ai revisori delle presentazioni di concentrarsi su specifici
+      aspetti di ogni invio durante la revisione, aggiungendo
+      rivedere le metriche in questo elenco.
   role:
     admin: amministratore
+    assistant: Assistente
     coordinator: coordinatore
     crew: Membro della squadra
     moderator: Moderatore
