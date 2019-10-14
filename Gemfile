@@ -8,6 +8,9 @@ install_if -> { RbConfig::CONFIG['target_os'] =~ /(?i-mx:bsd|dragonfly)/ } do
   gem 'rb-kqueue', ">= 0.2", platforms: :ruby
 end
 
+def os_is(re)
+  RbConfig::CONFIG['host_os'] =~ re
+end
 
 if ENV['CUSTOM_RUBY_VERSION']
   ruby ENV['CUSTOM_RUBY_VERSION'] # i.e.: '2.3'
@@ -24,7 +27,13 @@ gem 'coffee-rails'
 
 gem 'mysql2', group: :mysql
 gem 'pg', group: :postgresql
-gem 'sqlite3', group: :sqlite3
+
+if os_is /mingw32/
+  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec", group: :sqlite3
+else
+  gem 'sqlite3', group: :sqlite3
+end
+
 
 # Use Puma as the app server
 gem 'puma'
@@ -80,6 +89,8 @@ gem 'transitions', require: ['transitions', 'active_record/transitions']
 gem 'will_paginate'
 gem 'yard'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :production do
   gem 'exception_notification'
 end
@@ -92,6 +103,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'faker'
   gem 'i18n-tasks'
+  gem 'imgurr', github: 'Chris911/imgurr', branch: 'fix/rescue-failed-copy'
 end
 
 group :test do

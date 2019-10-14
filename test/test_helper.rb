@@ -30,6 +30,17 @@ class ActiveSupport::TestCase
   def teardown
     DatabaseCleaner.clean
   end
+  
+  def screenshot
+    @screenshots_dir ||= Time.now.strftime("%Y-%m-%d/%H%M_") + name
+    @serialnumberer ||= 1
+    filename = "#{@screenshots_dir}_#{'%02i' % @serialnumberer}.png"
+    filename = save_screenshot(filename, full: true)
+    puts 'Screenshot: ' + filename
+    Imgurr::Command::upload filename if ENV['CI']
+    @serialnumberer+=1
+  end
+
 end
 
 class ActionController::TestCase
