@@ -81,21 +81,27 @@ class EventsController < BaseConferenceController
   end
 
   # show event ratings
+  # GET /events/ratings.xslx
   def ratings
     authorize @conference, :read?
-    
-    result = search @conference.events_with_review_averages
-    @events = result.paginate page: page_param
-    clean_events_attributes
 
-    # total ratings:
-    @events_total = @conference.events.count
-    @events_reviewed_total = @conference.events.to_a.count { |e| !e.event_ratings_count.nil? && e.event_ratings_count > 0 }
-    @events_no_review_total = @events_total - @events_reviewed_total
-
-    # current_user rated:
-    @events_reviewed = @conference.events.joins(:event_ratings).where('event_ratings.person_id' => current_user.person.id).where.not('event_ratings.rating' => [nil, 0]).count
-    @events_no_review = @events_total - @events_reviewed
+    @events = search @conference.events
+    respond_to do |format|
+      format.html { 
+        @events = @events.paginate page: page_param
+        clean_events_attributes
+       
+        # total ratings:
+        @events_total = @conference.events.count
+        @events_reviewed_total = @conference.events.to_a.count { |e| !e.event_ratings_count.nil? && e.event_ratings_count > 0 }
+        @events_no_review_total = @events_total - @events_reviewed_total
+       
+        # current_user rated:
+        @events_reviewed = @conference.events.joins(:event_ratings).where('event_ratings.person_id' => current_user.person.id).where.not('event_ratings.rating' => [nil, 0]).count
+        @events_no_review = @events_total - @events_reviewed
+      }
+      format.xls
+    end
   end
 
   # show event feedbacks
