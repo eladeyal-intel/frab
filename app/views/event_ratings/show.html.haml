@@ -78,7 +78,7 @@
           = f.simple_fields_for :review_scores do |ff|
             = ff.input :score,
               as: :radio_buttons,
-              collection: [['N/A', '0'], ['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], 
+              collection: [[t('events_module.not_applicable'), '0'], ['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], 
               label: ff.object.review_metric.name, 
               hint: ff.object.review_metric.description,
               item_label_class: 'review-scores'

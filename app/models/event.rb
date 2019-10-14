@@ -122,7 +122,7 @@ class Event < ApplicationRecord
   end
 
   def recalculate_average_rating!
-    update_attributes(average_rating: average(:event_ratings), event_ratings_count: event_ratings.where.not(rating: [nil, 0]).count )
+    update_attributes(average_rating: average_of_nonzeros(event_ratings.pluck(:rating)), event_ratings_count: event_ratings.where.not(rating: [nil, 0]).count )
   end
 
   def recalculate_review_averages!
@@ -213,7 +213,7 @@ class Event < ApplicationRecord
     return nil if rating_count.zero?
     result.to_f / rating_count
   end
-  
+
   def average_of_nonzeros(list)
     return nil unless list
     list=list.select{ |x| x && x>0 }
