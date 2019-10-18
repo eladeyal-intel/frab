@@ -1951,12 +1951,16 @@ zh:
     speakers_without_availabilities: 没有可用性的扬声器
     unconfirmed_events: 未经证实的事件
   resend: 重发
-  review_metrics: 查看指标
-  review_metrics_module:
+  reviewing: 审核中
+  reviewing_module:
+    current_review_metrics: 当前配置的审阅指标是：
     empty_review_metrics: |
       您可以要求提交审稿人专注于特定的
       审核时，通过添加每个提交的方面
       查看此列表的指标。
+    modify_review_metric_with_parent: |
+      此会议的审核指标只能通过
+      父会议%{parent}的管理权限
   role:
     admin: 管理员
     assistant: 助理

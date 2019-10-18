@@ -1975,12 +1975,16 @@ fr:
     speakers_without_availabilities: orateurs sans disponibilités
     unconfirmed_events: événements non confirmés
   resend: Renvoyer
-  review_metrics: Examiner les métriques
-  review_metrics_module:
+  reviewing: Révision
+  reviewing_module:
+    current_review_metrics: 'Les métriques de révision actuellement configurées sont les suivantes:'
     empty_review_metrics: |
       Vous pouvez demander aux examinateurs de soumission de se concentrer sur des
       aspects de chaque soumission tout en examinant, en ajoutant
       examiner les métriques de cette liste.
+    modify_review_metric_with_parent: |
+      Les métriques d'évaluation de cette conférence ne peuvent être modifiées qu'avec
+      droits d'administration pour la conférence parente %{parent}
   role:
     admin: Administrateur
     assistant: Assistant

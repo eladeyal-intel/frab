@@ -1951,12 +1951,16 @@ ru:
     speakers_without_availabilities: динамики без оговорок
     unconfirmed_events: события, неподтвержденные
   resend: Отправить
-  review_metrics: Обзор метрик
-  review_metrics_module:
+  reviewing: Обзор
+  reviewing_module:
+    current_review_metrics: 'В настоящее время настроены показатели обзора:'
     empty_review_metrics: |
       Вы можете попросить рецензентов, чтобы сосредоточиться на конкретных
       аспекты каждого представления при рассмотрении, добавив
       просмотреть метрики к этому списку.
+    modify_review_metric_with_parent: |
+      Метрики просмотра для этой конференции могут быть изменены только с
+      Администрирование прав на родительскую конференцию %{parent}
   role:
     admin: Администратор
     assistant: Ассистент

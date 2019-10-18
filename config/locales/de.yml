@@ -1966,12 +1966,16 @@ de:
     speakers_without_availabilities: Sprecher ohne Verfügbarkeit
     unconfirmed_events: Unbestätigte Events
   resend: Erneut senden
-  review_metrics: Überprüfen Sie die Messdaten
-  review_metrics_module:
+  reviewing: Überprüfung
+  reviewing_module:
+    current_review_metrics: 'Die derzeit konfigurierten Überprüfungsmetriken sind:'
     empty_review_metrics: |
       Sie können Prüfer bitten, sich auf bestimmte Themen zu konzentrieren
       Aspekte jeder Einreichung während der Überprüfung durch Hinzufügen
       Überprüfen Sie die Messdaten in dieser Liste.
+    modify_review_metric_with_parent: |
+      Überprüfungsmetriken für diese Konferenz können nur mit geändert werden
+      Administrationsrechte für die Elternkonferenz %{parent}
   role:
     admin: Admin
     assistant: Assistent
