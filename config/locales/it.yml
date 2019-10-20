@@ -176,6 +176,7 @@ it:
       review_metric: Revisionare la metrica
       room: sala
       track: filo
+  add: Inserisci
   add_association: Aggiungi %{name}
   additional_resources: Risorse aggiuntive
   admin: Admin
@@ -980,6 +981,33 @@ it:
     attachments_overview: allegati
     average_feedback: 'Rendimenti medi:'
     average_speaker_feedback: 'Rendimenti medi per oratore:'
+    bulk_edit:
+      add_person: Aggiungi persona
+      add_person_confirm:
+        one: Sei sicuro di voler aggiungere una persona a questo evento?
+        other: Sei sicuro di voler aggiungere una persona a tutti gli eventi %{count}?
+      set_events_confirm:
+        one: sei sicuro di voler cambiare stato per questo evento?
+        other: Sei sicuro di voler cambiare stato per tutti gli eventi %{count}?
+      set_events_type_confirm:
+        one: Sei sicuro di voler modificare il tipo di questo evento?
+        other: Sei sicuro di voler modificare il tipo per tutti gli eventi %{count}?
+      set_new_event_type: Cambia tipo di evento
+      set_new_state: Assegna stato
+      set_new_track: Assegna traccia
+      set_track_confirm:
+        one: Sei sicuro di voler cambiare la traccia di questo evento?
+        other: Sei sicuro di voler cambiare la traccia di tutti gli eventi %{count}?
+      toggle: Modifica questi eventi >>
+      update_failed:
+        one: Modifica di %{count} non riuscita.
+        other: "%{count} modifiche non riuscite."
+      update_skipped:
+        one: "%{count} modifica saltata."
+        other: "%{count} modifiche saltate."
+      update_successful:
+        one: "%{count} modifica completata correttamente."
+        other: "%{count} modifiche completate correttamente."
     cancel_event: Annulla l'evento
     cancel_event_hint: |
       Imposta questo evento come cancellato. Generalmente, ciò significa che l'oratore
@@ -1030,6 +1058,9 @@ it:
         recording_license: Licenza di registrazione per questo discorso
         submission_note: 'Visibilità: amministratori e utenti; informazioni aggiuntive.'
         tech_rider: Cosa serve per questo evento?
+    listing_n_events:
+      one: Elenco di %{n} dell'evento %{count}.
+      other: Elenco di %{n} di eventi %{count}.
     my_events: I miei eventi
     my_rating: La mia nota
     my_ratings: I miei appunti
@@ -1072,6 +1103,7 @@ it:
     reject_event_no_email: Rifiuta l'evento (nessuna email)
     reject_event_no_email_hint: Rifiuta questo evento senza inviare un'e-mail automatica.
     toggle_description: Mostra descrizione >>
+    toggle_send_bulk_mail: Invia mail a tutte queste persone >>
     track_select: filtro per filo
   expenses: la spesa
   expenses_module:
@@ -1669,6 +1701,9 @@ it:
     send_notification: Invia notifiche %{name} %{speakers} in %{count}
     send_notification_confirm: Sei sicuro di voler inviare notifiche %{name} per %{event}?
     send_notification_to_speakers: Invia notifiche %{name} a %{speakers} in %{event}
+    send_unspecified_notification_confirm:
+      one: Sei sicuro di voler inviare e-mail per l'evento %{count}?
+      other: Sei sicuro di voler inviare e-mail per eventi %{count}?
   number:
     currency:
       format:
@@ -2057,11 +2092,13 @@ it:
     select_all_none: Selezione (Tutti / Nessuno)
     view_live_version_hint: Visualizza la versione pubblica del programma, come chiunque vorrebbe vederlo
   scheduling: programmazione
+  select_one: "-- Seleziona uno --"
   send: mandare
   session:
     login: Entra
     signup: Crea il mio account
     update_password: Cambia la mia password
+  set: Impostato
   settings: impostazioni
   show: Affiggere
   show_account: conto

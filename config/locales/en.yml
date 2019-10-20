@@ -176,6 +176,7 @@ en:
       room: room
       review_metric: Review metric
       track: track
+  add: Add
   add_association: Add %{name}
   additional_resources: Additional Resources
   admin: Admin
@@ -572,7 +573,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mar
@@ -598,7 +599,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    -
+    - 
     - January
     - February
     - March
@@ -946,6 +947,36 @@ en:
     ago: "%{time_ago} ago"
     all_events: All events
     all_rating: All ratings
+    bulk_edit:
+      add_person: Add person
+      add_person_confirm:
+        one: Are you sure you want to add a person to this event?
+        other: Are you sure you want to add a person to all %{count} events?
+      set_new_state: Assign state
+      set_new_track: Assign track
+      set_new_event_type: Change event type
+      set_events_confirm:
+        one: Are you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      set_events_type_confirm:
+        one: Are you sure you want to modify this event's type?
+        other: Are you sure you want to modify the type for all %{count} events?
+      set_track_confirm:
+        one: Are you sure you want to change the track of this event?
+        other: Are you sure you want to change the track of all %{count} events?
+      set_events_confirm: 
+        one: you sure you want to change state for this event?
+        other: Are you sure you want to change state for all %{count} events?
+      toggle: "Edit these events >>"
+      update_successful:
+        one: "%{count} edit completed successfully."
+        other: "%{count} edits completed successfully."
+      update_skipped:
+        one: "%{count} edit skipped."
+        other: "%{count} edits skipped."
+      update_failed:
+        one: "%{count} edit failed."
+        other: "%{count} edits failed."
     predefined_title_types:
       handouts: handouts
       media: media
@@ -1042,7 +1073,11 @@ en:
     reject_event_hint: Reject this event. The speaker(s) will be notified of the rejection via email.
     reject_event_no_email: Reject event (no email)
     reject_event_no_email_hint: Reject this event without sending an automated email.
+    listing_n_events: 
+      one: Listing %{n} of %{count} event.
+      other: Listing %{n} of %{count} events.
     toggle_description: Toggle Description >>
+    toggle_send_bulk_mail: Send mail to all these people >>
     track_select: filter by track
   expenses: Expenses
   expenses_module:
@@ -1639,6 +1674,9 @@ en:
     send_notification: send %{name} notifications to %{speakers} in %{count}
     send_notification_confirm: Are you sure you want to send %{name} notifications for %{event}?
     send_notification_to_speakers: Send %{name} notifications to %{speakers} in %{event}
+    send_unspecified_notification_confirm:
+      one: Are you sure you want to send e-mails for %{count} event?
+      other: Are you sure you want to send e-mails for %{count} events?
   number:
     currency:
       format:
@@ -2021,11 +2059,13 @@ en:
     select_all_none: Select all/none
     view_live_version_hint: View the public live version of your schedule just like any attendee might see it.
   scheduling: Scheduling
+  select_one: "-- Select one --"
   send: Send
   session:
     login: Log in
     signup: Sign up
     update_password: Update my password
+  set: Set
   settings: Settings
   show: Show
   show_account: Account
