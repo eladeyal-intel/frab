@@ -12,7 +12,10 @@
           - else
             - next_op={ '≥' => '≤', '≤' => '=', '=' => '≥' }[op]
             = link_to op, request.query_parameters.merge(f.qname => "#{next_op}#{val}")
-          - if f.i18n_scope
-            = t(val, scope: f.i18n_scope)
+          - options_selected = localized_filter_options(val, f.i18n_scope)
+          - if options_selected.count == 1
+            = options_selected[0].first
           - else
-            = val
+            = link_to t('multiple_indication'), "#", 
+                      class: 'show_filter_modal',
+                      data: { url: filter_modal_events_url(request.query_parameters.merge(which_filter: f.qname)) }
