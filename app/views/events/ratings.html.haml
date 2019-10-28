@@ -76,10 +76,11 @@
                   %td= link_to_unless params[:event_ratings_count].present?, event.event_ratings_count, request.query_parameters.merge(:event_ratings_count => "≥#{event.event_ratings_count}")
                   - review_metrics.each do |review_metric|
                     - avg = event[review_metric.safe_name]
-                    %td= avg.round(2) unless avg.nil?
+                    %td
+                      - unless avg.nil?
+                        = link_to_unless params[review_metric.safe_name].present?, avg.round(2), request.query_parameters.merge(review_metric.safe_name => "≥#{avg}")
                   %td
                     = link_to t('ratings_module.show_ratings'), event_event_rating_path(event), class: "btn small"
           = actions_bar do
             = will_paginate @events
-
 = render partial: 'filters_modal_holder'
