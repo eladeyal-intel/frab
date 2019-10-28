@@ -282,6 +282,12 @@ class EventsController < BaseConferenceController
       if params[f.qname].present?
         if f.type == :text
           filter = filter.where(f.attribute_name => criteria_from_param(params[f.qname]))
+        elsif f.type == :range  
+          op,val = helpers.get_op_and_val(params[f.qname])
+          op = { '≥' => '>=',
+                 '=' => '=',
+                 '≤' => '<=' }[op]
+          filter = filter.where("#{f.attribute_name} #{op} #{val}") if op
         end
       end
     end

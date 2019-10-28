@@ -6,8 +6,13 @@
         %span{:style => 'margin-left: 1em'}
           = link_to "[x]", request.query_parameters.except(f.qname)
           = f.filter_name || t(f.filter_name_i18n)
-          = ":"
-          - options_selected = localized_filter_options(params[f.qname], f.i18n_scope)
+          - op,val=get_op_and_val(params[f.qname])
+          - if op.blank?
+            = ":"
+          - else
+            - next_op={ '≥' => '≤', '≤' => '=', '=' => '≥' }[op]
+            = link_to op, request.query_parameters.merge(f.qname => "#{next_op}#{val}")
+          - options_selected = localized_filter_options(val, f.i18n_scope)
           - if options_selected.count == 1
             = options_selected[0].first
           - else 

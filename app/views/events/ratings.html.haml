@@ -69,8 +69,8 @@
                     %td= link_to_unless params[:event_state].present?, event.state, request.query_parameters.merge(:event_state => event.state)
                   %td
                     - if event.average_rating
-                      = raty_for("event_rating_#{event.id}", event.average_rating)
-                  %td= event.event_ratings_count
+                      = link_to_unless params[:average_rating].present?, raty_for("event_rating_#{event.id}", event.average_rating), request.query_parameters.merge(:average_rating => "≥#{event.average_rating}")
+                  %td= link_to_unless params[:event_ratings_count].present?, event.event_ratings_count, request.query_parameters.merge(:event_ratings_count => "≥#{event.event_ratings_count}")
                   %td
                     = link_to t('ratings_module.show_ratings'), event_event_rating_path(event), class: "btn small"
           = actions_bar do
