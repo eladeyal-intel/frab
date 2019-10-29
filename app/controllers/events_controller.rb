@@ -269,7 +269,7 @@ class EventsController < BaseConferenceController
     helpers.filters_data.each do |f|
       if params[f.qname].present?
         if f.type == :text
-          filter = filter.where(f.attribute_name => params[f.qname])
+          filter = filter.where(f.attribute_name => criteria_from_param(params[f.qname]))
         end
       end
     end
@@ -280,7 +280,13 @@ class EventsController < BaseConferenceController
       @search.result(distinct: true)
     end
   end
-  
+
+  def criteria_from_param(s)
+    c = helpers.split_filter_string(s)
+    c += [nil] if c.include?('')
+    return c
+  end
+
   def event_params
     params.require(:event).permit(
       :id, :title, :subtitle, :event_type, :time_slots, :state, :start_time, :public, :language, :abstract, :description, :logo, :track_id, :room_id, :note, :submission_note, :do_not_record, :recording_license, :tech_rider,
