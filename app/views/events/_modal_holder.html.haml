@@ -1,4 +1,4 @@
-#filters-modal.modal{style: "display: none;"}
+#events-modal.modal{style: "display: none;"}
 
 :coffeescript
   update_filter_modal = (url) ->
@@ -6,8 +6,8 @@
       dataType: "html",
       url: url,
       success: (data) ->
-        $('#filters-modal').modal('show')
-        $('#filters-modal').html(data)
+        $('#events-modal').modal('show')
+        $('#events-modal').html(data)
       error: () ->
         location.reload(true)
     )
@@ -15,7 +15,7 @@
   $('.show_filter_modal').on 'click', -> 
     update_filter_modal(this.dataset['url'])
      
-  $("#filters-modal").draggable({
+  $("#events-modal").draggable({
     handle: ".modal-header"
   }); 
   
