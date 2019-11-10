@@ -1684,6 +1684,7 @@ ru:
       confirmation_instructions: активация аккаунта
       password_reset_instructions: Сброс пароля
   manage_conference: Управление этой конференцией
+  manage_conference_flash: Вы вошли как член экипажа для этой конференции. Вы хотите управлять этой конференцией?
   manual: Руководство
   more: Больше...
   multiple_indication: множественный
@@ -1693,6 +1694,7 @@ ru:
     conferences: Конференции
     event: Информация о мероприятии
     feedbacks: Отзыв
+    history: история
     more: Подробнее >>
     people: люди
     ratings: Рейтинги

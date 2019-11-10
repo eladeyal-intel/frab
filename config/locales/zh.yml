@@ -1669,6 +1669,7 @@ zh:
       confirmation_instructions: 帐号激活
       password_reset_instructions: 重设密码
   manage_conference: 管理这个会议
+  manage_conference_flash: 您已作为该会议的工作人员登录。您要管理这次会议吗？
   manual: 手册
   more: 更多...
   multiple_indication: 多
@@ -1678,6 +1679,7 @@ zh:
     conferences: 会议
     event: 活动详情
     feedbacks: 反馈
+    history: 历史
     more: 更多>>
     people: 人
     ratings: 评级

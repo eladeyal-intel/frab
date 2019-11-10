@@ -1690,6 +1690,7 @@ pt-BR:
       confirmation_instructions: Ativação de Conta
       password_reset_instructions: Redefinir Senha
   manage_conference: Gerenciar esta conferência
+  manage_conference_flash: Você está logado como membro da tripulação para esta conferência. Deseja gerenciar esta conferência?
   manual: Manual
   more: Mais...
   multiple_indication: múltiplo
@@ -1699,6 +1700,7 @@ pt-BR:
     conferences: Conferências
     event: detalhes do evento
     feedbacks: Feedbacks
+    history: História
     more: Mais >>
     people: Pessoas
     ratings: Classificações
