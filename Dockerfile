@@ -1,11 +1,11 @@
 FROM ruby:latest
 
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs file imagemagick git && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs file imagemagick git vim && \
     apt-get clean && \ 
     rm -rf /var/lib/apt/lists/*
 
-ARG FRAB_UID="1000"
+ARG FRAB_UID="2000"
 
 RUN adduser --disabled-password --gecos "FRAB" --uid $FRAB_UID frab
 
@@ -13,6 +13,9 @@ COPY . /home/frab/app
 RUN chown -R frab:frab /home/frab/app
 
 USER frab
+
+RUN wget https://www.vim.org/scripts/download_script.php?src_id=14498 -O /tmp/AnsiEsc.vba.gz && \
+    vim -c ":so /tmp/AnsiEsc.vba.gz" -c q 
 
 WORKDIR /home/frab/app
 
