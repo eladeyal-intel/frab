@@ -223,9 +223,33 @@ class Conference < ApplicationRecord
   def to_label
     acronym
   end
+  
+  def allowed_event_timeslots
+    return parent.allowed_event_timeslots if sub_conference?
+    (allowed_event_timeslots_csv || '').split(',').map(&:to_i)
+  end
+
+  def allowed_event_timeslots=(list)
+    csv=list.to_set.sort.join(',')
+    update_attributes(allowed_event_timeslots_csv: csv)
+  end
+  
+  def allowed_durations_minutes
+    allowed_event_timeslots.map{|ts| ts*timeslot_duration}
+  end
+  
+  def allowed_durations_minutes_csv
+    allowed_durations_minutes.join(',')
+  end
+
+  def allowed_durations_minutes_csv=(csv)
+    list = csv.split(',').map(&:to_i)
+    timeslots=[default_timeslots] + (1..max_timeslots).select{|ts| (ts*timeslot_duration).in?(list)}
+    update_attributes(allowed_event_timeslots: timeslots)
+  end
 
   private
-
+  
   def update_timeslots
     return unless saved_change_to_timeslot_duration? and events.count.positive?
     old_duration = timeslot_duration_before_last_save
