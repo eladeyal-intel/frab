@@ -107,6 +107,13 @@ namespace :frab do
                            public_name: fakeperson[:extra][:raw_info][:username],
                            include_in_mailings: Faker::Boolean.boolean,
                            gender: [fakeperson[:extra][:raw_info][:gender], nil].sample)
+
+        uri=URI("https://randomuser.me/api/?inc=picture&gender=#{p.gender}")
+        response = Net::HTTP.get(uri)
+        r=JSON.parse(response)
+        imgurl = r['results'][0]['picture']['large']
+        p.update_attributes(avatar: StringIO.new(open(imgurl).read))
+        
         puts "Created person #{p.first_name} #{p.last_name} <#{p.email}> (#{p.public_name})"
       end
     end
