@@ -30,6 +30,20 @@ class LdapTest < FeatureTest
     connect_with_ldap # for new user
     connect_with_ldap # for existing user
   end
+
+  test 'rejects wrong password' do
+    visit '/'
+   
+    click_on 'Log-in'
+   
+    click_on 'Sign in with free testing server at ldap.forumsys.com'
+   
+    fill_in 'Login:', with: 'wrong'
+    fill_in 'Password:', with: 'wrong'
+    click_on 'Sign In'
+   
+    assert_content page, 'Authentication failed'
+  end
   
   teardown do
     User.where(email: EMAIL).destroy_all
