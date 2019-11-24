@@ -229,6 +229,10 @@ class Conference < ApplicationRecord
     (allowed_event_timeslots_csv || '').split(',').map(&:to_i)
   end
 
+  def persisted_acronym
+    changed_attributes['acronym'] || acronym
+  end
+
   def allowed_event_timeslots=(list)
     csv=list.to_set.sort.join(',')
     update_attributes(allowed_event_timeslots_csv: csv)
