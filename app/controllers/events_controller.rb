@@ -75,7 +75,7 @@ class EventsController < BaseConferenceController
   def bulk_edit_modal
     authorize @conference, :read?
     @events = search @conference.events_with_review_averages.includes(:track)
-    @num_of_matching_events = @events.pluck(:id).count
+    @num_of_matching_events = @events.reorder('').pluck(:id).count
     
     render partial: 'bulk_edit_modal'
   end
