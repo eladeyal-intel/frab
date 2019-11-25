@@ -10,7 +10,8 @@ update_filter = (lookup_people_url, filter_box, select_box, display_box, hidden_
     
       # Don't replace a name with a "too many" message
       # unless triggered explicitly
-      if (data.too_many) && (!(filter_box.value?))
+      if (data.too_many) && (!(filter_box.value?)) && display_box.text()
+        console.log ("skipping")
         return
         
       # Update selection box
