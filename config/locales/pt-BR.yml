@@ -30,6 +30,7 @@ pt-BR:
         acronym: Acrônimo
         allowed_event_types_as_list: Tipos de eventos permitidos
         attachment_title_is_freeform: O título do anexo é de forma livre
+        bcc_email_address: Endereço BCC
         bulk_notification_enabled: Notificações em massa
         color: Cor
         default_recording_license: Licença de gravação padrão
@@ -467,6 +468,9 @@ pt-BR:
           Se essa opção for selecionada, os remetentes poderão fornecer o título que quiserem.
           para arquivos que eles carregam como anexos. Se esta opção estiver desmarcada, eles
           deve selecionar entre um conjunto de títulos pré-configurados.
+        bcc_email_address: |
+          Se definido, todos os e-mails gerados pelo frab para esta conferência serão enviados para
+          esse endereço também.
         bulk_notification_enabled: |
           Se você ativar isso, as notificações serão enviadas em massa por e-mail
           ou subsistema de ticket.

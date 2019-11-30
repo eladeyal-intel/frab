@@ -23,6 +23,7 @@ it:
         acronym: acronimo
         allowed_event_types_as_list: Tipi di eventi consentiti
         attachment_title_is_freeform: Il titolo dell'allegato è a mano libera
+        bcc_email_address: Indirizzo BCC
         bulk_notification_enabled: Notifiche di gruppo
         color: colore
         default_recording_license: Licenza di registrazione predefinita
@@ -448,6 +449,9 @@ it:
           Se questa opzione è selezionata, i mittenti possono fornire qualsiasi titolo desiderino
           per i file caricati come allegati. Se questa opzione è deselezionata, essi
           deve selezionare tra un set di titoli preconfigurati.
+        bcc_email_address: |
+          Se impostato, tutte le mail generate da frab per questa conferenza verranno inviate a
+          anche questo indirizzo.
         bulk_notification_enabled: |
           Se abiliti questa opzione, le notifiche verranno inviate
           massa per posta, o da un sottosistema di biglietti.

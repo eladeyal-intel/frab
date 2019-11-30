@@ -23,6 +23,7 @@ fr:
         acronym: Acronyme
         allowed_event_types_as_list: Types d'événements autorisés
         attachment_title_is_freeform: Le titre de la pièce jointe est de forme libre
+        bcc_email_address: Adresse BCC
         bulk_notification_enabled: Notifications de groupe
         color: Couleur
         default_recording_license: License d’enregistrement par défaut
@@ -448,6 +449,9 @@ fr:
           Si cette option est sélectionnée, les émetteurs peuvent fournir le titre de leur choix.
           pour les fichiers téléchargés en pièces jointes. Si cette option est désélectionnée, ils
           doit choisir entre un ensemble de titres préconfigurés.
+        bcc_email_address: |
+          Si défini, tous les mails générés par frab pour cette conférence seront envoyés à
+          cette adresse aussi.
         bulk_notification_enabled: |
           Si vous activez cette option, les notifications seront envoyées en
           masse par mail, ou par un sous-systeme de tickets.
