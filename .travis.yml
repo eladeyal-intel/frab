@@ -1,5 +1,6 @@
 language: ruby
 dist: trusty
+cache: bundler
 rvm:
   - 2.4.4
   - 2.6.3
@@ -18,4 +19,6 @@ before_script:
 script:
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
   - bundle exec rails db:test:prepare
-  - bundle exec rails test
+  - bundle exec rails test -f
+after_failure:
+  - tail -3000 log/test.log | curl -T - curldu.mp | sed s/https:/http:/g
