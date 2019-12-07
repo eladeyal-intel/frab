@@ -345,3 +345,8 @@ span#display_box {
 span#display_box.accepted {
     font-weight: bold;
 }
+
+.conf-accepted-durations {
+    columns: 6;
+    width: fit-content;
+}
