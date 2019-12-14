@@ -275,6 +275,7 @@ class Conference < ApplicationRecord
   end
   
   def default_timeslot_must_not_exceed_max_timeslot
+    return if default_timeslots.blank? or max_timeslots.blank?
     if default_timeslots > max_timeslots
       errors.add(:default_timeslots, :exceeds, what: I18n.t('activerecord.attributes.conference.max_timeslots'))
     end
