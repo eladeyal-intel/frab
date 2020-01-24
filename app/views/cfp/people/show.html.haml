@@ -1,6 +1,6 @@
 %section
   .page-header
-    - if (ENV.fetch("FRAB_SHOW_ACTION_BAR","1")=="1")
+    - if (ENV.fetch("FRAB_SHOW_ACTION_BAR_IN_CFP","1")=="1")
       .pull-right
         - unless @conference.in_the_past?
           - unless @conference.call_for_participation.hard_deadline_over?
