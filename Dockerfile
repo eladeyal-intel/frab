@@ -1,4 +1,4 @@
-FROM ruby:2.6
+FROM ruby:latest
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs file imagemagick git vim && \
