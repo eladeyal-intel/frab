@@ -30,7 +30,7 @@ class OpenIDConnectTest < FeatureTest
 
 # Currently testing only once - second test would not result
 # in a new login prompt 
-  test 'can sign up and sign in with openid connect' do
+  test 'can sign up and sign in with openid connect', js:true do
     connect_with_openid_connect
   end
 
