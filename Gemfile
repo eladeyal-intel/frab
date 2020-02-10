@@ -100,6 +100,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'rails-controller-testing'
   gem 'minitest-rails-capybara'
+  gem 'capybara-mechanize'
   gem 'poltergeist'
 end
 
