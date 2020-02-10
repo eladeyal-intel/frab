@@ -99,7 +99,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'rails-controller-testing'
   gem 'minitest-rails-capybara'
-  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :doc do

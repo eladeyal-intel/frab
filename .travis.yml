@@ -15,6 +15,9 @@ before_script:
   - sed -i 's/config.eager_load = .*/config.eager_load = true/' config/environments/test.rb
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database frab_test'; fi"
   - sh -c "if [ '$DB' = 'postgresql' ]; then psql -c 'create database frab_test' -U postgres; fi"
+  - wget https://chromedriver.storage.googleapis.com/80.0.3987.16/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python2.7.12/bin/
+  - export CHROME_BIN=chromium-browser
 script:
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
   - bundle exec rails db:test:prepare

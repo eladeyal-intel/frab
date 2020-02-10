@@ -6,7 +6,7 @@ require 'database_cleaner'
 require 'sucker_punch/testing/inline'
 
 require 'minitest/rails/capybara'
-require 'capybara/poltergeist'
+require 'selenium-webdriver'
 
 Dir[Rails.root.join('test/support/**/*.rb')].each { |f| require f }
 
@@ -19,7 +19,14 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 
-  Capybara.javascript_driver = :poltergeist
+  Capybara.register_driver :chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new(
+      args: %w[headless disable-gpu no-sandbox]
+    )
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  end
+
+  Capybara.javascript_driver = :chrome
   DatabaseCleaner.strategy = :truncation
 
   def setup
