@@ -21,6 +21,11 @@ class ActiveSupport::TestCase
 
   Capybara.javascript_driver = :poltergeist
   DatabaseCleaner.strategy = :truncation
+  
+  Capybara.register_driver :poltergeist do |app|
+    options = {:phantomjs_options => ['--ignore-ssl-errors=yes', '--ssl-protocol=any']}
+    Capybara::Poltergeist::Driver.new(app, options)
+  end
 
   def setup
     DatabaseCleaner.start
