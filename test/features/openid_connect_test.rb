@@ -14,11 +14,20 @@ class OpenIDConnectTest < FeatureTest
 
     click_on 'Log-in'
     click_on 'Sign in with dev-853138.okta.com'
+
+    assert_content page, 'Need help signing in?'
     
-    fill_in 'okta-signin-username', with: EMAIL
-    fill_in 'okta-signin-password', with: PASSWORD
+    find('body').send_keys(EMAIL)
+    find('body').send_keys(:tab)
+    find('body').send_keys(PASSWORD)
+    find('body').send_keys(:return)
+
+    debugger
     
-    click_button 'okta-signin-submit'
+    #fill_in 'okta-signin-username', with: EMAIL
+    #fill_in 'okta-signin-password', with: PASSWORD
+    
+    #click_button 'okta-signin-submit'
     
     assert_content page, 'Successfully authenticated'
     assert User.where(email: EMAIL).any?
