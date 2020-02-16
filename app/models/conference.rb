@@ -223,6 +223,10 @@ class Conference < ApplicationRecord
   def to_label
     acronym
   end
+  
+  def persisted_acronym
+    changed_attributes['acronym'] || acronym
+  end
 
   private
 
