@@ -58,7 +58,6 @@ gem 'jbuilder'
 
 gem 'activemodel-serializers-xml'
 gem 'activeresource'
-gem 'acts_as_commentable'
 gem 'bcrypt'
 gem 'bootsnap'
 gem 'cocoon'
