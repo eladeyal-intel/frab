@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/Chris911/imgurr.git
+  revision: 38d3a525f8df990a0b50e5830ab72243aeadd291
+  branch: fix/rescue-failed-copy
+  specs:
+    imgurr (1.0.0)
+      json
+
+GIT
   remote: https://github.com/frab/localized_language_select.git
   revision: 85df6b97789de6e29c630808b630e56a1b76f80c
   branch: master
@@ -77,7 +85,7 @@ GEM
     ast (2.4.0)
     attr_required (1.0.1)
     bcrypt (3.1.13)
-    bindata (2.4.4)
+    bindata (2.4.6)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -189,6 +197,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.3.0)
     json-jwt (1.11.0)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -382,22 +391,21 @@ GEM
       rqrcode_core (~> 0.1)
     rqrcode_core (0.1.1)
     rubyntlm (0.6.2)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.1.0)
-      railties (>= 5.2.0)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.2.1)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     scanf (1.0.0)
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    sprockets (3.7.2)
+    sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.1)
@@ -405,7 +413,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
-    sshkit (1.20.0)
+    sshkit (1.21.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     sucker_punch (2.1.2)
@@ -476,6 +484,7 @@ DEPENDENCIES
   haml
   http_accept_language
   i18n-tasks
+  imgurr!
   jbuilder
   jquery-migrate-rails
   jquery-rails
@@ -509,12 +518,13 @@ DEPENDENCIES
   ri_cal
   roust!
   rqrcode
-  sass-rails (< 6)
+  sass-rails
   scanf
   simple_form
   sqlite3
   sucker_punch
   transitions
+  tzinfo-data
   uglifier
   will_paginate
   yard
