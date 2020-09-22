@@ -1,5 +1,5 @@
 - if ENV['SHOW_INTEL_LOGO']
   .brand
     = image_tag "intel-header-logo.svg", height: 18, alt: 'Intel'
-    - unless Rails.env.production?
+    - if ENV['SHOW_DEV_LOGO'] or (not Rails.env.production?)
       = image_tag "dev.svg", height: 18, alt: 'DEV'
