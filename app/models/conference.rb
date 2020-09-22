@@ -100,6 +100,10 @@ class Conference < ApplicationRecord
     attributes['timezone']
   end
 
+  def timezone_IANA
+    ActiveSupport::TimeZone::MAPPING[timezone] or timezone
+  end
+
   def timeslot_duration
     return parent.timeslot_duration if sub_conference?
     attributes['timeslot_duration']
@@ -225,6 +229,10 @@ class Conference < ApplicationRecord
     acronym
   end
   
+  def persisted_acronym
+    changed_attributes['acronym'] || acronym
+  end
+
   def allowed_event_timeslots
     return parent.allowed_event_timeslots if sub_conference?
     (allowed_event_timeslots_csv || '').split(',').map(&:to_i)

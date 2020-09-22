@@ -9,7 +9,7 @@ namespace :frab do
                                         email: Faker::Internet.email,
                                         color: Faker::Color.hex_color[1..6])
 
-        date = Faker::Time.forward(23).beginning_of_day + 9.hours
+        date = Faker::Time.forward(days: 23).beginning_of_day + 9.hours
 
         3.times do
           conference.languages << Language.create(code: %w(en de es pt-BR).sample)
@@ -41,8 +41,8 @@ namespace :frab do
         5.times do
           conference.rooms << Room.create!(conference: conference,
                                            name: Faker::App.name,
-                                           size: Faker::Number.between(1, 50) * 25,
-                                           rank: Faker::Number.between(1, 10))
+                                           size: Faker::Number.between(from: 1, to: 50) * 25,
+                                           rank: Faker::Number.between(from: 1, to: 10))
         end
 
         10.times do
@@ -107,6 +107,19 @@ namespace :frab do
                            public_name: fakeperson[:extra][:raw_info][:username],
                            include_in_mailings: Faker::Boolean.boolean,
                            gender: [fakeperson[:extra][:raw_info][:gender], nil].sample)
+
+        if rand(10) < 8
+          begin
+            uri=URI("https://randomuser.me/api/?inc=picture&gender=#{fakeperson[:extra][:raw_info][:gender]}")
+            response = Net::HTTP.get(uri)
+            r=JSON.parse(response)
+            imguri = URI(r['results'][0]['picture']['large'])
+            p.update_attributes(avatar: StringIO.new(imguri.open.read))
+          rescue StandardError => error
+            puts "Ignoring: #$!"
+          end
+        end
+
         puts "Created person #{p.first_name} #{p.last_name} <#{p.email}> (#{p.public_name})"
       end
     end
