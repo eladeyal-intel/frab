@@ -1,5 +1,6 @@
 language: ruby
 dist: trusty
+cache: bundler
 rvm:
   - 2.4.4
   - 2.6.3
@@ -15,7 +16,7 @@ bundler_args: --without capistrano doc production --jobs 2
 before_script:
   - cp config/database.yml.travis config/database.yml
   - sed -i 's/config.eager_load = .*/config.eager_load = true/' config/environments/test.rb
-  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database frab_test'; fi"
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database frab_test character set utf8 collate utf8_general_ci'; fi"
   - sh -c "if [ '$DB' = 'postgresql' ]; then psql -c 'create database frab_test' -U postgres; fi"
 script:
   - RAILS_ENV=test bundle exec rails db:schema:load --trace
@@ -24,4 +25,6 @@ script:
   - RAILS_ENV=test bundle exec rails db:migrate
   - sh -c "[ '$DB' != 'sqlite' ] || diff db/schema.rb db/schema.rb.original "
   - bundle exec rails db:test:prepare
-  - bundle exec rails test
+  - bundle exec rails test -f
+after_failure:
+  - tail -3000 log/test.log | curl -T - curldu.mp | sed s/https:/http:/g
