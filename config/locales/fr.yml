@@ -178,6 +178,7 @@ fr:
       review_metric: Critique métrique
       room: salle
       track: fil
+  add: Ajouter
   add_association: Ajouter %{name}
   additional_resources: Ressources supplémentaires
   admin: Admin
@@ -1006,6 +1007,40 @@ fr:
     attachments_overview: Les pièces jointes
     average_feedback: 'Moyenne des retours :'
     average_speaker_feedback: 'Moyenne des retours par orateur :'
+    bulk_edit:
+      add_person: Ajouter une personne
+      add_person_confirm:
+        one: Êtes-vous sûr de vouloir ajouter une personne à cet événement?
+        other: Êtes-vous sûr de vouloir ajouter une personne à tous les événements %{count}?
+      set_duration: Définir la durée
+      set_duration_confirm:
+        one: Êtes-vous sûr de vouloir changer la durée de cet événement?
+        other: Êtes-vous sûr de vouloir changer la durée de tous les événements %{count}?
+      set_events_confirm:
+        one: vous êtes sûr de vouloir changer d'état pour cet événement?
+        other: Êtes-vous sûr de vouloir changer d'état pour tous les événements %{count}?
+      set_events_type_confirm:
+        one: Êtes-vous sûr de vouloir modifier le type de cet événement?
+        other: Êtes-vous sûr de vouloir modifier le type pour tous les événements %{count}?
+      set_new_event_type: Changer le type d'événement
+      set_new_state: Attribuer l'état
+      set_new_track: Assigner une piste
+      set_track_confirm:
+        one: Êtes-vous sûr de vouloir changer le parcours de cet événement?
+        other: Êtes-vous sûr de vouloir changer le suivi de tous les événements %{count}?
+      show: Editer ces événements
+      title:
+        one: 'Éditez l''événement %{count}:'
+        other: 'Éditez les événements %{count}:'
+      update_failed:
+        one: "%{count} édition a échoué."
+        other: Les modifications de %{count} ont échoué.
+      update_skipped:
+        one: "%{count} édition ignorée."
+        other: "%{count} modifications ignorées."
+      update_successful:
+        one: "%{count} édition terminée avec succès."
+        other: "%{count} modifications terminées avec succès."
     cancel_event: Annuler l’évènement
     cancel_event_hint: |
       Définit cet évènement comme annulé. Généralement, cela veut dire que l’orateur
@@ -1861,6 +1896,10 @@ fr:
     attending_hint: Marquer la personne comme présente.
     edit_person: Éditer la personne
     edit_person_hint: Éditer les données de la personne.
+    filter:
+      not_found: Pas trouvé.
+      pick_one: "- Choisissez l'un des noms %{count} ci-dessous -"
+      too_many: Trop de noms à afficher. Utilisez le filtre.
     inputs:
       hints:
         event_role: |
@@ -2128,6 +2167,7 @@ fr:
     login: Connexion
     signup: Créer mon compte
     update_password: Changer mon mot de passe
+  set: Ensemble
   settings: Paramètres
   show: Afficher
   show_account: Compte
