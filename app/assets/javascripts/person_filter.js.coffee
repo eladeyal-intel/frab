@@ -30,7 +30,7 @@ update_filter = (lookup_people_url, filter_box, select_box, display_box, hidden_
           
       # Update the hidden person_id
       selected_id = select_box.find("option:selected").first().val()
-      hidden_box.attr("value", selected_id)
+      hidden_box.attr("value", selected_id).trigger("change")
       
       # If only one option is available, display it
       # without a selection box
@@ -48,7 +48,7 @@ update_filter = (lookup_people_url, filter_box, select_box, display_box, hidden_
         select_box.parent().show()
       return
     error: () ->
-      hidden_box.attr("value", "")
+      hidden_box.attr("value", "").trigger("change")
       display_box.hide()
       select_box.parent().hide()
   )
