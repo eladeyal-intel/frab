@@ -5,9 +5,9 @@ class Cfp::WelcomeController < ApplicationController
       flash.keep
       if redirect_submitter_to_edit?
         flash[:alert] = t('users_module.error_invalid_public_name')
-        redirect_to edit_cfp_person_path(conference_acronym: session[:conference_acronym])
+        redirect_to edit_cfp_person_path(conference_acronym: session[:conference_acronym]) and return
       else
-        redirect_to cfp_person_path(conference_acronym: session[:conference_acronym])
+        redirect_to cfp_person_path(conference_acronym: session[:conference_acronym]) and return
       end
     end
 
