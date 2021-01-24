@@ -1108,11 +1108,11 @@ zh:
       你喜欢的角色和事件将出现在这里
       名单。
     predefined_title_types:
+      abstract: 抽象
       handouts: 讲义
       media: 媒体
       other: 其他
       poster: 海报
-      proposal: 提案
       slides: 滑梯
       video: 视频
     print_accepted_cards: 打印卡(仅接受)

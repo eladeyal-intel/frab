@@ -11,7 +11,7 @@ class SortingEventListTest < FeatureTest
     
     # Upload a file to enable "Attachments" view
     upload = Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'textfile.txt'), 'text/plain')
-    @conference.events.first.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'proposal', 'attachment' => upload } }) 
+    @conference.events.first.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'abstract', 'attachment' => upload } }) 
   end
 
   it 'can sort', js: true do

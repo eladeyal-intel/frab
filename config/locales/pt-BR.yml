@@ -1118,11 +1118,11 @@ pt-BR:
       papel que você gosta e o evento aparecerá neste
       Lista.
     predefined_title_types:
+      abstract: abstrato
       handouts: apostilas
       media: meios de comunicação
       other: de outros
       poster: poster
-      proposal: proposta
       slides: slides
       video: vídeo
     print_accepted_cards: Cartões de impressão (aceitos somente)
