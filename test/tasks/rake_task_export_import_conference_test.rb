@@ -14,7 +14,7 @@ class RakeTaskExportImportConferenceTest < ActiveSupport::TestCase
       @event=@conf.events.first
     
       upload = Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'textfile.txt'), 'text/plain')
-      @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'proposal', 'attachment' => upload } })
+      @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'abstract', 'attachment' => upload } })
     
       FileUtils.rm_rf('tmp/frab_export')
     

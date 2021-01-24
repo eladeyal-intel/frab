@@ -1128,11 +1128,11 @@ fr:
       Ajoutez-vous à un évènement pour le rôle que vous souhaitez tenir, et
       l’évènement apparaîtra dans la liste
     predefined_title_types:
+      abstract: abstrait
       handouts: documents à distribuer
       media: médias
       other: autre
       poster: affiche
-      proposal: proposition
       slides: présentation
       video: vidéo
     print_accepted_cards: Imprimer les cartes (acceptées seulement)

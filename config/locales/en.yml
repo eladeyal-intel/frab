@@ -1106,11 +1106,11 @@ en:
       role you like and the event will appear in this
       list.
     predefined_title_types:
+      abstract: abstract
       handouts: handouts
       media: media
       other: other
       poster: poster
-      proposal: proposal
       slides: slides
       video: video
     print_accepted_cards: Print cards (accepted only)
