@@ -13,7 +13,7 @@ class RakeTaskExportAttachmentsTest < ActiveSupport::TestCase
       @event=@conference.events.first
       
       upload = Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'textfile.txt'), 'text/plain')
-      @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'proposal', 'attachment' => upload } })
+      @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'abstract', 'attachment' => upload } })
 
       # Run frab:conference_export_attachments
       Frab::Application.load_tasks if Rake::Task.tasks.empty?
@@ -27,7 +27,7 @@ class RakeTaskExportAttachmentsTest < ActiveSupport::TestCase
     end
 
     it "should export attachments" do
-      assert File.file?("tmp/attachments/#{@conference.acronym}/trackless_proposal.tgz")
+      assert File.file?("tmp/attachments/#{@conference.acronym}/trackless_abstract.tgz")
     end
 
   end

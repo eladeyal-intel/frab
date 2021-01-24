@@ -1150,11 +1150,11 @@ es:
       función que te gusta y el evento aparecerá en este
       lista.
     predefined_title_types:
+      abstract: resumen
       handouts: folletos
       media: medios de comunicación
       other: otro
       poster: póster
-      proposal: propuesta
       slides: diapositivas
       video: vídeo
     print_accepted_cards: Imprimir tarjetas (solo aceptadas)

@@ -34,7 +34,7 @@ class ViewEventTest < ActionDispatch::IntegrationTest
     assert_includes @response.body, 'There are no files attached'
     
     upload = Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'textfile.txt'), 'text/plain')
-    @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'proposal',         'attachment' => upload } }) #todo join lines?
+    @event.update_attributes( event_attachments_attributes: { 'xx' => { 'title' => 'abstract',         'attachment' => upload } }) #todo join lines?
     @event.update_attributes( event_attachments_attributes: { 'yy' => { 'title' => 'a freeform title', 'attachment' => upload } })
                                                                 
     get "/#{@conference.acronym}/events/attachments"
@@ -42,8 +42,8 @@ class ViewEventTest < ActionDispatch::IntegrationTest
 
     assert_select 'a', 'a freeform title' # freeform titles appear as clickable names
 
-    assert_includes @response.body, 'proposal' # proposal appears as a table header, not a link
-    assert_select 'a', {text: 'proposal', count: 0}
+    assert_includes @response.body, 'abstract' # abstract appears as a table header, not a link
+    assert_select 'a', {text: 'abstract', count: 0}
     
   end
 

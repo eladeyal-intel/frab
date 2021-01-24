@@ -1,5 +1,5 @@
 class EventAttachment < ApplicationRecord
-  ATTACHMENT_TITLES = %w(proposal poster slides handouts media video other).freeze
+  ATTACHMENT_TITLES = %w(abstract poster slides handouts media video other).freeze
   PRESERVE_FILE_ATTACHMENTS = (ENV["FRAB_PRESERVE_FILE_ATTACHMENTS"] == "1")
 
   include ActionView::Helpers::DateHelper
