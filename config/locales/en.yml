@@ -264,6 +264,7 @@ en:
     event_created_notice: Event was successfully created.
     event_description_hint: A longer description of the event. Use this to give additional details that did not fit in the abstract. Both, abstract and description, will be shown on the conference website. (HTML)
     event_time_slots_hint: Length of your event in hours and minutes. For regular talks etc. just use the default.
+    event_type_hint: Please pick your preferred event type. Conference crew will determine the suitable event type later based on conference needs.
     event_updated_notice: Event was successfully updated.
     event_withdrawn_notice: Your submission has been withdrawn.
     events_submitted: 'Events you already submitted:'
