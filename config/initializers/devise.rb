@@ -265,6 +265,7 @@ Devise.setup do |config|
       :method => ENV.fetch('LDAP_METHOD','').downcase.to_sym,
       :base => ENV['LDAP_BASE_DN'],
       :uid => ENV['LDAP_UID'],
+      :filter => ENV['LDAP_FILTER'],
       :name_proc => Proc.new {|name| name.gsub(/@.*$/,'')},
       :bind_dn => ENV['LDAP_BIND_DN'],
       :password => ENV['LDAP_BIND_PASSWORD'],
