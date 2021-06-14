@@ -79,7 +79,7 @@ gem 'prawn_rails'
 gem 'pundit'
 gem 'ransack'
 gem 'redcarpet'
-gem 'repost', '~> 0.3.6'
+gem 'repost', '~> 0.3.7'
 gem 'ri_cal'
 gem 'roust', github: 'frab/roust', branch: 'disallowed-ticket-1-fix'
 gem 'rqrcode'
@@ -114,7 +114,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 6.1'
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'rails-controller-testing'
   gem 'minitest-rails-capybara'
   gem 'poltergeist'
